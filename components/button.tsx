@@ -13,6 +13,7 @@ import { fonts } from "@/constants/fonts";
 import { useRouter } from "expo-router";
 
 function Buttons(props: IButton) {
+
   const router = useRouter();
 
   return (
@@ -21,7 +22,7 @@ function Buttons(props: IButton) {
       styles.containter,
       pressed && {backgroundColor: colors.gray3},
     ]}
-      onPress={() => console.log("Get started")}
+      onPress={() => router.replace('/onboarding/onboarding2')}
     >
       <Text style={styles.buttonText}>{props.title}</Text>
     </Pressable>
@@ -31,6 +32,7 @@ function Buttons(props: IButton) {
 export default Buttons;
 
 const styles = StyleSheet.create({
+
   containter: {
     backgroundColor: colors.white,
     height: 46,
