@@ -1,12 +1,16 @@
-import { View, Text } from 'react-native'
-import React from 'react'
+import React from "react";
+import { Stack } from "expo-router";
 
-const _layout = () => {
+const OnboardingLayout = () => {
   return (
-    <View>
-      <Text>_layout</Text>
-    </View>
-  )
-}
+    <Stack screenOptions={{ headerShown: false }}>
+      <Stack.Screen name="onboarding1" />
+      <Stack.Screen name="onboarding2" />
+      <Stack.Screen name="onboarding3" />
+      <Stack.Screen name="onboarding4" />
+      <Stack.Screen name="onboarding5" />
+    </Stack>
+  );
+};
 
-export default _layout
+export default OnboardingLayout;

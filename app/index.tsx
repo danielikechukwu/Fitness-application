@@ -1,10 +1,17 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import { Button, StyleSheet, Text, View } from 'react-native'
+import React, { useEffect } from 'react'
+import { useRouter } from 'expo-router'
 
 const index = () => {
+
+    const router = useRouter();
+
   return (
     <View>
-      <Text>index</Text>
+      <Text>
+        Welcome 
+      </Text>
+      <Button title='Next' onPress={() => router.push("/onboarding/onboarding1")}/>
     </View>
   )
 }

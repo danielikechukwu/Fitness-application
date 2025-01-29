@@ -1,14 +1,14 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 
-const complete = () => {
+const switchingPhoto = () => {
   return (
     <View>
-      <Text>complete</Text>
+      <Text>switchingPhoto</Text>
     </View>
   )
 }
 
-export default complete
+export default switchingPhoto
 
 const styles = StyleSheet.create({})

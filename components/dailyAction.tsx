@@ -1,14 +1,14 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 
-const screen1 = () => {
+const dailyAction = () => {
   return (
     <View>
-      <Text>screen1</Text>
+      <Text>dailyAction</Text>
     </View>
   )
 }
 
-export default screen1
+export default dailyAction
 
 const styles = StyleSheet.create({})

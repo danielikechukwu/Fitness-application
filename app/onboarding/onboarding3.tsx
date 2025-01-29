@@ -1,14 +1,14 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 
-const screen3 = () => {
+const thirdOnboardingScreen = () => {
   return (
     <View>
-      <Text>screen3</Text>
+      <Text>thirdOnboardingScreen</Text>
     </View>
   )
 }
 
-export default screen3
+export default thirdOnboardingScreen
 
 const styles = StyleSheet.create({})
