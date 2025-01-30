@@ -8,9 +8,8 @@ import {
 } from "react-native";
 import React from "react";
 import { fonts } from "@/constants/fonts";
-import Onboarding2 from "@/components/Buttons/onboarding2";
 import { colors } from "@/constants/colors";
-import LinearGradient from "react-native-linear-gradient";
+import OnboardingButton from "@/components/Buttons/onboardingButton";
 
 const secondOnboardingScreen = () => {
   return (
@@ -19,7 +18,7 @@ const secondOnboardingScreen = () => {
 
       <View>
         <Image
-          source={require("../../assets/images/onboarding2.png")}
+          source={require("../../assets/images/onboarding/onboarding2.png")}
           resizeMode="cover"
           style={{ width: "auto", objectFit: "fill" }}
         />
@@ -33,10 +32,13 @@ const secondOnboardingScreen = () => {
         </View>
       </View>
 
+      {/* Next button */}
       <View style={styles.button}>
-        <Onboarding2 />
+        <View style={styles.buttonBorder}>
+          <OnboardingButton path="/onboarding/onboarding3" />
+        </View>
       </View>
-      
+
     </SafeAreaView>
   );
 };
@@ -72,5 +74,17 @@ const styles = StyleSheet.create({
     marginBottom: "10%",
   },
 
-  gradientBorder: {},
+  buttonBorder: {
+    borderWidth: 3,
+    borderRadius: "50%",
+    borderBottomColor: colors.white,
+    borderLeftColor: colors.white,
+    borderTopColor: colors.brand,
+    borderRightColor: colors.white,
+    padding: 5,
+    width: 80,
+    height: 80,
+    alignItems: "center",
+    justifyContent: "center",
+  },
 });

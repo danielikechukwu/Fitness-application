@@ -8,8 +8,8 @@ import {
 } from "react-native";
 import React from "react";
 import { fonts } from "@/constants/fonts";
-import Onboarding3 from "@/components/Buttons/onboarding3";
 import { colors } from "@/constants/colors";
+import OnboardingButton from "@/components/Buttons/onboardingButton";
 
 const thirdOnboardingScreen = () => {
   return (
@@ -18,7 +18,7 @@ const thirdOnboardingScreen = () => {
 
       <View>
         <Image
-          source={require("../../assets/images/onboarding3.png")}
+          source={require("../../assets/images/onboarding/onboarding3.png")}
           resizeMode="cover"
           style={{ width: "auto", objectFit: "fill" }}
         />
@@ -31,9 +31,13 @@ const thirdOnboardingScreen = () => {
         </View>
       </View>
 
+      {/* Next button */}
       <View style={styles.button}>
-        <Onboarding3 />
+        <View style={styles.buttonBorder}>
+          <OnboardingButton path="/onboarding/onboarding4" />
+        </View>
       </View>
+
     </SafeAreaView>
   );
 };
@@ -68,6 +72,20 @@ const styles = StyleSheet.create({
     alignItems: "flex-end",
     marginRight: "4%",
     marginBottom: "10%"
+  },
+
+  buttonBorder: {
+    borderWidth: 3,
+    borderRadius: "50%",
+    borderBottomColor: colors.white,
+    borderLeftColor: colors.white,
+    borderTopColor: colors.brand,
+    borderRightColor: colors.brand,
+    padding: 5,
+    width: 80,
+    height: 80,
+    alignItems: "center",
+    justifyContent: "center",
   }
 
 });

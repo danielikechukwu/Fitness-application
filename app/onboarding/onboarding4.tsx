@@ -8,8 +8,8 @@ import {
 } from "react-native";
 import React from "react";
 import { fonts } from "@/constants/fonts";
-import Onboarding4 from "@/components/Buttons/onboarding4";
 import { colors } from "@/constants/colors";
+import OnboardingButton from "@/components/Buttons/onboardingButton";
 
 const fourthOnboardingScreen = () => {
   return (
@@ -18,7 +18,7 @@ const fourthOnboardingScreen = () => {
 
       <View>
         <Image
-          source={require("../../assets/images/onboarding4.png")}
+          source={require("../../assets/images/onboarding/onboarding4.png")}
           resizeMode="cover"
           style={{ width: "auto", objectFit: "fill" }}
         />
@@ -32,9 +32,13 @@ const fourthOnboardingScreen = () => {
         </View>
       </View>
 
+      {/* Next button */}
       <View style={styles.button}>
-        <Onboarding4 />
+        <View style={styles.buttonBorder}>
+          <OnboardingButton path="/onboarding/onboarding5" />
+        </View>
       </View>
+
     </SafeAreaView>
   );
 };
@@ -69,6 +73,20 @@ const styles = StyleSheet.create({
     alignItems: "flex-end",
     marginRight: "4%",
     marginBottom: "10%"
+  },
+
+  buttonBorder: {
+    borderWidth: 3,
+    borderRadius: "50%",
+    borderBottomColor: colors.brand,
+    borderLeftColor: colors.white,
+    borderTopColor: colors.brand,
+    borderRightColor: colors.brand,
+    padding: 5,
+    width: 80,
+    height: 80,
+    alignItems: "center",
+    justifyContent: "center",
   }
 
 });

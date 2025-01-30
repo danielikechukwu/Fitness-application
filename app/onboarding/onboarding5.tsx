@@ -8,9 +8,8 @@ import {
 } from "react-native";
 import React from "react";
 import { fonts } from "@/constants/fonts";
-import Onboarding5 from "@/components/Buttons/onboarding5";
-import { Button } from "react-native-paper";
 import { colors } from "@/constants/colors";
+import OnboardingButton from "@/components/Buttons/onboardingButton";
 
 const secondOnboardingScreen = () => {
   return (
@@ -19,7 +18,7 @@ const secondOnboardingScreen = () => {
 
       <View>
         <Image
-          source={require("../../assets/images/onboarding5.png")}
+          source={require("../../assets/images/onboarding/onboarding5.png")}
           resizeMode="cover"
           style={{ width: "auto", objectFit: "fill" }}
         />
@@ -33,9 +32,13 @@ const secondOnboardingScreen = () => {
         </View>
       </View>
 
+      {/* Next button */}
       <View style={styles.button}>
-        <Onboarding5 />
+        <View style={styles.buttonBorder}>
+          <OnboardingButton path="/onboarding/onboarding5" />
+        </View>
       </View>
+
     </SafeAreaView>
   );
 };
@@ -43,11 +46,10 @@ const secondOnboardingScreen = () => {
 export default secondOnboardingScreen;
 
 const styles = StyleSheet.create({
-
   container: {
     flex: 1,
     justifyContent: "space-between",
-    backgroundColor: colors.white
+    backgroundColor: colors.white,
   },
 
   textSection: {
@@ -70,6 +72,19 @@ const styles = StyleSheet.create({
     alignItems: "flex-end",
     marginRight: "4%",
     marginBottom: "10%",
-
   },
+
+  buttonBorder: {
+    borderWidth: 3,
+    borderRadius: "50%",
+    borderBottomColor: colors.brand,
+    borderLeftColor: colors.brand,
+    borderTopColor: colors.brand,
+    borderRightColor: colors.brand,
+    padding: 5,
+    width: 80,
+    height: 80,
+    alignItems: "center",
+    justifyContent: "center",
+  }
 });
