@@ -12,7 +12,7 @@ import Onboarding2 from "@/components/Buttons/onboarding2";
 
 const secondOnboardingScreen = () => {
   return (
-    <SafeAreaView>
+    <SafeAreaView style={styles.container}>
       <StatusBar backgroundColor="white" />
 
       <View>
@@ -41,10 +41,10 @@ const secondOnboardingScreen = () => {
 export default secondOnboardingScreen;
 
 const styles = StyleSheet.create({
+  
   container: {
     flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
+    justifyContent: 'space-between'
   },
 
   textSection: {
@@ -64,8 +64,9 @@ const styles = StyleSheet.create({
   },
 
   button: {
-    bottom: "-20%",
     alignItems: "flex-end",
-    marginRight: 11,
-  },
+    marginRight: "4%",
+    marginBottom: "10%"
+  }
+
 });

@@ -9,10 +9,11 @@ import {
 import React from "react";
 import { fonts } from "@/constants/fonts";
 import Onboarding5 from "@/components/Buttons/onboarding5";
+import { Button } from "react-native-paper";
 
 const secondOnboardingScreen = () => {
   return (
-    <SafeAreaView>
+    <SafeAreaView style={styles.container}>
       <StatusBar backgroundColor="white" />
 
       <View>
@@ -43,8 +44,7 @@ export default secondOnboardingScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
+    justifyContent: "space-between",
   },
 
   textSection: {
@@ -64,8 +64,8 @@ const styles = StyleSheet.create({
   },
 
   button: {
-    bottom: "-20%",
     alignItems: "flex-end",
-    marginRight: 11,
+    marginRight: "4%",
+    marginBottom: "10%",
   },
 });

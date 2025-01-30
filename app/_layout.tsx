@@ -1,13 +1,13 @@
-import React, { useEffect } from 'react'
-import { Stack } from 'expo-router'
-import { useFonts } from 'expo-font';
+import React, { useEffect } from "react";
+import { Stack } from "expo-router";
+import { useFonts } from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
+import { PaperProvider } from "react-native-paper";
 
 //Prevent splash screen from hiding automatically
 SplashScreen.preventAutoHideAsync();
 
 const RootLayout = () => {
-
   const [fontsLoaded] = useFonts({
     "Poppins-Regular": require("../assets/fonts/Poppins-Regular.ttf"),
     "Poppins-Bold": require("../assets/fonts/Poppins-Bold.ttf"),
@@ -16,17 +16,18 @@ const RootLayout = () => {
   });
 
   useEffect(() => {
-
-    if(fontsLoaded) {
+    if (fontsLoaded) {
       SplashScreen.hideAsync(); //hide splash screen after fonts load
     }
-  }, [fontsLoaded])
+  }, [fontsLoaded]);
 
   return (
-    <Stack screenOptions={{ headerShown: false }}>
-      <Stack.Screen name="index" />
-    </Stack>
-  )
-}
+    <PaperProvider>
+      <Stack screenOptions={{ headerShown: false }}>
+        <Stack.Screen name="index" />
+      </Stack>
+    </PaperProvider>
+  );
+};
 
-export default RootLayout
+export default RootLayout;

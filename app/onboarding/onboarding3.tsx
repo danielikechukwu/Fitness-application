@@ -12,7 +12,7 @@ import Onboarding3 from "@/components/Buttons/onboarding3";
 
 const thirdOnboardingScreen = () => {
   return (
-    <SafeAreaView>
+    <SafeAreaView style={styles.container}>
       <StatusBar backgroundColor="white" />
 
       <View>
@@ -40,10 +40,10 @@ const thirdOnboardingScreen = () => {
 export default thirdOnboardingScreen;
 
 const styles = StyleSheet.create({
+
   container: {
     flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
+    justifyContent: 'space-between'
   },
 
   textSection: {
@@ -63,8 +63,9 @@ const styles = StyleSheet.create({
   },
 
   button: {
-    bottom: "-20%",
     alignItems: "flex-end",
-    marginRight: 11,
-  },
+    marginRight: "4%",
+    marginBottom: "10%"
+  }
+
 });
