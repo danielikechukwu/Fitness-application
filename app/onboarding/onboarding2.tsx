@@ -8,6 +8,7 @@ import {
 } from "react-native";
 import React from "react";
 import { fonts } from "@/constants/fonts";
+import Onboarding2 from "@/components/Buttons/onboarding2";
 
 const secondOnboardingScreen = () => {
   return (
@@ -30,7 +31,9 @@ const secondOnboardingScreen = () => {
         </View>
       </View>
 
-      <View></View>
+      <View style={styles.button}>
+        <Onboarding2 />
+      </View>
     </SafeAreaView>
   );
 };
@@ -45,7 +48,7 @@ const styles = StyleSheet.create({
   },
 
   textSection: {
-    marginTop: "10%",
+    marginTop: "13%",
     marginLeft: "5%",
     marginRight: "5%",
   },
@@ -57,6 +60,12 @@ const styles = StyleSheet.create({
 
   text: {
     fontFamily: fonts.regular,
-    fontSize: 12
-  }
+    fontSize: 12,
+  },
+
+  button: {
+    bottom: "-20%",
+    alignItems: "flex-end",
+    marginRight: 11,
+  },
 });

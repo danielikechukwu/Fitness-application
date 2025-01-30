@@ -3,18 +3,16 @@ import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { fonts } from "../../constants/fonts";
 import { colors } from "../../constants/colors";
-import Buttons from "../../components/button";
+import Buttons from "../../components/Buttons/button";
 
 const firstOnboardingScreen = () => {
   const buttonTitle: string = "Get Started";
 
   return (
     <SafeAreaView style={styles.container}>
-
       <StatusBar backgroundColor="white" />
 
       <View style={{ flex: 1, justifyContent: "center" }}>
-
         <View
           style={{
             display: "flex",
@@ -43,7 +41,6 @@ const firstOnboardingScreen = () => {
           <Buttons title={buttonTitle} />
         </View>
       </View>
-
     </SafeAreaView>
   );
 };
