@@ -1,8 +1,12 @@
 import { Pressable, StyleSheet, Text, View, Image } from "react-native";
 import React from "react";
 import { colors } from "@/constants/colors";
+import { useRouter } from "expo-router";
 
 const Onboarding5 = () => {
+
+    const router = useRouter();
+    
   return (
     <View style={styles.buttonBorder}>
       <Pressable
