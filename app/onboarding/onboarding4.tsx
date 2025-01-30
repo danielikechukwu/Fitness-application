@@ -9,6 +9,7 @@ import {
 import React from "react";
 import { fonts } from "@/constants/fonts";
 import Onboarding4 from "@/components/Buttons/onboarding4";
+import { colors } from "@/constants/colors";
 
 const fourthOnboardingScreen = () => {
   return (
@@ -44,7 +45,8 @@ const styles = StyleSheet.create({
   
   container: {
     flex: 1,
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
+    backgroundColor: colors.white
   },
 
   textSection: {

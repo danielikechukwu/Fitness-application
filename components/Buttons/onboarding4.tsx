@@ -34,13 +34,16 @@ const styles = StyleSheet.create({
 
   buttonBorder: {
     borderWidth: 3,
-    borderRadius: '50%',
+    borderRadius: "50%",
+    borderLeftColor: colors.white,
+    borderBottomColor: colors.brand,
+    borderTopColor: colors.brand,
+    borderRightColor: colors.brand,
     padding: 5,
     width: 80,
     height: 80,
-    borderColor: colors.brand,
-    alignItems: 'center',
-    justifyContent: 'center'
+    alignItems: "center",
+    justifyContent: "center",
 
   }
 });

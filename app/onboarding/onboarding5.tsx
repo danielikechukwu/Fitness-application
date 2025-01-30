@@ -10,6 +10,7 @@ import React from "react";
 import { fonts } from "@/constants/fonts";
 import Onboarding5 from "@/components/Buttons/onboarding5";
 import { Button } from "react-native-paper";
+import { colors } from "@/constants/colors";
 
 const secondOnboardingScreen = () => {
   return (
@@ -42,9 +43,11 @@ const secondOnboardingScreen = () => {
 export default secondOnboardingScreen;
 
 const styles = StyleSheet.create({
+
   container: {
     flex: 1,
     justifyContent: "space-between",
+    backgroundColor: colors.white
   },
 
   textSection: {
@@ -67,5 +70,6 @@ const styles = StyleSheet.create({
     alignItems: "flex-end",
     marginRight: "4%",
     marginBottom: "10%",
+
   },
 });

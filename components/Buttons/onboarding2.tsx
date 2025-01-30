@@ -21,6 +21,7 @@ const Onboarding2 = () => {
 export default Onboarding2;
 
 const styles = StyleSheet.create({
+
   container: {
     backgroundColor: colors.brand,
     width: 57,
@@ -33,11 +34,15 @@ const styles = StyleSheet.create({
   buttonBorder: {
     borderWidth: 3,
     borderRadius: "50%",
+    borderBottomColor: colors.white,
+    borderLeftColor: colors.white,
+    borderTopColor: colors.brand,
+    borderRightColor: colors.white,
     padding: 5,
     width: 80,
     height: 80,
-    borderColor: colors.brand,
     alignItems: "center",
     justifyContent: "center",
-  },
+  }
+  
 });

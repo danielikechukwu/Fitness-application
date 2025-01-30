@@ -9,6 +9,8 @@ import {
 import React from "react";
 import { fonts } from "@/constants/fonts";
 import Onboarding2 from "@/components/Buttons/onboarding2";
+import { colors } from "@/constants/colors";
+import LinearGradient from "react-native-linear-gradient";
 
 const secondOnboardingScreen = () => {
   return (
@@ -34,6 +36,7 @@ const secondOnboardingScreen = () => {
       <View style={styles.button}>
         <Onboarding2 />
       </View>
+      
     </SafeAreaView>
   );
 };
@@ -41,10 +44,10 @@ const secondOnboardingScreen = () => {
 export default secondOnboardingScreen;
 
 const styles = StyleSheet.create({
-  
   container: {
     flex: 1,
-    justifyContent: 'space-between'
+    justifyContent: "space-between",
+    backgroundColor: colors.white,
   },
 
   textSection: {
@@ -66,7 +69,8 @@ const styles = StyleSheet.create({
   button: {
     alignItems: "flex-end",
     marginRight: "4%",
-    marginBottom: "10%"
-  }
+    marginBottom: "10%",
+  },
 
+  gradientBorder: {},
 });
