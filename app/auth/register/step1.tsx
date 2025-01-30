@@ -10,22 +10,16 @@ const RegisterStep1 = () => {
 
       <StatusBar backgroundColor="white" />
 
-      <View>
-
-        <View style={styles.topText}>
+      <View style={styles.topText}>
+        
           <Text style={{ fontFamily: fonts.regular, fontSize: 20 }}>
             Hey there,
           </Text>
-          <Text style={{ fontFamily: fonts.bold, fontSize: 24 }}>
+          <Text style={{ fontFamily: fonts.bold, fontSize: 24, color: colors.black }}>
             Create an Account
           </Text>
         </View>
 
-        <View style={styles.form}>
-
-        </View>
-        
-      </View>
     </SafeAreaView>
   );
 };
