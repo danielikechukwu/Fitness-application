@@ -9,7 +9,7 @@ const Onboarding2 = () => {
   return (
     <View style={styles.buttonBorder}>
       <Pressable
-        onPress={() => router.replace("/onboarding/onboarding5")}
+        onPress={() => router.replace("/onboarding/onboarding3")}
         style={styles.container}
       >
         <Image source={require("../../assets/images/light-right-arrow.png")} />

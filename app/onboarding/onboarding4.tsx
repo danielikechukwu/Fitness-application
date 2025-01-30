@@ -8,7 +8,7 @@ import {
 } from "react-native";
 import React from "react";
 import { fonts } from "@/constants/fonts";
-import Onboarding4 from "@/components/Buttons/onboarding2";
+import Onboarding4 from "@/components/Buttons/onboarding4";
 
 const fourthOnboardingScreen = () => {
   return (
