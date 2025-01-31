@@ -11,11 +11,14 @@ const RegisterStep1 = () => {
   const [checked, setChecked] = useState<boolean>(false);
 
   return (
+
     <SafeAreaView style={styles.container}>
+
       <StatusBar backgroundColor="white" />
 
-      <View>
-        <View style={styles.topText}>
+      <View style={styles.topText}>
+
+        <View style={{alignItems: 'center'}}>
           <Text
             style={{
               fontFamily: fonts.regular,
@@ -37,10 +40,11 @@ const RegisterStep1 = () => {
         </View>
 
         <View style={styles.form}>
-          <Label icon="../assets/images/icons/profile.png" placeholder="First Name" />
-          <Label icon="../assets/images/icons/profile.png" placeholder="First Name" />
-          <Label icon="../assets/images/icons/profile.png" placeholder="First Name" />
-          <Label icon="../assets/images/icons/profile.png" placeholder="First Name" />
+
+          <Label icon={require("../../../assets/images/icons/profile.png")} placeholder="First Name" password={false} />
+          <Label icon={require("../../../assets/images/icons/profile.png")} placeholder="Last Name" password={false} />
+          <Label icon={require("../../../assets/images/icons/message.png")} placeholder="Email" password={false} />
+          <Label icon={require("../../../assets/images/icons/lock.png")} placeholder="Password" password={true} />
 
           <View
             style={{

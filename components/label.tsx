@@ -1,18 +1,57 @@
-import { StyleSheet, View, TextInput, Image } from "react-native";
-import React from "react";
+import {
+  StyleSheet,
+  View,
+  TextInput,
+  Image,
+  TouchableOpacity,
+} from "react-native";
+import React, { useState } from "react";
 import { colors } from "@/constants/colors";
 import { fonts } from "@/constants/fonts";
 import ILabel from "@/app/types/Label";
 
 const Label = (props: ILabel) => {
-  return (
-    <View style={styles.inputContainer}>
 
-      <Image resizeMode="contain" source={require("../assets/images/icons/profile.png")} style={styles.img} />
+  const [isPasswordVisible, setIsPasswordVisiable] = useState(false);
 
-      <TextInput placeholder={props.placeholder} placeholderTextColor={colors.gray2} style={styles.input} />
-    </View>
-  );
+  if (props.password) {
+    return (
+      <View style={styles.inputContainer}>
+        <Image resizeMode="contain" source={props.icon} style={styles.img} />
+
+        <TextInput
+          placeholder={props.placeholder}
+          placeholderTextColor={colors.gray2}
+          secureTextEntry={!isPasswordVisible}
+          style={styles.input}
+        />
+
+        <TouchableOpacity onPress={() => setIsPasswordVisiable(!isPasswordVisible)}>
+            {isPasswordVisible ? <Image
+            resizeMode="contain"
+            source={require('../assets/images/icons/show.png')}
+            style={styles.img}
+          /> : <Image
+          resizeMode="contain"
+          source={require('../assets/images/icons/hide.png')}
+          style={styles.img}
+        />}          
+        </TouchableOpacity>
+      </View>
+    );
+  } else {
+    return (
+      <View style={styles.inputContainer}>
+        <Image resizeMode="contain" source={props.icon} style={styles.img} />
+
+        <TextInput
+          placeholder={props.placeholder}
+          placeholderTextColor={colors.gray2}
+          style={styles.input}
+        />
+      </View>
+    );
+  }
 };
 
 export default Label;
@@ -37,12 +76,12 @@ const styles = StyleSheet.create({
     padding: 8,
     color: colors.black,
     fontFamily: fonts.regular,
-    alignSelf: 'center'
+    alignSelf: "center",
   },
 
   img: {
-    marginRight: '3%', 
-    width: 18, 
+    marginRight: "3%",
+    width: 18,
     height: 18,
-}
+  },
 });
