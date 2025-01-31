@@ -21,7 +21,7 @@ const RegisterStep1 = () => {
     <SafeAreaView style={styles.container}>
       <StatusBar backgroundColor="white" />
 
-      <View style={styles.topText}>
+      <View style={{ flex: 1, alignItems: "center", marginTop: "4%" }}>
         <View style={{ alignItems: "center" }}>
           <Text
             style={{
@@ -76,6 +76,7 @@ const RegisterStep1 = () => {
               status={checked ? "checked" : "unchecked"}
               onPress={() => {
                 setChecked(!checked);
+                console.log(!checked)
               }}
               color={colors.gray2}
             />
@@ -92,7 +93,7 @@ const RegisterStep1 = () => {
           </View>
         </View>
 
-        <View style={{ width: "90%", marginTop: "25%" }}>
+        <View style={{ width: "90%", marginTop: "22%" }}>
           <Button
             mode="contained"
             textColor={colors.white}
@@ -117,19 +118,35 @@ const RegisterStep1 = () => {
             <View style={styles.horizontalLine}></View>
           </View>
 
-          <View>
-            <TouchableOpacity style={{borderWidth: 2}}>
+          <View
+            style={{
+              flexDirection: "row",
+              marginTop: "7%",
+              justifyContent: "center",
+              gap: "10%",
+            }}
+          >
+            <TouchableOpacity
+              style={styles.socials}
+              onPress={() => console.log("Google")}
+            >
               <Image
                 source={require("../../../assets/images/icons/google.png")}
               />
             </TouchableOpacity>
-            <TouchableOpacity>
-            <Image
+            <TouchableOpacity
+              style={styles.socials}
+              onPress={() => console.log("Facebook")}
+            >
+              <Image
                 source={require("../../../assets/images/icons/facebook.png")}
               />
             </TouchableOpacity>
           </View>
 
+          <View style={{ alignItems: "center", marginTop: "5%" }}>
+            <Text style={{fontFamily: fonts.medium, color: colors.black, fontSize: 14}}>Aready have an account? <Text style={{color: colors.brand}} onPress={() => console.log('Login')}>Login</Text></Text>
+          </View>
         </View>
       </View>
     </SafeAreaView>
@@ -142,12 +159,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: colors.white,
-  },
-
-  topText: {
-    flex: 1,
-    alignItems: "center",
-    marginTop: "4%",
   },
 
   form: {
@@ -167,5 +178,15 @@ const styles = StyleSheet.create({
     width: "45%",
     height: 1,
     backgroundColor: colors.gray3,
+  },
+
+  socials: {
+    borderWidth: 1,
+    width: 50,
+    height: 50,
+    alignItems: "center",
+    justifyContent: "center",
+    borderRadius: 15,
+    borderColor: colors.gray3,
   },
 });
