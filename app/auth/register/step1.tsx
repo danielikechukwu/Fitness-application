@@ -18,7 +18,9 @@ const RegisterStep1 = () => {
   const [checked, setChecked] = useState<boolean>(false);
 
   return (
+
     <SafeAreaView style={styles.container}>
+        
       <StatusBar backgroundColor="white" />
 
       <View style={{ flex: 1, alignItems: "center", marginTop: "4%" }}>
