@@ -1,3 +1,3 @@
-export interface Button {
+export default interface IButton {
     path: string
 }

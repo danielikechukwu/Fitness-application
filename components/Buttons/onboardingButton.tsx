@@ -2,9 +2,10 @@ import { Pressable, StyleSheet, Text, View, Image } from "react-native";
 import React from "react";
 import { colors } from "@/constants/colors";
 import { useRouter } from "expo-router";
-import Button from "@/app/types/OnBoardingButton";
+import IButton from "@/app/types/OnBoardingButton";
 
-const OnboardingButton = (props: Button) => {
+const OnboardingButton = (props: IButton) => {
+
   const router = useRouter();
 
   return (
