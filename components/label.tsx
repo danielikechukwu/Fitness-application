@@ -37,6 +37,7 @@ const Label = (props: ILabel) => {
           style={styles.img}
         />}          
         </TouchableOpacity>
+        
       </View>
     );
   } else {
