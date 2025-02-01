@@ -1,14 +1,69 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import { StyleSheet, Text, View, Image } from "react-native";
+import React, { useState } from "react";
+import RNPickerSelect from "react-native-picker-select";
+import ILabel from "@/app/types/Label";
+import { colors } from "@/constants/colors";
 
-const DropDown = () => {
+const DropDown = (props: ILabel) => {
+  const [selectedValue, setSelectedValue] = useState();
+
   return (
-    <View>
-      <Text>DropDown</Text>
+    <View style={styles.container}>
+
+{/* <Image
+        tintColor={colors.gray2}
+        resizeMode="contain"
+        source={props.icon}
+        style={styles.img}
+      /> */}
+
+<RNPickerSelect
+        onValueChange={(value) => setSelectedValue(value)}
+        items={[
+          { label: "Male", value: "male" },
+          { label: "Female", value: "female" },
+        ]}
+        placeholder={{ label: props.placeholder, value: null }}
+        style={pickerStyles}
+        
+      />
     </View>
-  )
-}
+  );
+};
 
-export default DropDown
+export default DropDown;
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+  container: {
+    alignItems: "center",
+    borderWidth: 1,
+    borderColor: "#ccc",
+    borderRadius: 8,
+    paddingHorizontal: 10,
+    marginVertical: 10,
+    width: "100%",
+    backgroundColor: "F7F8F8"
+  },
+
+  img: {
+    marginRight: "3%",
+    width: 18,
+    height: 18,
+  },
+});
+
+const pickerStyles = {
+  inputIOS: {
+    color: colors.black,
+    padding: 10,
+    borderBottomWidth: 1,
+    borderColor: "red",
+  },
+  inputAndroid: {
+    color: colors.black,
+    //padding: 10,
+    borderWidth: 3,
+    borderColor: "red",
+    
+  },
+};

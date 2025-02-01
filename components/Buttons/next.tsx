@@ -2,18 +2,15 @@ import { StyleSheet, Text, Pressable, Image } from "react-native";
 import React from "react";
 import { colors } from "../../constants/colors";
 import { fonts } from "@/constants/fonts";
-import IButton from "@/app/types/OnBoardingButton";
+import IButton from "@/app/types/onboarding-button";
 import { useRouter } from "expo-router";
 
 function Next(props: IButton) {
-
-    const router = useRouter();
+  const router = useRouter();
 
   return (
     <Pressable
-      style={({ pressed }) => [
-        styles.containter
-      ]}
+      style={({ pressed }) => [styles.containter]}
       onPress={() => router.replace(props.path)}
     >
       <Text style={styles.buttonText}>{props.title}</Text>
@@ -23,7 +20,6 @@ function Next(props: IButton) {
         source={require("../../assets/images/icons/light-right-arrow.png")}
         style={{ marginLeft: 10 }}
       />
-
     </Pressable>
   );
 }
@@ -34,7 +30,7 @@ const styles = StyleSheet.create({
   containter: {
     backgroundColor: colors.brand,
     height: 46,
-    display: 'flex',
+    display: "flex",
     alignItems: "center",
     justifyContent: "center",
     borderRadius: 28,

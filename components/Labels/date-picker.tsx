@@ -7,10 +7,10 @@ import {
   Platform,
 } from "react-native";
 import React, { useState } from "react";
-import ILabel from "@/app/types/Label";
 import { colors } from "@/constants/colors";
 import { fonts } from "@/constants/fonts";
 import DateTimePicker from "@react-native-community/datetimepicker";
+import ILabel from "@/app/types/Label";
 
 const DatePicker = (props: ILabel) => {
   const [date, setDate] = useState(new Date());

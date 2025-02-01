@@ -9,7 +9,7 @@ import {
 import React from "react";
 import { fonts } from "@/constants/fonts";
 import { colors } from "@/constants/colors";
-import OnboardingButton from "@/components/Buttons/onboardingButton";
+import OnboardingButton from "@/components/Buttons/onboarding-button";
 
 const secondOnboardingScreen = () => {
   return (
@@ -38,7 +38,6 @@ const secondOnboardingScreen = () => {
           <OnboardingButton path="/onboarding/onboarding5" />
         </View>
       </View>
-
     </SafeAreaView>
   );
 };
@@ -86,5 +85,5 @@ const styles = StyleSheet.create({
     height: 80,
     alignItems: "center",
     justifyContent: "center",
-  }
+  },
 });

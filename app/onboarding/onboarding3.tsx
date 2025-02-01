@@ -9,7 +9,7 @@ import {
 import React from "react";
 import { fonts } from "@/constants/fonts";
 import { colors } from "@/constants/colors";
-import OnboardingButton from "@/components/Buttons/onboardingButton";
+import OnboardingButton from "@/components/Buttons/onboarding-button";
 
 const thirdOnboardingScreen = () => {
   return (
@@ -26,7 +26,8 @@ const thirdOnboardingScreen = () => {
         <View style={styles.textSection}>
           <Text style={styles.heading}>Get Burn</Text>
           <Text style={styles.text}>
-            Let's keep burning, to achieve your goals, it hurts only temporarily, if you give up now you will be in pain forever
+            Let's keep burning, to achieve your goals, it hurts only
+            temporarily, if you give up now you will be in pain forever
           </Text>
         </View>
       </View>
@@ -37,7 +38,6 @@ const thirdOnboardingScreen = () => {
           <OnboardingButton path="/onboarding/onboarding4" />
         </View>
       </View>
-
     </SafeAreaView>
   );
 };
@@ -45,11 +45,10 @@ const thirdOnboardingScreen = () => {
 export default thirdOnboardingScreen;
 
 const styles = StyleSheet.create({
-
   container: {
     flex: 1,
-    justifyContent: 'space-between',
-    backgroundColor: colors.white
+    justifyContent: "space-between",
+    backgroundColor: colors.white,
   },
 
   textSection: {
@@ -71,7 +70,7 @@ const styles = StyleSheet.create({
   button: {
     alignItems: "flex-end",
     marginRight: "4%",
-    marginBottom: "10%"
+    marginBottom: "10%",
   },
 
   buttonBorder: {
@@ -86,6 +85,5 @@ const styles = StyleSheet.create({
     height: 80,
     alignItems: "center",
     justifyContent: "center",
-  }
-
+  },
 });

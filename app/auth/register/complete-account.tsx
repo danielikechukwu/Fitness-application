@@ -14,6 +14,7 @@ import Next from "@/components/Buttons/next";
 import NumberLabel from "@/components/Labels/weight-height-label";
 import Label from "@/components/Labels/label";
 import DatePicker from "@/components/Labels/date-picker";
+import DropDown from "@/components/Labels/dropdown";
 
 const CompleteAccount = () => {
   return (
@@ -29,15 +30,15 @@ const CompleteAccount = () => {
           />
 
           <View style={styles.textSection}>
-            <Text style={styles.heading}>Let's complete your profile</Text>
-            <Text>It will help us to know more about you!</Text>
+            <Text style={styles.textHeading}>Let's complete your profile</Text>
+            <Text style={styles.textContent}>It will help us to know more about you!</Text>
           </View>
 
           {/* Complete form */}
           <View style={styles.form}>
-            <Label
+            <DropDown
               icon={require("../../../assets/images/icons/profile.png")}
-              placeholder="First Name"
+              placeholder="Choose gender"
               password={false}
             />
             <DatePicker
@@ -103,10 +104,16 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
 
-  heading: {
+  textHeading: {
     fontFamily: fonts.bold,
     fontSize: 22,
+    color: colors.black
   },
+
+  textContent: {
+    color: colors.gray1, 
+    fontFamily: fonts.regular, 
+    fontSize: 14 },
 
   form: {
     marginTop: "5%",

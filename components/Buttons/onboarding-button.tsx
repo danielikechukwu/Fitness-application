@@ -2,10 +2,9 @@ import { Pressable, StyleSheet, Image } from "react-native";
 import React from "react";
 import { colors } from "@/constants/colors";
 import { useRouter } from "expo-router";
-import IButton from "@/app/types/OnBoardingButton";
+import IButton from "@/app/types/onboarding-button";
 
 const OnboardingButton = (props: IButton) => {
-
   const router = useRouter();
 
   return (
@@ -30,6 +29,5 @@ const styles = StyleSheet.create({
     borderRadius: "50%",
     justifyContent: "center",
     alignItems: "center",
-  }
-
+  },
 });

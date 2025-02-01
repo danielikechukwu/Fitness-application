@@ -175,6 +175,7 @@ import Label from "@/components/Labels/label";
       color: colors.gray2,
       marginLeft: "2%",
       flexWrap: "wrap",
+      fontSize: 14
     },
   
     horizontalLine: {

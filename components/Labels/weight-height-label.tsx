@@ -1,21 +1,15 @@
-import {
-  StyleSheet,
-  View,
-  TextInput,
-  Image
-} from "react-native";
+import { StyleSheet, View, TextInput, Image } from "react-native";
 import React, { useState } from "react";
 import { colors } from "@/constants/colors";
 import { fonts } from "@/constants/fonts";
-import ILabel from "@/app/types/Label";
+import ILabel from "@/app/types/label";
 
 const NumberLabel = (props: ILabel) => {
+  const [number, setNumber] = useState("");
 
-    const [number, setNumber] = useState("");
-
-    const handleInput = (text: string) => {
-        setNumber(text.replace(/[^0-9.]/g, "")); // Allows numbers and dots..
-    }
+  const handleInput = (text: string) => {
+    setNumber(text.replace(/[^0-9.]/g, "")); // Allows numbers and dots..
+  };
 
   return (
     <View style={styles.inputContainer}>

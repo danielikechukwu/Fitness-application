@@ -9,7 +9,7 @@ import {
 import React from "react";
 import { fonts } from "@/constants/fonts";
 import { colors } from "@/constants/colors";
-import OnboardingButton from "@/components/Buttons/onboardingButton";
+import OnboardingButton from "@/components/Buttons/onboarding-button";
 
 const fourthOnboardingScreen = () => {
   return (
@@ -38,7 +38,6 @@ const fourthOnboardingScreen = () => {
           <OnboardingButton path="/onboarding/onboarding5" />
         </View>
       </View>
-
     </SafeAreaView>
   );
 };
@@ -46,11 +45,10 @@ const fourthOnboardingScreen = () => {
 export default fourthOnboardingScreen;
 
 const styles = StyleSheet.create({
-  
   container: {
     flex: 1,
-    justifyContent: 'space-between',
-    backgroundColor: colors.white
+    justifyContent: "space-between",
+    backgroundColor: colors.white,
   },
 
   textSection: {
@@ -72,7 +70,7 @@ const styles = StyleSheet.create({
   button: {
     alignItems: "flex-end",
     marginRight: "4%",
-    marginBottom: "10%"
+    marginBottom: "10%",
   },
 
   buttonBorder: {
@@ -87,6 +85,5 @@ const styles = StyleSheet.create({
     height: 80,
     alignItems: "center",
     justifyContent: "center",
-  }
-
+  },
 });
