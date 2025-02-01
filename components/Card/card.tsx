@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import Carousel from "react-native-snap-carousel";
 import { colors } from "@/constants/colors";
 import { fonts } from "@/constants/fonts";
+import { Divider } from "react-native-paper";
 
 const { width } = Dimensions.get("screen");
 
@@ -39,10 +40,14 @@ const CardCarousel = () => {
     item: { heading: string; image: string; content: string };
   }) => (
     <View style={styles.card}>
-      <Image source={item.image} />
-
+        
+      <Image source={item.image} style={{alignSelf: 'center'}} />
+      
       <View style={styles.textContent}>
+        
         <Text style={styles.textHeading}>{item.heading}</Text>
+        <View style={styles.horizontalLine} />
+        <View style={styles.horizontalLine}></View>
         <Text style={styles.text}>{item.content}</Text>
       </View>
     </View>
@@ -75,8 +80,7 @@ const styles = StyleSheet.create({
     paddingLeft: 15,
     paddingRight: 15,
     paddingTop: "15%",
-    paddingBottom: '15%',
-    alignItems: "center",
+    paddingBottom: "15%",
     shadowColor: "#000",
     shadowOpacity: 0.2,
     shadowRadius: 5,
@@ -86,22 +90,28 @@ const styles = StyleSheet.create({
 
   textContent: {
     marginTop: "10%",
-    alignItems: 'center'
+    alignItems: "center",
   },
 
   textHeading: {
     color: colors.white,
     fontFamily: fonts.semiBold,
-    fontSize: 16
+    fontSize: 16,
   },
 
   text: {
     color: colors.white,
     fontFamily: fonts.regular,
     fontSize: 14,
-    marginTop: '5%',
-    marginLeft: '5%',
-    marginRight: '5%',
-    textAlign: 'center'
+    marginTop: "5%",
+    marginLeft: "5%",
+    marginRight: "5%",
+    textAlign: "center",
+  },
+
+  horizontalLine: {
+    width: "20%",
+    height: 0.5,
+    backgroundColor: colors.white
   },
 });

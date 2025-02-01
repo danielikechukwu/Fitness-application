@@ -46,9 +46,7 @@ export default Benefit;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: colors.white,
-    // paddingTop: "19%",
-    // paddingBottom: "19%",
+    backgroundColor: colors.white
   },
 
   content: {
