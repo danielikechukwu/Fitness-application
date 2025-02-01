@@ -10,8 +10,8 @@ import {
   import { SafeAreaView } from "react-native-safe-area-context";
   import { colors } from "@/constants/colors";
   import { fonts } from "@/constants/fonts";
-  import Label from "@/components/label";
   import { Button, Checkbox } from "react-native-paper";
+import Label from "@/components/Labels/label";
   
   const CreateAccount = () => {
 

@@ -31,12 +31,12 @@ const Label = (props: ILabel) => {
             {isPasswordVisible ? <Image
             resizeMode="contain"
             tintColor={colors.gray2}
-            source={require('../assets/images/icons/show.png')}
+            source={require('../../assets/images/icons/show.png')}
             style={styles.img}
           /> : <Image
           resizeMode="contain"
           tintColor={colors.gray2}
-          source={require('../assets/images/icons/hide.png')}
+          source={require('../../assets/images/icons/hide.png')}
           style={styles.img}
         />}          
         </TouchableOpacity>

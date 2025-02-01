@@ -1,14 +1,14 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 
-const switchingPhoto = () => {
+const DropDown = () => {
   return (
     <View>
-      <Text>switchingPhoto</Text>
+      <Text>DropDown</Text>
     </View>
   )
 }
 
-export default switchingPhoto
+export default DropDown
 
 const styles = StyleSheet.create({})

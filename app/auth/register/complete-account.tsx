@@ -10,9 +10,9 @@ import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { colors } from "@/constants/colors";
 import { fonts } from "@/constants/fonts";
-import Label from "@/components/label";
 import Next from "@/components/Buttons/next";
-import NumberLabel from "@/components/weight-height-label";
+import NumberLabel from "@/components/Labels/weight-height-label";
+import Label from "@/components/Labels/label";
 
 const CompleteAccount = () => {
   return (
@@ -46,7 +46,7 @@ const CompleteAccount = () => {
             />
             <View style={{ flexDirection: "row", alignItems: "center" }}>
               <NumberLabel
-                icon={require("../../../assets/images/icons/profile.png")}
+                icon={require("../../../assets/images/icons/weight-scale.png")}
                 placeholder="Your Weight"
               />
               <View style={styles.measurement}>
@@ -64,7 +64,7 @@ const CompleteAccount = () => {
 
             <View style={{ flexDirection: "row", alignItems: "center" }}>
               <NumberLabel
-                icon={require("../../../assets/images/icons/profile.png")}
+                icon={require("../../../assets/images/icons/swap.png")}
                 placeholder="Your Height"
               />
               <View style={styles.measurement}>

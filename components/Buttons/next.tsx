@@ -12,8 +12,7 @@ function Next(props: IButton) {
   return (
     <Pressable
       style={({ pressed }) => [
-        styles.containter,
-        pressed && { backgroundColor: colors.gray3 },
+        styles.containter
       ]}
       onPress={() => router.replace(props.path)}
     >

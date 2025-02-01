@@ -1,14 +1,14 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 
-const dailyAction = () => {
+const DatePicker = () => {
   return (
     <View>
-      <Text>dailyAction</Text>
+      <Text>DatePicker</Text>
     </View>
   )
 }
 
-export default dailyAction
+export default DatePicker
 
 const styles = StyleSheet.create({})
