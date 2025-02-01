@@ -11,7 +11,7 @@ const index = () => {
       <Text>
         Welcome 
       </Text>
-      <Button title='Next' onPress={() => router.push("/auth/register/step2")}/>
+      <Button title='Next' onPress={() => router.push("/auth/register/complete-account")}/>
     </View>
   )
 }

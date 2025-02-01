@@ -1,14 +1,14 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 
-const RegisterStep4 = () => {
+const Benefit = () => {
   return (
     <View>
-      <Text>RegisterStep4</Text>
+      <Text>Benefit</Text>
     </View>
   )
 }
 
-export default RegisterStep4
+export default Benefit
 
 const styles = StyleSheet.create({})
