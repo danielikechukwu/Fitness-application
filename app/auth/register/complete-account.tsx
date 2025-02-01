@@ -37,7 +37,7 @@ const CompleteAccount = () => {
           {/* Complete form */}
           <View style={styles.form}>
             <DropDown
-              icon={require("../../../assets/images/icons/profile.png")}
+              icon={require("../../../assets/images/icons/two-user.png")}
               placeholder="Choose gender"
               password={false}
             />

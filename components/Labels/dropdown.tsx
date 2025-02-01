@@ -5,28 +5,28 @@ import ILabel from "@/app/types/Label";
 import { colors } from "@/constants/colors";
 
 const DropDown = (props: ILabel) => {
+    
   const [selectedValue, setSelectedValue] = useState();
 
   return (
     <View style={styles.container}>
-
-{/* <Image
+      <Image
         tintColor={colors.gray2}
         resizeMode="contain"
         source={props.icon}
         style={styles.img}
-      /> */}
-
-<RNPickerSelect
-        onValueChange={(value) => setSelectedValue(value)}
-        items={[
-          { label: "Male", value: "male" },
-          { label: "Female", value: "female" },
-        ]}
-        placeholder={{ label: props.placeholder, value: null }}
-        style={pickerStyles}
-        
       />
+      <View style={{ width: "100%", marginLeft: '-3%' }}>
+        <RNPickerSelect
+          onValueChange={(value) => setSelectedValue(value)}
+          items={[
+            { label: "Male", value: "male" },
+            { label: "Female", value: "female" },
+          ]}
+          placeholder={{ label: props.placeholder, value: null }}
+          style={pickerStyles}
+        />
+      </View>
     </View>
   );
 };
@@ -42,7 +42,8 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
     marginVertical: 10,
     width: "100%",
-    backgroundColor: "F7F8F8"
+    backgroundColor: "F7F8F8",
+    flexDirection: "row",
   },
 
   img: {
@@ -64,6 +65,5 @@ const pickerStyles = {
     //padding: 10,
     borderWidth: 3,
     borderColor: "red",
-    
   },
 };

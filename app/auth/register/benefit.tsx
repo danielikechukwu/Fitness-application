@@ -4,6 +4,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { colors } from "@/constants/colors";
 import { fonts } from "@/constants/fonts";
 import { Button } from "react-native-paper";
+import CardCarousel from "@/components/Card/card";
 
 const Benefit = () => {
   return (
@@ -11,14 +12,15 @@ const Benefit = () => {
       <StatusBar backgroundColor={colors.white} />
 
       <View style={styles.content}>
+        
         <View style={styles.topTextSection}>
           <Text style={styles.heading}>What is your goal?</Text>
           <Text>It will help us to choose a best</Text>
           <Text>program for you</Text>
         </View>
 
-        <View>
-          <Text>Hello, world</Text>
+        <View style={{ height: '63%'}}>
+          <CardCarousel />
         </View>
 
         <View style={{ width: "90%" }}>
@@ -33,6 +35,7 @@ const Benefit = () => {
             </Text>
           </Button>
         </View>
+
       </View>
     </SafeAreaView>
   );
@@ -44,14 +47,14 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: colors.white,
-    paddingTop: "19%",
-    paddingBottom: "19%",
+    // paddingTop: "19%",
+    // paddingBottom: "19%",
   },
 
   content: {
     flex: 1,
     alignItems: "center",
-    justifyContent: "space-between",
+    justifyContent: "space-around",
   },
 
   topTextSection: {
@@ -62,5 +65,5 @@ const styles = StyleSheet.create({
     fontFamily: fonts.bold,
     fontSize: 22,
     color: colors.black,
-  },
+  }
 });
