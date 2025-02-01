@@ -13,6 +13,7 @@ import { fonts } from "@/constants/fonts";
 import Next from "@/components/Buttons/next";
 import NumberLabel from "@/components/Labels/weight-height-label";
 import Label from "@/components/Labels/label";
+import DatePicker from "@/components/Labels/date-picker";
 
 const CompleteAccount = () => {
   return (
@@ -39,10 +40,9 @@ const CompleteAccount = () => {
               placeholder="First Name"
               password={false}
             />
-            <Label
-              icon={require("../../../assets/images/icons/profile.png")}
-              placeholder="First Name"
-              password={false}
+            <DatePicker
+              icon={require("../../../assets/images/icons/calender.png")}
+              placeholder="Date of Birth"
             />
             <View style={{ flexDirection: "row", alignItems: "center" }}>
               <NumberLabel

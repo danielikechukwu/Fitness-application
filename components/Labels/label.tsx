@@ -16,7 +16,7 @@ const Label = (props: ILabel) => {
 
   if (props.password) {
     return (
-      <View style={styles.inputContainer}>
+      <View style={styles.container}>
 
         <Image tintColor={colors.gray2} resizeMode="contain" source={props.icon} style={styles.img} />
 
@@ -45,7 +45,7 @@ const Label = (props: ILabel) => {
     );
   } else {
     return (
-      <View style={styles.inputContainer}>
+      <View style={styles.container}>
 
         <Image tintColor={colors.gray2} resizeMode="contain" source={props.icon} style={styles.img} />
 
@@ -62,7 +62,8 @@ const Label = (props: ILabel) => {
 export default Label;
 
 const styles = StyleSheet.create({
-  inputContainer: {
+
+  container: {
     flexDirection: "row",
     alignItems: "center",
     borderWidth: 1,
