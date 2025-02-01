@@ -6,6 +6,7 @@ import { useRouter } from "expo-router";
 import IButton from "@/app/types/onboarding-button";
 
 function Buttons(props: IButton) {
+  
   const router = useRouter();
 
   return (

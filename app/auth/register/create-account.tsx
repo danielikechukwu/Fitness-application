@@ -12,10 +12,13 @@ import {
   import { fonts } from "@/constants/fonts";
   import { Button, Checkbox } from "react-native-paper";
 import Label from "@/components/Labels/label";
+import { useRouter } from "expo-router";
   
   const CreateAccount = () => {
 
     const [checked, setChecked] = useState<boolean>(false);
+
+    const router = useRouter();
   
     return (
   
@@ -148,7 +151,7 @@ import Label from "@/components/Labels/label";
             </View>
   
             <View style={{ alignItems: "center", marginTop: "5%" }}>
-              <Text style={{fontFamily: fonts.medium, color: colors.black, fontSize: 14}}>Aready have an account? <Text style={{color: colors.brand}} onPress={() => console.log('Login')}>Login</Text></Text>
+              <Text style={{fontFamily: fonts.medium, color: colors.black, fontSize: 14}}>Aready have an account? <Text style={{color: colors.brand}} onPress={() => router.replace('/auth/login')}>Login</Text></Text>
             </View>
           </View>
         </View>

@@ -1,4 +1,4 @@
 export default interface IButton {
-    path: any,
+    path?: any,
     title?: string
 }
