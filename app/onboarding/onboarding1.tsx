@@ -6,6 +6,7 @@ import { colors } from "../../constants/colors";
 import Buttons from "../../components/Buttons/button";
 
 const firstOnboardingScreen = () => {
+
   const buttonTitle: string = "Get Started";
 
   return (
@@ -38,7 +39,7 @@ const firstOnboardingScreen = () => {
         </View>
 
         <View style={styles.buttonComponent}>
-          <Buttons title={buttonTitle} />
+          <Buttons title={buttonTitle} path="/onboarding/onboarding2" />
         </View>
       </View>
     </SafeAreaView>

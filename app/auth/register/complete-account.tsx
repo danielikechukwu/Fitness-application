@@ -11,7 +11,8 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { colors } from "@/constants/colors";
 import { fonts } from "@/constants/fonts";
 import Label from "@/components/label";
-import { Button } from "react-native-paper";
+import Next from "@/components/Buttons/next";
+import NumberLabel from "@/components/weight-height-label";
 
 const CompleteAccount = () => {
   return (
@@ -43,33 +44,45 @@ const CompleteAccount = () => {
               placeholder="First Name"
               password={false}
             />
-            <View>
-              <Label
+            <View style={{ flexDirection: "row", alignItems: "center" }}>
+              <NumberLabel
                 icon={require("../../../assets/images/icons/profile.png")}
-                placeholder="First Name"
-                password={false}
+                placeholder="Your Weight"
               />
+              <View style={styles.measurement}>
+                <Text
+                  style={{
+                    fontFamily: fonts.regular,
+                    fontSize: 16,
+                    color: colors.white,
+                  }}
+                >
+                  KG
+                </Text>
+              </View>
             </View>
-            <View>
-              <Label
+
+            <View style={{ flexDirection: "row", alignItems: "center" }}>
+              <NumberLabel
                 icon={require("../../../assets/images/icons/profile.png")}
-                placeholder="First Name"
-                password={false}
+                placeholder="Your Height"
               />
+              <View style={styles.measurement}>
+                <Text
+                  style={{
+                    fontFamily: fonts.regular,
+                    fontSize: 16,
+                    color: colors.white,
+                  }}
+                >
+                  CM
+                </Text>
+              </View>
             </View>
           </View>
 
-          <View>
-            <Button
-              mode="contained"
-              textColor={colors.white}
-              buttonColor={colors.brand}
-              onPress={() => console.log("Pressed")}
-            >
-              <Text style={{ fontFamily: fonts.bold, fontSize: 16 }}>
-                Register
-              </Text>
-            </Button>
+          <View style={styles.button}>
+            <Next path="/auth/register/complete-account" title="Next" />
           </View>
         </View>
       </ScrollView>
@@ -99,5 +112,24 @@ const styles = StyleSheet.create({
     marginTop: "5%",
     marginRight: "5%",
     marginLeft: "5%",
+  },
+
+  button: {
+    marginTop: "5%",
+    marginBottom: "9%",
+    marginRight: "5%",
+    marginLeft: "5%",
+  },
+
+  measurement: {
+    width: 50,
+    height: 50,
+    borderWidth: 1,
+    marginLeft: "5%",
+    borderRadius: 7,
+    backgroundColor: colors.brand,
+    alignItems: "center",
+    justifyContent: "center",
+    borderColor: colors.brand,
   },
 });

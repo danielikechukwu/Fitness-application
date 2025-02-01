@@ -17,7 +17,8 @@ const Label = (props: ILabel) => {
   if (props.password) {
     return (
       <View style={styles.inputContainer}>
-        <Image resizeMode="contain" source={props.icon} style={styles.img} />
+
+        <Image tintColor={colors.gray2} resizeMode="contain" source={props.icon} style={styles.img} />
 
         <TextInput
           placeholder={props.placeholder}
@@ -29,21 +30,24 @@ const Label = (props: ILabel) => {
         <TouchableOpacity onPress={() => setIsPasswordVisiable(!isPasswordVisible)}>
             {isPasswordVisible ? <Image
             resizeMode="contain"
+            tintColor={colors.gray2}
             source={require('../assets/images/icons/show.png')}
             style={styles.img}
           /> : <Image
           resizeMode="contain"
+          tintColor={colors.gray2}
           source={require('../assets/images/icons/hide.png')}
           style={styles.img}
         />}          
         </TouchableOpacity>
-        
+
       </View>
     );
   } else {
     return (
       <View style={styles.inputContainer}>
-        <Image resizeMode="contain" source={props.icon} style={styles.img} />
+
+        <Image tintColor={colors.gray2} resizeMode="contain" source={props.icon} style={styles.img} />
 
         <TextInput
           placeholder={props.placeholder}

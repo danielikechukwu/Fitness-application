@@ -5,9 +5,9 @@ import {
 } from "react-native";
 import React from "react";
 import { colors } from "../../constants/colors";
-import IButton from "@/app/types/IButton";
 import { fonts } from "@/constants/fonts";
 import { useRouter } from "expo-router";
+import IButton from "@/app/types/OnBoardingButton";
 
 function Buttons(props: IButton) {
   const router = useRouter();
@@ -18,7 +18,7 @@ function Buttons(props: IButton) {
         styles.containter,
         pressed && { backgroundColor: colors.gray3 },
       ]}
-      onPress={() => router.replace("/onboarding/onboarding2")}
+      onPress={() => router.replace(props.path)}
     >
       <Text style={styles.buttonText}>{props.title}</Text>
     </Pressable>
