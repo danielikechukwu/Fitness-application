@@ -5,13 +5,12 @@ import { colors } from "@/constants/colors";
 import { Ionicons } from "@expo/vector-icons";
 
 const RootLayout = () => {
-  const [dot, setDot] = useState(false);
-
   return (
     <Tabs
       screenOptions={{
         tabBarActiveTintColor: "red",
         tabBarInactiveTintColor: "green",
+        headerShown: false,
         tabBarStyle: {
           backgroundColor: colors.white,
           height: "8%",
@@ -25,14 +24,22 @@ const RootLayout = () => {
           title: "",
           tabBarIcon: ({ focused }) => (
             <View>
-              <Image
-                tintColor={colors.gray1}
-                source={require("../../assets/images/icons/home.png")}
-              />
+              {focused ? (
+                <Image
+                  accessibilityLabel="home"
+                  source={require("../../assets/images/icons/active-home.png")}
+                />
+              ) : (
+                <Image
+                  tintColor={colors.gray1}
+                  accessibilityLabel="home"
+                  source={require("../../assets/images/icons/home.png")}
+                />
+              )}
               {focused && (
                 <Image
                   style={{ alignSelf: "center", marginTop: "19%" }}
-                  tintColor={colors.gray1}
+                  accessibilityLabel="dot"
                   source={require("../../assets/images/icons/dot.png")}
                 />
               )}
@@ -46,15 +53,23 @@ const RootLayout = () => {
           title: "",
           tabBarIcon: ({ focused }) => (
             <View>
-              <Image
-                tintColor={colors.gray1}
-                source={require("../../assets/images/icons/activity.png")}
-              />
-
+              {focused ? (
+                <Image
+                  accessibilityLabel="activity"
+                  tintColor={colors.secondary}
+                  source={require("../../assets/images/icons/active-activity.png")}
+                />
+              ) : (
+                <Image
+                  tintColor={colors.gray1}
+                  accessibilityLabel="activity"
+                  source={require("../../assets/images/icons/activity.png")}
+                />
+              )}
               {focused && (
                 <Image
                   style={{ alignSelf: "center", marginTop: "19%" }}
-                  tintColor={colors.gray1}
+                  accessibilityLabel="dot"
                   source={require("../../assets/images/icons/dot.png")}
                 />
               )}
@@ -80,6 +95,7 @@ const RootLayout = () => {
             >
               <Image
                 tintColor={colors.white}
+                accessibilityLabel="search"
                 source={require("../../assets/images/icons/search.png")}
               />
             </View>
@@ -92,15 +108,22 @@ const RootLayout = () => {
           title: "",
           tabBarIcon: ({ focused }) => (
             <View>
-              <Image
-                tintColor={colors.gray1}
-                source={require("../../assets/images/icons/camera.png")}
-              />
-
+              {focused ? (
+                <Image
+                  accessibilityLabel="camera"
+                  source={require("../../assets/images/icons/active-camera.png")}
+                />
+              ) : (
+                <Image
+                  tintColor={colors.gray1}
+                  accessibilityLabel="camera"
+                  source={require("../../assets/images/icons/camera.png")}
+                />
+              )}
               {focused && (
                 <Image
                   style={{ alignSelf: "center", marginTop: "19%" }}
-                  tintColor={colors.gray1}
+                  accessibilityLabel="dot"
                   source={require("../../assets/images/icons/dot.png")}
                 />
               )}
@@ -114,15 +137,22 @@ const RootLayout = () => {
           title: "",
           tabBarIcon: ({ focused }) => (
             <View>
-              <Image
-                tintColor={colors.gray1}
-                source={require("../../assets/images/icons/profile.png")}
-              />
-
+              {focused ? (
+                <Image
+                  accessibilityLabel="profile"
+                  source={require("../../assets/images/icons/active-profile.png")}
+                />
+              ) : (
+                <Image
+                  tintColor={colors.gray1}
+                  accessibilityLabel="profile"
+                  source={require("../../assets/images/icons/profile.png")}
+                />
+              )}
               {focused && (
                 <Image
                   style={{ alignSelf: "center", marginTop: "19%" }}
-                  tintColor={colors.gray1}
+                  accessibilityLabel="dot"
                   source={require("../../assets/images/icons/dot.png")}
                 />
               )}
