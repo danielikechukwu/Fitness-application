@@ -15,8 +15,8 @@ const Benefit = () => {
         
         <View style={styles.topTextSection}>
           <Text style={styles.heading}>What is your goal?</Text>
-          <Text>It will help us to choose a best</Text>
-          <Text>program for you</Text>
+          <Text style={styles.text}>It will help us to choose a best</Text>
+          <Text style={styles.text}>program for you</Text>
         </View>
 
         <View style={{ height: '63%'}}>
@@ -63,5 +63,12 @@ const styles = StyleSheet.create({
     fontFamily: fonts.bold,
     fontSize: 22,
     color: colors.black,
-  }
+  },
+
+  text: {
+    color: colors.gray1,
+    fontFamily: fonts.regular,
+    //width: "70%",
+    //textAlign: "center",
+  },
 });
