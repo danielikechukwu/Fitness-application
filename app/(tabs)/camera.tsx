@@ -1,14 +1,28 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import { StatusBar, StyleSheet, Text, View, ScrollView } from "react-native";
+import React from "react";
+import { SafeAreaView } from "react-native-safe-area-context";
+import { colors } from "@/constants/colors";
 
 const Camera = () => {
   return (
-    <View>
-      <Text>Camera</Text>
-    </View>
-  )
-}
+    <SafeAreaView style={styles.container}>
+      <StatusBar backgroundColor={colors.white} />
 
-export default Camera
+      <ScrollView>
+        <View>
+            <Text>Hello, world</Text>
+        </View>
+      </ScrollView>
+    </SafeAreaView>
+  );
+};
 
-const styles = StyleSheet.create({})
+export default Camera;
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: colors.white,
+    alignItems: 'center',
+  },
+});
