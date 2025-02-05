@@ -15,17 +15,19 @@ import { fonts } from "@/constants/fonts";
 import PieChart from "react-native-pie-chart";
 
 const Home = (): React.JSX.Element => {
-
+  
   const [notification, setNotification] = useState<boolean>(false);
 
-  const widthAndHeight = 110
+  const widthAndHeight: number = 110;
 
   const series = [
-    { value: 430, color: '#fbd203' },
-    { value: 321, color: '#ffb300' },
-    { value: 185, color: '#ff9100' },
-    { value: 123, color: '#ff6c00' },
-  ]
+    {
+      value: 150,
+      color: colors.secondary,
+      label: { text: "22,1", fontWeight: "bold", fill: colors.white },
+    },
+    { value: 430, color: colors.white },
+  ];
 
   return (
     <SafeAreaView style={styles.container}>
@@ -53,9 +55,9 @@ const Home = (): React.JSX.Element => {
               onPress={() => console.log("notification")}
             >
               {notification ? (
-                <Image                  
+                <Image
                   source={require("../../assets/images/icons/available-notification.png")}
-                  style={{width: 22, height: 22}}
+                  style={{ width: 22, height: 22 }}
                 />
               ) : (
                 <Image
@@ -119,10 +121,40 @@ const Home = (): React.JSX.Element => {
                 </View>
 
                 <View>
-                  <PieChart widthAndHeight={widthAndHeight} series={series} />                  
+                  <PieChart widthAndHeight={widthAndHeight} series={series} />
                 </View>
               </View>
             </ImageBackground>
+          </View>
+
+          <View style={styles.action}>
+            <View>
+              <Text style={{ color: colors.black, fontFamily: fonts.bold, fontSize: 18 }}>
+                Today Target
+              </Text>
+            </View>
+            <View>
+              <Pressable
+                style={{
+                  backgroundColor: colors.brand,
+                  padding: "6%",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  borderRadius: 18
+                }}
+                onPress={() => console.log("Today target")}
+              >
+                <Text
+                  style={{
+                    color: colors.white,
+                    fontFamily: fonts.regular,
+                    fontSize: 18
+                  }}
+                >
+                  Check
+                </Text>
+              </Pressable>
+            </View>
           </View>
         </View>
       </ScrollView>
@@ -147,7 +179,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: colors.gray3,
+    backgroundColor: colors.border,
   },
 
   header: {
@@ -180,5 +212,19 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     backgroundColor: colors.secondary,
+  },
+
+  action: {
+    flex: 1,
+    flexDirection: "row",
+    justifyContent: "space-between",
+    marginTop: "10%",
+    paddingTop: "5%",
+    paddingBottom: "5%",
+    paddingRight: "5%",
+    paddingLeft: "5%",
+    backgroundColor: colors.border,
+    borderRadius: 18,
+    alignItems: 'center'
   },
 });
