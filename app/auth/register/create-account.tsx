@@ -1,32 +1,31 @@
 import {
-    StatusBar,
-    StyleSheet,
-    Text,
-    TouchableOpacity,
-    View,
-    Image,
-  } from "react-native";
-  import React, { useState } from "react";
-  import { SafeAreaView } from "react-native-safe-area-context";
-  import { colors } from "@/constants/colors";
-  import { fonts } from "@/constants/fonts";
-  import { Button, Checkbox } from "react-native-paper";
+  StatusBar,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+  Image,
+  ScrollView
+} from "react-native";
+import React, { useState } from "react";
+import { SafeAreaView } from "react-native-safe-area-context";
+import { colors } from "@/constants/colors";
+import { fonts } from "@/constants/fonts";
+import { Button, Checkbox } from "react-native-paper";
 import Label from "@/components/Labels/label";
 import { useRouter } from "expo-router";
-  
-  const CreateAccount = () => {
 
-    const [checked, setChecked] = useState<boolean>(false);
+const CreateAccount = () => {
+  const [checked, setChecked] = useState<boolean>(false);
 
-    const router = useRouter();
-  
-    return (
-  
-      <SafeAreaView style={styles.container}>
-          
-        <StatusBar backgroundColor="white" />
-  
-        <View style={{ flex: 1, alignItems: "center", marginTop: "4%" }}>
+  const router = useRouter();
+
+  return (
+    <SafeAreaView style={styles.container}>
+      <StatusBar backgroundColor="white" />
+
+      <ScrollView showsHorizontalScrollIndicator={false} showsVerticalScrollIndicator={false}>
+        <View style={{ flex: 1, alignItems: "center", marginTop: '3%', marginBottom: '15%' }}>
           <View style={{ alignItems: "center" }}>
             <Text
               style={{
@@ -47,7 +46,7 @@ import { useRouter } from "expo-router";
               Create an Account
             </Text>
           </View>
-  
+
           <View style={styles.form}>
             <Label
               icon={require("../../../assets/images/icons/profile.png")}
@@ -69,7 +68,7 @@ import { useRouter } from "expo-router";
               placeholder="Password"
               password={true}
             />
-  
+
             <View
               style={{
                 flexDirection: "row",
@@ -82,7 +81,7 @@ import { useRouter } from "expo-router";
                 uncheckedColor={colors.gray2}
                 onPress={() => {
                   setChecked(!checked);
-                  console.log(!checked)
+                  console.log(!checked);
                 }}
                 color={colors.gray2}
               />
@@ -98,7 +97,7 @@ import { useRouter } from "expo-router";
               </Text>
             </View>
           </View>
-  
+
           <View style={{ width: "90%", marginTop: "22%" }}>
             <Button
               mode="contained"
@@ -110,7 +109,7 @@ import { useRouter } from "expo-router";
                 Register
               </Text>
             </Button>
-  
+
             <View
               style={{
                 marginTop: "5%",
@@ -123,7 +122,7 @@ import { useRouter } from "expo-router";
               <Text style={{ marginLeft: "2%", marginRight: "2%" }}>Or</Text>
               <View style={styles.horizontalLine}></View>
             </View>
-  
+
             <View
               style={{
                 flexDirection: "row",
@@ -149,52 +148,66 @@ import { useRouter } from "expo-router";
                 />
               </TouchableOpacity>
             </View>
-  
+
             <View style={{ alignItems: "center", marginTop: "5%" }}>
-              <Text style={{fontFamily: fonts.medium, color: colors.black, fontSize: 14}}>Aready have an account? <Text style={{color: colors.brand}} onPress={() => router.replace('/auth/login')}>Login</Text></Text>
+              <Text
+                style={{
+                  fontFamily: fonts.medium,
+                  color: colors.black,
+                  fontSize: 14,
+                }}
+              >
+                Aready have an account?{" "}
+                <Text
+                  style={{ color: colors.brand }}
+                  onPress={() => router.replace("/auth/login")}
+                >
+                  Login
+                </Text>
+              </Text>
             </View>
           </View>
         </View>
-      </SafeAreaView>
-    );
-  };
-  
-  export default CreateAccount;
-  
-  const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      backgroundColor: colors.white,
-    },
-  
-    form: {
-      marginTop: "5%",
-      marginRight: "5%",
-      marginLeft: "5%",
-    },
-  
-    conditionText: {
-      fontFamily: fonts.regular,
-      color: colors.gray2,
-      marginLeft: "2%",
-      flexWrap: "wrap",
-      fontSize: 14
-    },
-  
-    horizontalLine: {
-      width: "45%",
-      height: 1,
-      backgroundColor: colors.gray3,
-    },
-  
-    socials: {
-      borderWidth: 1,
-      width: 50,
-      height: 50,
-      alignItems: "center",
-      justifyContent: "center",
-      borderRadius: 15,
-      borderColor: colors.gray3,
-    },
-  });
-  
+      </ScrollView>
+    </SafeAreaView>
+  );
+};
+
+export default CreateAccount;
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: colors.white,
+  },
+
+  form: {
+    marginTop: "5%",
+    marginRight: "5%",
+    marginLeft: "5%",
+  },
+
+  conditionText: {
+    fontFamily: fonts.regular,
+    color: colors.gray2,
+    marginLeft: "2%",
+    flexWrap: "wrap",
+    fontSize: 14,
+  },
+
+  horizontalLine: {
+    width: "45%",
+    height: 1,
+    backgroundColor: colors.gray3,
+  },
+
+  socials: {
+    borderWidth: 1,
+    width: 50,
+    height: 50,
+    alignItems: "center",
+    justifyContent: "center",
+    borderRadius: 15,
+    borderColor: colors.gray3,
+  },
+});
