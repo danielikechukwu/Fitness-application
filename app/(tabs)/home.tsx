@@ -15,7 +15,7 @@ import { fonts } from "@/constants/fonts";
 import PieChart from "react-native-pie-chart";
 
 const Home = (): React.JSX.Element => {
-  
+
   const [notification, setNotification] = useState<boolean>(false);
 
   const widthAndHeight: number = 110;
@@ -224,7 +224,7 @@ const styles = StyleSheet.create({
     paddingRight: "5%",
     paddingLeft: "5%",
     backgroundColor: colors.border,
-    borderRadius: 18,
+    borderRadius: 20,
     alignItems: 'center'
   },
 });
