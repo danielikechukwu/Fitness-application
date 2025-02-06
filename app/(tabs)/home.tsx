@@ -12,22 +12,14 @@ import React, { useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { colors } from "@/constants/colors";
 import { fonts } from "@/constants/fonts";
-import PieChart from "react-native-pie-chart";
+import { LineChart } from "react-native-gifted-charts";
+import HomeBanner from "@/components/banner/home";
 
 const Home = (): React.JSX.Element => {
 
   const [notification, setNotification] = useState<boolean>(false);
 
-  const widthAndHeight: number = 110;
-
-  const series = [
-    {
-      value: 150,
-      color: colors.secondary,
-      label: { text: "22,1", fontWeight: "bold", fill: colors.white },
-    },
-    { value: 430, color: colors.white },
-  ];
+  const data = [{ value: 15 }, { value: 30 }, { value: 26 }, { value: 40 }];
 
   return (
     <SafeAreaView style={styles.container}>
@@ -68,68 +60,17 @@ const Home = (): React.JSX.Element => {
             </Pressable>
           </View>
 
-          <View style={styles.banner}>
-            <ImageBackground
-              resizeMode="cover"
-              style={styles.bannerDots}
-              source={require("../../assets/images/dashboard/banner-dots.png")}
-            >
-              <View
-                style={{
-                  flex: 1,
-                  flexDirection: "row",
-                  justifyContent: "space-between",
-                  alignItems: "center",
-                  paddingRight: "5%",
-                  paddingLeft: "5%",
-                }}
-              >
-                <View>
-                  <Text
-                    style={{
-                      color: colors.white,
-                      fontFamily: fonts.bold,
-                      fontSize: 16,
-                    }}
-                  >
-                    BMI (Body Mass Inded)
-                  </Text>
-                  <Text
-                    style={{
-                      color: colors.white,
-                      fontFamily: fonts.regular,
-                      fontSize: 14,
-                    }}
-                  >
-                    You have a normal weight
-                  </Text>
-                  <View>
-                    <Pressable
-                      style={styles.bannerButton}
-                      onPress={() => console.log("Hellow.")}
-                    >
-                      <Text
-                        style={{
-                          color: colors.white,
-                          fontFamily: fonts.regular,
-                        }}
-                      >
-                        View More
-                      </Text>
-                    </Pressable>
-                  </View>
-                </View>
-
-                <View>
-                  <PieChart widthAndHeight={widthAndHeight} series={series} />
-                </View>
-              </View>
-            </ImageBackground>
-          </View>
+          <HomeBanner />
 
           <View style={styles.action}>
             <View>
-              <Text style={{ color: colors.black, fontFamily: fonts.bold, fontSize: 18 }}>
+              <Text
+                style={{
+                  color: colors.black,
+                  fontFamily: fonts.bold,
+                  fontSize: 16,
+                }}
+              >
                 Today Target
               </Text>
             </View>
@@ -140,7 +81,7 @@ const Home = (): React.JSX.Element => {
                   padding: "6%",
                   alignItems: "center",
                   justifyContent: "center",
-                  borderRadius: 18
+                  borderRadius: 18,
                 }}
                 onPress={() => console.log("Today target")}
               >
@@ -148,12 +89,28 @@ const Home = (): React.JSX.Element => {
                   style={{
                     color: colors.white,
                     fontFamily: fonts.regular,
-                    fontSize: 18
+                    fontSize: 18,
                   }}
                 >
                   Check
                 </Text>
               </Pressable>
+            </View>
+          </View>
+
+          <View style={styles.statusSection}>
+            <Text
+              style={{
+                color: colors.black,
+                fontFamily: fonts.bold,
+                fontSize: 16,
+              }}
+            >
+              Activity Status
+            </Text>
+
+            <View style={styles.chartStatus}>
+              <LineChart areaChart data={data} pointerConfig={{}} />
             </View>
           </View>
         </View>
@@ -193,38 +150,23 @@ const styles = StyleSheet.create({
     height: 25,
   },
 
-  banner: {
-    marginTop: "10%",
-    height: 170,
-    backgroundColor: colors.brand,
-    borderRadius: 17,
-  },
-
-  bannerDots: {
-    flex: 1,
-  },
-
-  bannerButton: {
-    marginTop: "8%",
-    width: "55%",
-    padding: "5%",
-    borderRadius: 23,
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: colors.secondary,
-  },
-
   action: {
     flex: 1,
     flexDirection: "row",
     justifyContent: "space-between",
-    marginTop: "10%",
+    marginTop: "8%",
     paddingTop: "5%",
     paddingBottom: "5%",
     paddingRight: "5%",
     paddingLeft: "5%",
     backgroundColor: colors.border,
     borderRadius: 20,
-    alignItems: 'center'
+    alignItems: "center",
   },
+
+  statusSection: {
+    marginTop: "5%",
+  },
+
+  chartStatus: {},
 });
