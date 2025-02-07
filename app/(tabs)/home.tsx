@@ -16,16 +16,20 @@ import { LineChart } from "react-native-gifted-charts";
 import HomeBanner from "@/components/banner/home";
 import HeartRate from "@/components/status/heart-rate";
 import Sleep from "@/components/status/sleep";
+import WaterIntake from "@/components/status/water-intake";
+import Calories from "@/components/status/calories";
 
 const Home = (): React.JSX.Element => {
-
   const [notification, setNotification] = useState<boolean>(false);
 
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar backgroundColor={colors.white} />
 
-      <ScrollView>
+      <ScrollView
+        showsHorizontalScrollIndicator={false}
+        showsVerticalScrollIndicator={false}
+      >
         <View>
           <View style={styles.header}>
             <View>
@@ -99,30 +103,39 @@ const Home = (): React.JSX.Element => {
           </View>
 
           <Text
-              style={{
-                color: colors.black,
-                fontFamily: fonts.bold,
-                fontSize: 18,
-                marginTop: '5%'
-              }}
-            >
-              Activity Status
-            </Text>
+            style={{
+              color: colors.black,
+              fontFamily: fonts.bold,
+              fontSize: 18,
+              marginTop: "5%",
+            }}
+          >
+            Activity Status
+          </Text>
 
           <View style={styles.status}>
-
             <View>
-              {/* <HeartRate /> */}
-
+              <HeartRate />
             </View>
 
-            <View>
-
-              <View>
-<Sleep />
+            <View
+              style={{
+                borderWidth: 1,
+                flexDirection: "row",
+              }}
+            >
+              <View style={{ flexGrow: 1, marginRight: "3%", marginTop: "7%" }}>
+                <WaterIntake />
+              </View>
+              <View style={{ flexGrow: 1, marginTop: "7%", gap: "2%" }}>
+                <View>
+                  <Sleep />
+                </View>
+                <View>
+                  <Calories />
+                </View>
               </View>
             </View>
-
           </View>
         </View>
       </ScrollView>
@@ -136,9 +149,9 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: colors.white,
-    paddingRight: "20%",
-    paddingLeft: "20%",
-    paddingTop: "20%",
+    paddingRight: "10%",
+    paddingLeft: "10%",
+    paddingTop: "10%",
   },
 
   notification: {
@@ -177,8 +190,7 @@ const styles = StyleSheet.create({
 
   status: {
     marginTop: "2%",
-    borderWidth: 1
+    borderWidth: 1,
+    marginBottom: "20%",
   },
-
-
 });
