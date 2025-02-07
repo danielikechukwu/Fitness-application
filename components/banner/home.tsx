@@ -13,7 +13,8 @@ const HomeBanner = () => {
       value: 150,
       color: colors.secondary,
       text: "22,1",
-      focused: true
+      focused: true,
+      
     },
     { value: 430, color: colors.white },
   ];
@@ -58,7 +59,7 @@ const HomeBanner = () => {
                   <View>
                     <Pressable
                       style={styles.bannerButton}
-                      onPress={() => console.log("Hellow.")}
+                      onPress={() => console.log("View more")}
                     >
                       <Text
                         style={{

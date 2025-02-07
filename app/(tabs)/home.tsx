@@ -14,12 +14,12 @@ import { colors } from "@/constants/colors";
 import { fonts } from "@/constants/fonts";
 import { LineChart } from "react-native-gifted-charts";
 import HomeBanner from "@/components/banner/home";
+import HeartRate from "@/components/status/heart-rate";
+import Sleep from "@/components/status/sleep";
 
 const Home = (): React.JSX.Element => {
 
   const [notification, setNotification] = useState<boolean>(false);
-
-  const data = [{ value: 15 }, { value: 30 }, { value: 26 }, { value: 40 }];
 
   return (
     <SafeAreaView style={styles.container}>
@@ -98,20 +98,31 @@ const Home = (): React.JSX.Element => {
             </View>
           </View>
 
-          <View style={styles.statusSection}>
-            <Text
+          <Text
               style={{
                 color: colors.black,
                 fontFamily: fonts.bold,
-                fontSize: 16,
+                fontSize: 18,
+                marginTop: '5%'
               }}
             >
               Activity Status
             </Text>
 
-            <View style={styles.chartStatus}>
-              <LineChart areaChart data={data} pointerConfig={{}} />
+          <View style={styles.status}>
+
+            <View>
+              {/* <HeartRate /> */}
+
             </View>
+
+            <View>
+
+              <View>
+<Sleep />
+              </View>
+            </View>
+
           </View>
         </View>
       </ScrollView>
@@ -164,9 +175,10 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
 
-  statusSection: {
-    marginTop: "5%",
+  status: {
+    marginTop: "2%",
+    borderWidth: 1
   },
 
-  chartStatus: {},
+
 });
