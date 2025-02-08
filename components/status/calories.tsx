@@ -1,13 +1,42 @@
 import { StyleSheet, Text, View, Image } from "react-native";
-import React from "react";
 import { fonts } from "@/constants/fonts";
 import { colors } from "@/constants/colors";
+import React, { useEffect } from "react";
+import Svg, { Circle, Rect } from "react-native-svg";
+import Animated, {
+  useSharedValue,
+  useAnimatedProps,
+  withTiming,
+  interpolate,
+} from "react-native-reanimated";
 
-const Calories = () => {
+interface Props {
+  calorieCount: number;
+}
+
+const AnimatedCircle = Animated.createAnimatedComponent(Circle);
+
+const Calories = (props: Props) => {
+
+  const progress = useSharedValue(0);
+
+  const radius: number = 40;
+
+  const circumference: number = 2 * Math.PI * radius;
+
+  useEffect(() => {
+    progress.value = withTiming(props.calorieCount / 990, { duration: 1000 }); // Assuming 2000 is max calories
+  }, [props.calorieCount]);
+
+  const animatedProps = useAnimatedProps(() => {
+    const strokeDashoffset = interpolate(progress.value, [0, 1], [100, 0]);
+    return { strokeDashoffset };
+  });
+
   return (
     <View style={styles.container}>
       <Text style={{ fontFamily: fonts.semiBold, fontSize: 18 }}>Calories</Text>
-      <View style={{ marginBottom: "5%", flexDirection: "row" }}>
+      <View style={{ flexDirection: "row" }}>
         <View style={{ flexDirection: "row", alignItems: "baseline" }}>
           <Text
             style={{
@@ -17,7 +46,7 @@ const Calories = () => {
               marginRight: 6,
             }}
           >
-            760
+            {props.calorieCount}
           </Text>
           <Text
             style={{
@@ -31,28 +60,59 @@ const Calories = () => {
         </View>
       </View>
 
-      <View style={{alignSelf: 'center'}}>
-        <View>
-          <View
-            style={{
-              width: 80,
-              height: 80,
-              alignItems: "center",
-              justifyContent: "center",
-              borderRadius: "50%",
-              backgroundColor: colors.brand
-            }}
-          >
-            <Text
+      <View style={{ alignItems: "center", justifyContent: "center" }}>
+        <Svg height="130" width="130" viewBox="0 0 100 100">
+          <Circle
+            cx="50"
+            cy="50"
+            r="40"
+            stroke={colors.border}
+            strokeWidth="9"
+            fill="none"
+          />
+
+          <AnimatedCircle
+            cx="50"
+            cy="50"
+            r={radius}
+            stroke={colors.brand}
+            strokeWidth="9"
+            fill="none"
+            strokeDasharray={circumference}
+            strokeLinecap="round"
+            animatedProps={animatedProps}
+          />
+        </Svg>
+
+        <View
+          style={{
+            alignSelf: "center",
+            justifyContent: "center",
+            position: "absolute",
+          }}
+        >
+          <View>
+            <View
               style={{
-                color: colors.white,
-                fontFamily: fonts.regular,
-                fontSize: 14,
-                textAlign: "center"                                
+                width: 80,
+                height: 80,
+                alignItems: "center",
+                justifyContent: "center",
+                borderRadius: "50%",
+                backgroundColor: colors.brand,
               }}
             >
-              230kCal left
-            </Text>
+              <Text
+                style={{
+                  color: colors.white,
+                  fontFamily: fonts.regular,
+                  fontSize: 14,
+                  textAlign: "center",
+                }}
+              >
+                {990 - props.calorieCount} kCal left
+              </Text>
+            </View>
           </View>
         </View>
       </View>

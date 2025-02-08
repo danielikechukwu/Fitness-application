@@ -93,7 +93,7 @@ export default HomeBanner
 const styles = StyleSheet.create({
 
       banner: {
-        marginTop: "10%",
+        marginTop: "2%",
         height: 170,
         backgroundColor: colors.brand,
         borderRadius: 17,

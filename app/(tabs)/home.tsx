@@ -120,19 +120,18 @@ const Home = (): React.JSX.Element => {
 
             <View
               style={{
-                borderWidth: 1,
                 flexDirection: "row",
               }}
             >
               <View style={{ flexGrow: 1, marginRight: "3%", marginTop: "7%" }}>
-                <WaterIntake />
+                <WaterIntake />                
               </View>
               <View style={{ flexGrow: 1, marginTop: "7%", gap: "2%" }}>
                 <View>
                   <Sleep />
                 </View>
                 <View>
-                  <Calories />
+                  <Calories calorieCount={760} />
                 </View>
               </View>
             </View>
@@ -190,7 +189,6 @@ const styles = StyleSheet.create({
 
   status: {
     marginTop: "2%",
-    borderWidth: 1,
     marginBottom: "20%",
   },
 });
