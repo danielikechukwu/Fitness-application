@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Image } from "react-native";
+import { StyleSheet, Text, View, Image, Platform } from "react-native";
 import React from "react";
 import { fonts } from "@/constants/fonts";
 import { colors } from "@/constants/colors";
@@ -57,7 +57,7 @@ const Sleep = () => {
       </View>
       <Image
         source={require("../../assets/images/dashboard/sleep-graph.png")}
-        style={{ width: "100%" }}
+        style={{width: 127}}
       />
     </View>
   );
@@ -70,7 +70,17 @@ const styles = StyleSheet.create({
     width: "100%",
     padding: "8%",
     borderRadius: 25,
-    elevation: 15,
-    backgroundColor: colors.white
+    backgroundColor: colors.white,
+        ...Platform.select({
+          ios: {
+            shadowColor: 'black',
+            shadowOffset: { width: 0, height: 2 },
+            shadowOpacity: 0.2,
+            shadowRadius: 4,
+        },
+        android: {
+            elevation: 15,
+        }
+        })
   },
 });

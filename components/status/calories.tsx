@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Image } from "react-native";
+import { StyleSheet, Text, View, Image, Platform } from "react-native";
 import { fonts } from "@/constants/fonts";
 import { colors } from "@/constants/colors";
 import React, { useEffect } from "react";
@@ -127,6 +127,16 @@ const styles = StyleSheet.create({
     padding: "8%",
     borderRadius: 25,
     backgroundColor: colors.white,
-    elevation: 15
+    ...Platform.select({
+      ios: {
+        shadowColor: 'black',
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.2,
+        shadowRadius: 4,
+    },
+    android: {
+        elevation: 15,
+    }
+    })
   },
 });

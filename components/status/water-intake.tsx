@@ -1,18 +1,24 @@
-import { StyleSheet, Text, View, Image } from "react-native";
+import { StyleSheet, Text, View, Image, Platform } from "react-native";
 import React from "react";
 import { fonts } from "@/constants/fonts";
 import { colors } from "@/constants/colors";
+import WaterIntakeGraph from "../water-intake-graph";
 
 const WaterIntake = () => {
   return (
     <View style={styles.container}>
-      <Text style={{ fontFamily: fonts.bold, fontSize: 18 }}>water intake</Text>
-      <Text style={{marginBottom: '5%'}}>
-        <Text style={{ fontSize: 22, fontFamily: fonts.bold, color: colors.brand }}>8</Text>
-        <Text style={{ fontFamily: fonts.bold, fontSize: 16, color: colors.brand }}>h</Text>
-        <Text style={{ fontFamily: fonts.bold, fontSize: 22, color: colors.brand }}>20</Text>
-        <Text style={{ fontFamily: fonts.bold, fontSize: 16, color: colors.brand }}>m</Text>
-      </Text>
+
+      <View>
+        <WaterIntakeGraph waterIntake={1600}/>
+      </View>
+
+      <View>
+        <View>
+          <Text>Water Intake</Text>
+          <Text>4 Liters</Text>
+        </View>
+        <View></View>
+      </View>
 
     </View>
   );
@@ -22,11 +28,22 @@ export default WaterIntake;
 
 const styles = StyleSheet.create({
   container: {
-    width: "100%",
-    height: '64%',
+    width: "120%",
+    height: "63%",
     padding: "4%",
+    flexDirection: 'row',
     borderRadius: 25,
-    elevation: 15,
-    backgroundColor: colors.white
+    backgroundColor: colors.white,
+    ...Platform.select({
+      ios: {
+        shadowColor: "black",
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.2,
+        shadowRadius: 4,
+      },
+      android: {
+        elevation: 15,
+      },
+    }),
   },
 });

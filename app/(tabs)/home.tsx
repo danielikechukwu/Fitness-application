@@ -18,6 +18,7 @@ import HeartRate from "@/components/status/heart-rate";
 import Sleep from "@/components/status/sleep";
 import WaterIntake from "@/components/status/water-intake";
 import Calories from "@/components/status/calories";
+import HeartRateChart from "@/components/status/heart";
 
 const Home = (): React.JSX.Element => {
   const [notification, setNotification] = useState<boolean>(false);
@@ -105,7 +106,7 @@ const Home = (): React.JSX.Element => {
           <Text
             style={{
               color: colors.black,
-              fontFamily: fonts.bold,
+              fontFamily: fonts.semiBold,
               fontSize: 18,
               marginTop: "5%",
             }}
@@ -126,12 +127,12 @@ const Home = (): React.JSX.Element => {
               <View style={{ flexGrow: 1, marginRight: "3%", marginTop: "7%" }}>
                 <WaterIntake />                
               </View>
-              <View style={{ flexGrow: 1, marginTop: "7%", gap: "2%" }}>
-                <View>
+              <View style={{ flexGrow: 1, marginTop: "7%", gap: "2%", right: 0 }}>
+                <View style={{alignSelf: 'flex-end'}}>
                   <Sleep />
                 </View>
-                <View>
-                  <Calories calorieCount={760} />
+                <View style={{alignSelf: 'flex-end'}}>
+                  <Calories calorieCount={60} />
                 </View>
               </View>
             </View>

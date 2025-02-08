@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { Platform, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import { LineChart } from 'react-native-gifted-charts'
 import { colors } from '@/constants/colors';
@@ -21,7 +21,17 @@ const styles = StyleSheet.create({
     container: {
         backgroundColor: colors.border,
         borderRadius: 12,
-        elevation: 15,
+            ...Platform.select({
+              ios: {
+                shadowColor: 'black',
+                shadowOffset: { width: 0, height: 2 },
+                shadowOpacity: 0.2,
+                shadowRadius: 4,
+            },
+            android: {
+                elevation: 15,
+            }
+            })
 
     }
 })
