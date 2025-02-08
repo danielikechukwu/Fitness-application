@@ -19,9 +19,9 @@ export default HeartRate
 const styles = StyleSheet.create({
 
     container: {
-        borderWidth: 1,
-        borderColor: 'red',
         backgroundColor: colors.border,
         borderRadius: 12,
+        elevation: 15,
+
     }
 })

@@ -17,7 +17,6 @@ interface Props {
 const AnimatedCircle = Animated.createAnimatedComponent(Circle);
 
 const Calories = (props: Props) => {
-
   const progress = useSharedValue(0);
 
   const radius: number = 40;
@@ -124,10 +123,10 @@ export default Calories;
 
 const styles = StyleSheet.create({
   container: {
-    borderWidth: 1,
-    borderColor: "red",
     width: "100%",
     padding: "8%",
     borderRadius: 25,
+    backgroundColor: colors.white,
+    elevation: 15
   },
 });

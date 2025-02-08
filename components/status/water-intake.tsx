@@ -22,11 +22,11 @@ export default WaterIntake;
 
 const styles = StyleSheet.create({
   container: {
-    borderWidth: 1,
-    borderColor: "red",
     width: "100%",
-    height: '61%',
+    height: '64%',
     padding: "4%",
     borderRadius: 25,
+    elevation: 15,
+    backgroundColor: colors.white
   },
 });

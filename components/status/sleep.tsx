@@ -67,10 +67,10 @@ export default Sleep;
 
 const styles = StyleSheet.create({
   container: {
-    borderWidth: 1,
-    borderColor: "red",
     width: "100%",
     padding: "8%",
     borderRadius: 25,
+    elevation: 15,
+    backgroundColor: colors.white
   },
 });
