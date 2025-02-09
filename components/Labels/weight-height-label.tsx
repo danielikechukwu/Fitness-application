@@ -4,7 +4,8 @@ import { colors } from "@/constants/colors";
 import { fonts } from "@/constants/fonts";
 import ILabel from "@/app/types/label";
 
-const NumberLabel = (props: ILabel) => {
+const NumberLabel: React.FC<ILabel> = (props: ILabel) => {
+
   const [number, setNumber] = useState("");
 
   const handleInput = (text: string) => {
@@ -62,4 +63,4 @@ const styles = StyleSheet.create({
     width: 18,
     height: 18,
   },
-});
+} as const);

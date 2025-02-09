@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 
-const ProgressPhoto = () => {
+const ProgressPhoto: React.FC = () => {
   return (
     <View>
       <Text>ProgressPhoto</Text>
@@ -11,4 +11,4 @@ const ProgressPhoto = () => {
 
 export default ProgressPhoto
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({} as const)

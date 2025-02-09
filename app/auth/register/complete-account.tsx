@@ -16,7 +16,7 @@ import Label from "@/components/Labels/label";
 import DatePicker from "@/components/Labels/date-picker";
 import DropDown from "@/components/Labels/dropdown";
 
-const CompleteAccount = () => {
+const CompleteAccount: React.FC = () => {
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar backgroundColor="white" />
@@ -139,4 +139,4 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     borderColor: colors.brand,
   },
-});
+} as const);

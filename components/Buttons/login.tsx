@@ -5,7 +5,7 @@ import { fonts } from "@/constants/fonts";
 import { useRouter } from "expo-router";
 import IButton from "@/app/types/onboarding-button";
 
-function LoginBtn(props: IButton) {
+const LoginBtn: React.FC<IButton> = (props: IButton) => {
   
   const router = useRouter();
 
@@ -42,4 +42,4 @@ const styles = StyleSheet.create({
     fontSize: 18,
     marginLeft: 12
   },
-});
+} as const);

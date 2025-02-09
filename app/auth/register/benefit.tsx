@@ -6,7 +6,7 @@ import { fonts } from "@/constants/fonts";
 import { Button } from "react-native-paper";
 import CardCarousel from "@/components/Card/card";
 
-const Benefit = () => {
+const Benefit: React.FC = () => {
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar backgroundColor={colors.white} />
@@ -71,4 +71,4 @@ const styles = StyleSheet.create({
     //width: "70%",
     //textAlign: "center",
   },
-});
+} as const);

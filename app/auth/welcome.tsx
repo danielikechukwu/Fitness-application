@@ -5,7 +5,7 @@ import { colors } from "@/constants/colors";
 import { Button } from "react-native-paper";
 import { fonts } from "@/constants/fonts";
 
-const Welcome = () => {
+const Welcome: React.FC = () => {
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar backgroundColor={colors.white} />
@@ -77,4 +77,4 @@ const styles = StyleSheet.create({
     width: "70%",
     textAlign: "center",
   },
-});
+} as const);

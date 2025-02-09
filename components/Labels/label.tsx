@@ -10,7 +10,8 @@ import { colors } from "@/constants/colors";
 import { fonts } from "@/constants/fonts";
 import ILabel from "@/app/types/label";
 
-const Label = (props: ILabel) => {
+const Label: React.FC<ILabel> = (props: ILabel) => {
+
   const [isPasswordVisible, setIsPasswordVisiable] = useState(false);
 
   if (props.password) {
@@ -101,4 +102,4 @@ const styles = StyleSheet.create({
     width: 18,
     height: 18,
   },
-});
+} as const);

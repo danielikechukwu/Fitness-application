@@ -1,7 +1,7 @@
 import React from "react";
 import { Stack } from "expo-router";
 
-const OnboardingLayout = () => {
+const OnboardingLayout: React.FC = () => {
   return (
     <Stack screenOptions={{ headerShown: false }}>
       <Stack.Screen name="onboarding1" />

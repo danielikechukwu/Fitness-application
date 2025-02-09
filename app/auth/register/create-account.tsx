@@ -15,7 +15,7 @@ import { Button, Checkbox } from "react-native-paper";
 import Label from "@/components/Labels/label";
 import { useRouter } from "expo-router";
 
-const CreateAccount = () => {
+const CreateAccount: React.FC = () => {
   const [checked, setChecked] = useState<boolean>(false);
 
   const router = useRouter();
@@ -210,4 +210,4 @@ const styles = StyleSheet.create({
     borderRadius: 15,
     borderColor: colors.gray3,
   },
-});
+} as const);

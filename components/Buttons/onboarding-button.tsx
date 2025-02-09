@@ -4,7 +4,7 @@ import { colors } from "@/constants/colors";
 import { useRouter } from "expo-router";
 import IButton from "@/app/types/onboarding-button";
 
-const OnboardingButton = (props: IButton) => {
+const OnboardingButton: React.FC<IButton> = (props: IButton) => {
   const router = useRouter();
 
   return (
@@ -30,4 +30,4 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
-});
+} as const);

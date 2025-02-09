@@ -3,7 +3,7 @@ import React from "react";
 import { fonts } from "@/constants/fonts";
 import { colors } from "@/constants/colors";
 
-const Sleep = () => {
+const Sleep: React.FC = () => {
   return (
     <View style={styles.container}>
       <Text style={{ fontFamily: fonts.semiBold, fontSize: 18 }}>Sleep</Text>
@@ -83,4 +83,4 @@ const styles = StyleSheet.create({
         }
         })
   },
-});
+} as const);

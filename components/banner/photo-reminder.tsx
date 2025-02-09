@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 
-const PhotoReminder = () => {
+const PhotoReminder: React.FC = () => {
   return (
     <View>
       <Text>PhotoReminder</Text>
@@ -11,4 +11,4 @@ const PhotoReminder = () => {
 
 export default PhotoReminder
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({} as const);

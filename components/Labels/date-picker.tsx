@@ -10,9 +10,10 @@ import React, { useState } from "react";
 import { colors } from "@/constants/colors";
 import { fonts } from "@/constants/fonts";
 import DateTimePicker from "@react-native-community/datetimepicker";
-import ILabel from "@/app/types/Label";
+import ILabel from "@/app/types/label";
 
-const DatePicker = (props: ILabel) => {
+const DatePicker: React.FC<ILabel> = (props: ILabel) => {
+
   const [date, setDate] = useState(new Date());
   const [open, setOpen] = useState(false);
 
@@ -81,4 +82,4 @@ const styles = StyleSheet.create({
     fontFamily: fonts.regular,
     alignSelf: "center",
   },
-});
+} as const);

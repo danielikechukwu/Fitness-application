@@ -11,7 +11,7 @@ import { fonts } from "@/constants/fonts";
 import { colors } from "@/constants/colors";
 import OnboardingButton from "@/components/Buttons/onboarding-button";
 
-const secondOnboardingScreen = () => {
+const SecondOnboardingScreen: React.FC = () => {
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar backgroundColor="white" />
@@ -42,7 +42,7 @@ const secondOnboardingScreen = () => {
   );
 };
 
-export default secondOnboardingScreen;
+export default SecondOnboardingScreen;
 
 const styles = StyleSheet.create({
   container: {
@@ -86,4 +86,4 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
-});
+} as const);

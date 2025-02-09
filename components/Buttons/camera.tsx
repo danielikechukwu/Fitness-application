@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 
-const Camera = () => {
+const Camera: React.FC = () => {
   return (
     <View>
       <Text>Camera</Text>
@@ -11,4 +11,4 @@ const Camera = () => {
 
 export default Camera
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({} as const);

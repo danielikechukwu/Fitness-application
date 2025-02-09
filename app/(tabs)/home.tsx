@@ -18,9 +18,10 @@ import HeartRate from "@/components/status/heart-rate";
 import Sleep from "@/components/status/sleep";
 import WaterIntake from "@/components/status/water-intake";
 import Calories from "@/components/status/calories";
-import HeartRateChart from "@/components/status/heart";
 
-const Home = (): React.JSX.Element => {
+
+const Home: React.FC = () => {
+
   const [notification, setNotification] = useState<boolean>(false);
 
   return (
@@ -192,4 +193,4 @@ const styles = StyleSheet.create({
     marginTop: "2%",
     marginBottom: "20%",
   },
-});
+} as const);

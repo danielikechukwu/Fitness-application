@@ -5,7 +5,7 @@ import { fonts } from "@/constants/fonts";
 import IButton from "@/app/types/onboarding-button";
 import { useRouter } from "expo-router";
 
-function Next(props: IButton) {
+const Next = (props: IButton) => {
   const router = useRouter();
 
   return (
@@ -42,4 +42,4 @@ const styles = StyleSheet.create({
     fontFamily: fonts.bold,
     fontSize: 18,
   },
-});
+} as const);

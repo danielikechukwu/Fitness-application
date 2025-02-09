@@ -3,7 +3,7 @@ import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { colors } from "@/constants/colors";
 
-const Search = () => {
+const Search: React.FC = () => {
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar backgroundColor={colors.white} />
@@ -25,4 +25,4 @@ const styles = StyleSheet.create({
     backgroundColor: colors.white,
     alignItems: 'center',
   },
-});
+} as const);

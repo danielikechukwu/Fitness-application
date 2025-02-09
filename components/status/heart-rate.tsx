@@ -3,7 +3,7 @@ import React from 'react'
 import { LineChart } from 'react-native-gifted-charts'
 import { colors } from '@/constants/colors';
 
-const HeartRate = () => {
+const HeartRate: React.FC = () => {
 
     const data = [{ value: 15 }, { value: 30 }, { value: 26 }, { value: 40 }];
 
@@ -34,4 +34,4 @@ const styles = StyleSheet.create({
             })
 
     }
-})
+} as const)

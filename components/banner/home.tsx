@@ -4,7 +4,7 @@ import { colors } from '@/constants/colors';
 import { fonts } from '@/constants/fonts';
 import { PieChart } from "react-native-gifted-charts";
 
-const HomeBanner = () => {
+const HomeBanner: React.FC = () => {
 
     const widthAndHeight: number = 50;
 
@@ -112,4 +112,4 @@ const styles = StyleSheet.create({
         alignItems: "center",
         backgroundColor: colors.secondary,
       },
-})
+} as const);

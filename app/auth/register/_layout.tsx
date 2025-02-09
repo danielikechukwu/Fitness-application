@@ -13,6 +13,4 @@ const RegisterLayout = () => {
   )
 }
 
-export default RegisterLayout
-
-const styles = StyleSheet.create({})
+export default RegisterLayout;

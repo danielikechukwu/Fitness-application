@@ -3,7 +3,7 @@ import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { colors } from "@/constants/colors";
 
-const Camera = () => {
+const Camera: React.FC<void> = () => {
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar backgroundColor={colors.white} />
@@ -24,5 +24,5 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: colors.white,
     alignItems: 'center',
-  },
+  } as const,
 });

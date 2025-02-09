@@ -5,7 +5,7 @@ import { fonts } from "../../constants/fonts";
 import { colors } from "../../constants/colors";
 import Buttons from "../../components/Buttons/button";
 
-const firstOnboardingScreen = () => {
+const FirstOnboardingScreen: React.FC = () => {
 
   const buttonTitle: string = "Get Started";
 
@@ -46,7 +46,7 @@ const firstOnboardingScreen = () => {
   );
 };
 
-export default firstOnboardingScreen;
+export default FirstOnboardingScreen;
 
 const styles = StyleSheet.create({
   container: {
@@ -76,4 +76,4 @@ const styles = StyleSheet.create({
     marginLeft: 30,
     marginRight: 30,
   },
-});
+} as const);

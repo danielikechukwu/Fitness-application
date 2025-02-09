@@ -10,12 +10,11 @@ import React, { useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { colors } from "@/constants/colors";
 import { fonts } from "@/constants/fonts";
-import { Button, Checkbox } from "react-native-paper";
 import Label from "@/components/Labels/label";
 import LoginBtn from "@/components/Buttons/login";
 import { useRouter } from "expo-router";
 
-const Login = () => {
+const Login: React.FC = () => {
 
   const [checked, setChecked] = useState<boolean>(false);
 
@@ -164,4 +163,4 @@ const styles = StyleSheet.create({
     borderRadius: 15,
     borderColor: colors.gray3,
   },
-});
+} as const);

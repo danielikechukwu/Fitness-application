@@ -1,10 +1,10 @@
 import { StyleSheet, Text, View, Image } from "react-native";
 import React, { useState } from "react";
 import RNPickerSelect from "react-native-picker-select";
-import ILabel from "@/app/types/Label";
 import { colors } from "@/constants/colors";
+import ILabel from "@/app/types/label";
 
-const DropDown = (props: ILabel) => {
+const DropDown: React.FC<ILabel> = (props: ILabel) => {
     
   const [selectedValue, setSelectedValue] = useState();
 
@@ -51,9 +51,9 @@ const styles = StyleSheet.create({
     width: 18,
     height: 18,
   },
-});
+} as const);
 
-const pickerStyles = {
+const pickerStyles = Object.freeze({
   inputIOS: {
     color: colors.black,
     padding: 10,
@@ -66,4 +66,4 @@ const pickerStyles = {
     borderWidth: 3,
     borderColor: "red",
   },
-};
+});

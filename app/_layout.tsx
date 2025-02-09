@@ -7,7 +7,7 @@ import { PaperProvider } from "react-native-paper";
 //Prevent splash screen from hiding automatically
 SplashScreen.preventAutoHideAsync();
 
-const RootLayout = () => {
+const RootLayout: React.FC = () => {
   const [fontsLoaded] = useFonts({
     "Poppins-Regular": require("../assets/fonts/Poppins-Regular.ttf"),
     "Poppins-Bold": require("../assets/fonts/Poppins-Bold.ttf"),

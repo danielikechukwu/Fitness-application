@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import Carousel from "react-native-snap-carousel";
 import { colors } from "@/constants/colors";
 import { fonts } from "@/constants/fonts";
-import { Divider } from "react-native-paper";
 
 const { width } = Dimensions.get("screen");
 
@@ -31,7 +30,8 @@ const data = [
   },
 ];
 
-const CardCarousel = () => {
+const CardCarousel: React.FC = () => {
+
   const [activeIndex, setActiveIndex] = useState(0);
 
   const renderItem = ({
@@ -114,4 +114,4 @@ const styles = StyleSheet.create({
     height: 0.5,
     backgroundColor: colors.white
   },
-});
+} as const);

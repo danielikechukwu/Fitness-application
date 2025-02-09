@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 
-const TodayTarget = () => {
+const TodayTarget: React.FC = () => {
   return (
     <View>
       <Text>TodayTarget</Text>
@@ -11,4 +11,4 @@ const TodayTarget = () => {
 
 export default TodayTarget
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({} as const);

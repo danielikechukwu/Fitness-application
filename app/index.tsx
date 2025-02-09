@@ -2,7 +2,7 @@ import { Button, StyleSheet, Text, View } from 'react-native'
 import React, { useEffect } from 'react'
 import { useRouter } from 'expo-router'
 
-const index = () => {
+const Index: React.FC = () => {
 
     const router = useRouter();
 
@@ -16,6 +16,4 @@ const index = () => {
   )
 }
 
-export default index
-
-const styles = StyleSheet.create({})
+export default Index;

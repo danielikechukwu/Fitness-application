@@ -11,7 +11,7 @@ import { colors } from "@/constants/colors";
 
 const AnimatedRect = Animated.createAnimatedComponent(Rect);
 
-const WaterIntakeGraph = ({ waterIntake }: { waterIntake: number }) => {
+const WaterIntakeGraph: React.FC<{waterIntake: number}> = ({waterIntake}: {waterIntake: number}) => {
 
   const progress = useSharedValue(0);
 
