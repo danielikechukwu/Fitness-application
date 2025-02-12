@@ -61,6 +61,7 @@ const Calories: React.FC<Props> = (props: Props) => {
       </View>
 
       <View style={{ alignItems: "center", justifyContent: "center" }}>
+        
         <Svg height="130" width="130" viewBox="0 0 100 100">
           <Circle
             cx="50"
@@ -124,7 +125,7 @@ export default Calories;
 
 const styles = StyleSheet.create({
   container: {
-    width: "100%",
+    width: "80%",
     padding: "8%",
     borderRadius: 25,
     backgroundColor: colors.white,

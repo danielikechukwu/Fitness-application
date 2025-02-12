@@ -2,23 +2,49 @@ import { StyleSheet, Text, View, Platform } from "react-native";
 import React from "react";
 import { colors } from "@/constants/colors";
 import WaterIntakeGraph from "../water-intake-graph";
+import { fonts } from "@/constants/fonts";
 
 const WaterIntake: React.FC = () => {
   return (
     <View style={styles.container}>
-
-      <View>
-        <WaterIntakeGraph waterIntake={1600}/>
+      <View style={{ marginRight: '5%' }}>
+        {/* <WaterIntakeGraph waterIntake={1600}/> */}
+        <WaterIntakeGraph waterIntake={1900}/>
       </View>
 
-      <View>
+      <View style={{}}>
         <View>
-          <Text>Water Intake</Text>
-          <Text>4 Liters</Text>
+          <Text
+            style={{
+              color: colors.black,
+              fontFamily: fonts.semiBold,
+              fontSize: 14,
+            }}
+          >
+            Water Intake
+          </Text>
+          <Text
+            style={{
+              color: colors.brand,
+              fontFamily: fonts.semiBold,
+              fontSize: 14,
+            }}
+          >
+            4 Liters
+          </Text>
         </View>
-        <View></View>
+        <View style={{ marginTop: "12%" }}>
+          <Text
+            style={{
+              color: colors.gray1,
+              fontFamily: fonts.regular,
+              fontSize: 12,
+            }}
+          >
+            Real time updates
+          </Text>
+        </View>
       </View>
-
     </View>
   );
 };
@@ -27,10 +53,10 @@ export default WaterIntake;
 
 const styles = StyleSheet.create({
   container: {
-    width: "120%",
-    height: "63%",
-    padding: "4%",
-    flexDirection: 'row',
+    width: "88%",
+    height: "64%",
+    padding: "9%",
+    flexDirection: "row",
     borderRadius: 25,
     backgroundColor: colors.white,
     ...Platform.select({

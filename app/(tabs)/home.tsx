@@ -123,16 +123,18 @@ const Home: React.FC = () => {
             <View
               style={{
                 flexDirection: "row",
+                marginTop: "7%",
+                width: '100%'
               }}
             >
-              <View style={{ flexGrow: 1, marginRight: "3%", marginTop: "7%" }}>
+              <View>
                 <WaterIntake />                
               </View>
-              <View style={{ flexGrow: 1, marginTop: "7%", gap: "2%", right: 0 }}>
-                <View style={{alignSelf: 'flex-end'}}>
+              <View style={{gap: '4%'}}>
+                <View>
                   <Sleep />
                 </View>
-                <View style={{alignSelf: 'flex-end'}}>
+                <View>
                   <Calories calorieCount={60} />
                 </View>
               </View>
