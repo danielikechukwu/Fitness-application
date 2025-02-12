@@ -7,9 +7,9 @@ import { fonts } from "@/constants/fonts";
 const WaterIntake: React.FC = () => {
   return (
     <View style={styles.container}>
-      <View style={{ marginRight: '5%' }}>
+      <View style={{ marginRight: "5%" }}>
         {/* <WaterIntakeGraph waterIntake={1600}/> */}
-        <WaterIntakeGraph waterIntake={1900}/>
+        <WaterIntakeGraph waterIntake={1900} />
       </View>
 
       <View style={{}}>
@@ -53,9 +53,11 @@ export default WaterIntake;
 
 const styles = StyleSheet.create({
   container: {
-    width: "88%",
-    height: "64%",
-    padding: "9%",
+    width: "100%",
+    height: "100%",
+    paddingLeft: "5%",
+    paddingTop: "9%",
+    paddingBottom: "9%",
     flexDirection: "row",
     borderRadius: 25,
     backgroundColor: colors.white,

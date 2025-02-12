@@ -5,23 +5,19 @@ import {
   View,
   ScrollView,
   Image,
-  ImageBackground,
   Pressable,
 } from "react-native";
 import React, { useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { colors } from "@/constants/colors";
 import { fonts } from "@/constants/fonts";
-import { LineChart } from "react-native-gifted-charts";
 import HomeBanner from "@/components/banner/home";
 import HeartRate from "@/components/status/heart-rate";
 import Sleep from "@/components/status/sleep";
 import WaterIntake from "@/components/status/water-intake";
 import Calories from "@/components/status/calories";
 
-
 const Home: React.FC = () => {
-
   const [notification, setNotification] = useState<boolean>(false);
 
   return (
@@ -31,6 +27,7 @@ const Home: React.FC = () => {
       <ScrollView
         showsHorizontalScrollIndicator={false}
         showsVerticalScrollIndicator={false}
+        contentContainerStyle={{  paddingBottom: 50 }}
       >
         <View>
           <View style={styles.header}>
@@ -66,7 +63,9 @@ const Home: React.FC = () => {
             </Pressable>
           </View>
 
-          <HomeBanner />
+          <View style={{ marginLeft: "3%", marginRight: "3%" }}>
+            <HomeBanner />
+          </View>
 
           <View style={styles.action}>
             <View>
@@ -110,13 +109,15 @@ const Home: React.FC = () => {
               fontFamily: fonts.semiBold,
               fontSize: 18,
               marginTop: "5%",
+              marginLeft: "3%",
             }}
           >
             Activity Status
           </Text>
 
           <View style={styles.status}>
-            <View>
+
+            <View style={{ marginLeft: "3%", marginRight: "3%" }}>
               <HeartRate />
             </View>
 
@@ -124,23 +125,42 @@ const Home: React.FC = () => {
               style={{
                 flexDirection: "row",
                 marginTop: "7%",
-                width: '100%'
+                width: "100%",
+                height: '62%',
               }}
             >
-              <View>
-                <WaterIntake />                
+              <View style={{ marginLeft: "3%" }}>
+                <WaterIntake />
               </View>
-              <View style={{gap: '4%'}}>
-                <View>
+              <View style={{ gap: "5%", width: "50%" }}>
+                <View
+                  style={{
+                    alignSelf: "flex-end",
+                    width: "90%",
+                    marginRight: "3%",
+                  }}
+                >
                   <Sleep />
                 </View>
-                <View>
+                <View
+                  style={{
+                    alignSelf: "flex-end",
+                    width: "90%",
+                    marginRight: "3%",
+                  }}
+                >
                   <Calories calorieCount={60} />
                 </View>
               </View>
             </View>
           </View>
+
+           <View style={{marginTop: "7%",}}>
+            <Text>Next movement</Text>
+          </View>
+
         </View>
+       
       </ScrollView>
     </SafeAreaView>
   );
@@ -152,9 +172,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: colors.white,
-    paddingRight: "5%",
-    paddingLeft: "5%",
     paddingTop: "10%",
+    paddingBottom: "2%",
   },
 
   notification: {
@@ -170,6 +189,8 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: "row",
     justifyContent: "space-between",
+    marginLeft: "3%",
+    marginRight: "3%",
   },
 
   notificationIcon: {
@@ -182,6 +203,8 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     marginTop: "8%",
+    marginLeft: "3%",
+    marginRight: "3%",
     paddingTop: "5%",
     paddingBottom: "5%",
     paddingRight: "5%",
@@ -192,7 +215,7 @@ const styles = StyleSheet.create({
   },
 
   status: {
-    marginTop: "2%",
-    marginBottom: "20%",
+    flex: 1,
+    marginTop: "2%"
   },
 } as const);

@@ -17,7 +17,6 @@ interface Props {
 const AnimatedCircle = Animated.createAnimatedComponent(Circle);
 
 const Calories: React.FC<Props> = (props: Props) => {
-
   const progress = useSharedValue(0);
 
   const radius: number = 40;
@@ -61,7 +60,6 @@ const Calories: React.FC<Props> = (props: Props) => {
       </View>
 
       <View style={{ alignItems: "center", justifyContent: "center" }}>
-        
         <Svg height="130" width="130" viewBox="0 0 100 100">
           <Circle
             cx="50"
@@ -125,20 +123,20 @@ export default Calories;
 
 const styles = StyleSheet.create({
   container: {
-    width: "80%",
+    width: "90%",
     padding: "8%",
     borderRadius: 25,
     backgroundColor: colors.white,
     ...Platform.select({
       ios: {
-        shadowColor: 'black',
+        shadowColor: "black",
         shadowOffset: { width: 0, height: 2 },
         shadowOpacity: 0.2,
         shadowRadius: 4,
-    },
-    android: {
+      },
+      android: {
         elevation: 15,
-    }
-    })
+      },
+    }),
   },
 } as const);

@@ -57,7 +57,7 @@ const Sleep: React.FC = () => {
       </View>
       <Image
         source={require("../../assets/images/dashboard/sleep-graph.png")}
-        style={{width: 127}}
+        style={{width: 130}}
       />
     </View>
   );
@@ -67,20 +67,20 @@ export default Sleep;
 
 const styles = StyleSheet.create({
   container: {
-    width: "80%",
+    width: "90%",
     padding: "8%",
     borderRadius: 25,
     backgroundColor: colors.white,
-        ...Platform.select({
-          ios: {
-            shadowColor: 'black',
-            shadowOffset: { width: 0, height: 2 },
-            shadowOpacity: 0.2,
-            shadowRadius: 4,
-        },
-        android: {
-            elevation: 15,
-        }
-        })
+    ...Platform.select({
+      ios: {
+        shadowColor: "black",
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.2,
+        shadowRadius: 4,
+      },
+      android: {
+        elevation: 15,
+      },
+    }),
   },
 } as const);
