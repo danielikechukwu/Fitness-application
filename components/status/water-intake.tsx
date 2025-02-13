@@ -1,19 +1,19 @@
 import { StyleSheet, Text, View, Platform } from "react-native";
 import React from "react";
 import { colors } from "@/constants/colors";
-import WaterIntakeGraph from "../water-intake-graph";
 import { fonts } from "@/constants/fonts";
-import WaterIntakeTimeLine from "../water-intake-time-line";
+import WaterIntakeGraph from "./water-intake-graph";
+import WaterIntakeTimeLine from "./water-intake-time-line";
 
 const WaterIntake: React.FC = () => {
   return (
     <View style={styles.container}>
+
       <View style={{ marginRight: "5%" }}>
-        {/* <WaterIntakeGraph waterIntake={1600}/> */}
         <WaterIntakeGraph waterIntake={1900} />
       </View>
 
-      <View style={{}}>
+      <View>
         <View>
           <Text
             style={{

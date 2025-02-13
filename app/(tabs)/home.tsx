@@ -11,11 +11,11 @@ import React, { useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { colors } from "@/constants/colors";
 import { fonts } from "@/constants/fonts";
-import HomeBanner from "@/components/banner/home";
-import HeartRate from "@/components/status/heart-rate";
-import Sleep from "@/components/status/sleep";
-import WaterIntake from "@/components/status/water-intake";
-import Calories from "@/components/status/calories";
+import HomeBanner from "@/components/Banner/home";
+import HeartRate from "@/components/Status/heart-rate";
+import Sleep from "@/components/Status/sleep";
+import WaterIntake from "@/components/Status/water-intake";
+import Calories from "@/components/Status/calories";
 
 const Home: React.FC = () => {
   const [notification, setNotification] = useState<boolean>(false);
