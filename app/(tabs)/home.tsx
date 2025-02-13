@@ -18,6 +18,7 @@ import WaterIntake from "@/components/Status/water-intake";
 import Calories from "@/components/Status/calories";
 
 const Home: React.FC = () => {
+  
   const [notification, setNotification] = useState<boolean>(false);
 
   return (
@@ -156,8 +157,13 @@ const Home: React.FC = () => {
           </View>
 
           <View style={{ marginTop: "7%" }}>
-            <Text>Next movement</Text>
+            <Text>Work out section</Text>
           </View>
+
+          <View>
+            <Text>Latest workout section</Text>
+          </View>
+
         </View>
       </ScrollView>
     </SafeAreaView>
