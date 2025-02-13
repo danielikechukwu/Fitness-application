@@ -19,7 +19,7 @@ const WaterIntake: React.FC = () => {
             style={{
               color: colors.black,
               fontFamily: fonts.semiBold,
-              fontSize: 14,
+              fontSize: 16,
             }}
           >
             Water Intake
@@ -28,7 +28,7 @@ const WaterIntake: React.FC = () => {
             style={{
               color: colors.brand,
               fontFamily: fonts.semiBold,
-              fontSize: 14,
+              fontSize: 16,
             }}
           >
             4 Liters
