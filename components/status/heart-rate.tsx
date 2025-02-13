@@ -1,7 +1,8 @@
 import { Platform, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
-import { LineChart } from 'react-native-gifted-charts'
 import { colors } from '@/constants/colors';
+import { LineChart } from 'react-native-gifted-charts';
+// import { LineChart } from 'react-native-gifted-charts';
 
 const HeartRate: React.FC = () => {
 

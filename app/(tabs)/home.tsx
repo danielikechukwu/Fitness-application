@@ -27,7 +27,8 @@ const Home: React.FC = () => {
       <ScrollView
         showsHorizontalScrollIndicator={false}
         showsVerticalScrollIndicator={false}
-        contentContainerStyle={{  paddingBottom: 50 }}
+        nestedScrollEnabled={true}
+        contentContainerStyle={{ paddingBottom: 50 }}
       >
         <View>
           <View style={styles.header}>
@@ -116,7 +117,6 @@ const Home: React.FC = () => {
           </Text>
 
           <View style={styles.status}>
-
             <View style={{ marginLeft: "3%", marginRight: "3%" }}>
               <HeartRate />
             </View>
@@ -126,7 +126,7 @@ const Home: React.FC = () => {
                 flexDirection: "row",
                 marginTop: "7%",
                 width: "100%",
-                height: '62%',
+                height: "62%",
               }}
             >
               <View style={{ marginLeft: "3%" }}>
@@ -155,12 +155,10 @@ const Home: React.FC = () => {
             </View>
           </View>
 
-           <View style={{marginTop: "7%",}}>
+          <View style={{ marginTop: "7%" }}>
             <Text>Next movement</Text>
           </View>
-
         </View>
-       
       </ScrollView>
     </SafeAreaView>
   );
@@ -216,6 +214,6 @@ const styles = StyleSheet.create({
 
   status: {
     flex: 1,
-    marginTop: "2%"
+    marginTop: "2%",
   },
 } as const);

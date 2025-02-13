@@ -1,6 +1,6 @@
 export const colors = Object.freeze({
   brand: "#98B9FE",     
-  secondary: "#DA98E0",  
+  secondary: "#DFA7F8",  
   black: "#1D1617", 
   white: "#FFFFFF",
   gray1: "#7B6F72",

@@ -3,6 +3,7 @@ import React from "react";
 import { colors } from "@/constants/colors";
 import WaterIntakeGraph from "../water-intake-graph";
 import { fonts } from "@/constants/fonts";
+import WaterIntakeTimeLine from "../water-intake-time-line";
 
 const WaterIntake: React.FC = () => {
   return (
@@ -39,10 +40,16 @@ const WaterIntake: React.FC = () => {
               color: colors.gray1,
               fontFamily: fonts.regular,
               fontSize: 12,
+              marginBottom: '2%'
             }}
           >
             Real time updates
           </Text>
+
+          <View>
+            <WaterIntakeTimeLine />
+          </View>
+          
         </View>
       </View>
     </View>
