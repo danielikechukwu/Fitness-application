@@ -67,6 +67,7 @@ export default Sleep;
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
     width: "90%",
     padding: "8%",
     borderRadius: 25,

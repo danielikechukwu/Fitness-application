@@ -3,7 +3,7 @@ import React from 'react'
 
 const WorkoutSection = () => {
   return (
-    <View>
+    <View style={styles.container}>
       <Text>WorkoutSection</Text>
     </View>
   )
@@ -11,4 +11,9 @@ const WorkoutSection = () => {
 
 export default WorkoutSection
 
-const styles = StyleSheet.create({} as const)
+const styles = StyleSheet.create({
+  container: {
+    borderWidth: 1, 
+    flex: 1
+  }
+} as const)

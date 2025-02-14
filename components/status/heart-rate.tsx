@@ -21,6 +21,7 @@ const styles = StyleSheet.create({
 
     container: {
         backgroundColor: colors.border,
+        flex: 1,
         borderRadius: 12,
             ...Platform.select({
               ios: {
