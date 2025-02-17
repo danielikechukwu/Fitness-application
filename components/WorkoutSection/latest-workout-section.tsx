@@ -3,7 +3,7 @@ import React from 'react'
 import { colors } from '@/constants/colors'
 import { fonts } from '@/constants/fonts'
 
-const LatestWorkoutSection = () => {
+const LatestWorkoutSection:React.FC = () => {
   return (
     <View style={styles.container}>
       <View style={{flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center'}}>

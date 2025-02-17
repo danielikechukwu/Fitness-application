@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 
-const WorkoutSection = () => {
+const WorkoutSection: React.FC = () => {
   return (
     <View style={styles.container}>
       <Text>WorkoutSection</Text>
