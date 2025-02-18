@@ -57,7 +57,7 @@ const Sleep: React.FC = () => {
       </View>
       <Image
         source={require("../../assets/images/dashboard/sleep-graph.png")}
-        style={{width: 130}}
+        style={{ width: 130 }}
       />
     </View>
   );
@@ -69,6 +69,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     width: "90%",
+    height: "100%",
     padding: "8%",
     borderRadius: 25,
     backgroundColor: colors.white,

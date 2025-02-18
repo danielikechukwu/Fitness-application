@@ -20,17 +20,18 @@ import LatestWorkoutSection from "@/components/WorkoutSection/latest-workout-sec
 import WorkoutSection from "@/components/WorkoutSection/workout-section";
 
 const Home: React.FC = () => {
+  
   const [notification, setNotification] = useState<boolean>(false);
 
   return (
     <SafeAreaView style={styles.container}>
+
       <StatusBar backgroundColor={colors.white} />
 
       <ScrollView
         showsHorizontalScrollIndicator={false}
         showsVerticalScrollIndicator={false}
-        nestedScrollEnabled={true}
-        contentContainerStyle={{ paddingBottom: 50 }}
+        contentContainerStyle={{ paddingBottom: 50, flexGrow: 1 }}
       >
         <View>
           <View style={styles.header}>
@@ -135,7 +136,7 @@ const Home: React.FC = () => {
               <View style={{ marginLeft: "3%" }}>
                 <WaterIntake />
               </View>
-              <View style={{ gap: "5%", width: "50%" }}>
+              <View style={{ gap: "8%", width: "50%" }}>
                 <View
                   style={{
                     alignSelf: "flex-end",

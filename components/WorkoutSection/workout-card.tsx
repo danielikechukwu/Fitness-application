@@ -1,14 +1,21 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 
-const WorkCard: React.FC = () => {
+const WorkoutCard: React.FC = () => {
   return (
-    <View>
+    <View style={styles.container}>
       <Text>WorkCard</Text>
     </View>
   )
 }
 
-export default WorkCard
+export default WorkoutCard
 
-const styles = StyleSheet.create({} as const)
+const styles = StyleSheet.create({
+
+  container: {
+    flex: 1,
+    borderWidth: 1,
+    marginTop: '5%'
+  }
+} as const)

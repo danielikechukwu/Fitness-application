@@ -32,7 +32,14 @@ const WaterIntakeGraph: React.FC<{ waterIntake: number }> = ({
     <View style={{ alignItems: "center", justifyContent: "center" }}>
       <Svg viewBox="0 20 50 45" height={400} width={50}>
         {/* Background */}
-        <Rect x="5" y="20" width="35" height="370" fill="lightgray" rx="20" />
+        <Rect
+          x="5"
+          y="20"
+          width="35"
+          height="370"
+          fill={colors.gray3}
+          rx="20"
+        />
 
         {/* Animated Water Level */}
         <AnimatedRect

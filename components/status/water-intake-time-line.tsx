@@ -1,29 +1,47 @@
-import { FlatList, Platform, StyleSheet, Text, View } from "react-native";
+import {
+  FlatList,
+  Platform,
+  StyleSheet,
+  Text,
+  View,
+  ScrollView,
+} from "react-native";
 import React from "react";
 import LinearGradient from "react-native-linear-gradient";
 import { colors } from "@/constants/colors";
 import { fonts } from "@/constants/fonts";
 
-const waterIntakeData = [
+interface Props {
+  time: string;
+  amount: string;
+  isCurrent?: boolean;
+}
+
+const waterIntakeData: Props[] = [
   { time: "6am - 8am", amount: "600ml" },
   { time: "9am - 11am", amount: "500ml" },
   { time: "11am - 2pm", amount: "1000ml" },
   { time: "2pm - 4pm", amount: "700ml" },
+
+  { time: "6am - 8am", amount: "600ml" },
+  { time: "9am - 11am", amount: "500ml" },
+  { time: "11am - 2pm", amount: "1000ml" },
+  { time: "2pm - 4pm", amount: "700ml" },
+  
   { time: "4pm - now", amount: "900ml", isCurrent: true },
 ];
 
 const WaterIntakeTimeLine: React.FC = () => {
   return (
     <View
-      style={{
-        height: "90%",
+      style={{      
         marginTop: "4%",
+        height: '88%'
       }}
     >
       <FlatList
-        scrollEnabled={true}
-        data={waterIntakeData}
-        keyExtractor={(item, index) => index.toString()}
+        data={waterIntakeData}        
+        keyExtractor={(_, index) => index.toString()}
         renderItem={({ item }) => (
           <View style={styles.container}>
             <View>
@@ -46,6 +64,10 @@ const WaterIntakeTimeLine: React.FC = () => {
             </View>
           </View>
         )}
+        nestedScrollEnabled={true}
+        showsHorizontalScrollIndicator={false}
+        showsVerticalScrollIndicator={false}
+        style={{maxHeight: 300}}
       />
     </View>
   );
@@ -71,7 +93,7 @@ const styles = StyleSheet.create({
     height: 14,
     borderRadius: 7,
     borderColor: "rgba(223, 167, 248, 0.5)",
-    borderWidth: 4
+    borderWidth: 4,
   },
 
   dashedLine: {
