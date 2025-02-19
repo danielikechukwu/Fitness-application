@@ -34,6 +34,15 @@
     ],
     "experiments": {
       "typedRoutes": true
-    }
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "07b5ffbb-a901-4c1a-bec1-bb9c9870319c"
+      }
+    },
+    "owner": "daniel_ike"
   }
 }
