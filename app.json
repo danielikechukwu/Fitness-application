@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "FitnestX",
-    "slug": "FitnestX",
+    "slug": "Fitness-Application",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -43,6 +43,12 @@
         "projectId": "07b5ffbb-a901-4c1a-bec1-bb9c9870319c"
       }
     },
-    "owner": "daniel_ike"
+    "owner": "daniel_ike",
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/07b5ffbb-a901-4c1a-bec1-bb9c9870319c"
+    }
   }
 }
