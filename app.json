@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "Fitness-Application",
-    "slug": "Fitness-Application",
+    "name": "FitnestX",
+    "slug": "FitnestX",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
