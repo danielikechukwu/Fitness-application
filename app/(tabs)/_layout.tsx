@@ -1,7 +1,7 @@
 import { View, Text, Image } from "react-native";
 import React, { useState } from "react";
 import { Tabs } from "expo-router";
-import { colors } from "@/constants/colors";
+import { colors } from "../../constants/colors";
 import { Ionicons } from "@expo/vector-icons";
 
 const RootLayout = () => {

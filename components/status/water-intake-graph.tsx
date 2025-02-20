@@ -7,7 +7,7 @@ import Animated, {
   withTiming,
   interpolate,
 } from "react-native-reanimated";
-import { colors } from "@/constants/colors";
+import { colors } from "../../constants/colors";
 
 const AnimatedRect = Animated.createAnimatedComponent(Rect);
 

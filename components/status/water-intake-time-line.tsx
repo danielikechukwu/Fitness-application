@@ -1,15 +1,12 @@
 import {
   FlatList,
-  Platform,
   StyleSheet,
   Text,
   View,
-  ScrollView,
 } from "react-native";
 import React from "react";
-import LinearGradient from "react-native-linear-gradient";
-import { colors } from "@/constants/colors";
-import { fonts } from "@/constants/fonts";
+import { colors } from "../../constants/colors";
+import { fonts } from "../../constants/fonts";
 
 interface Props {
   time: string;
@@ -76,7 +73,7 @@ const WaterIntakeTimeLine: React.FC = () => {
 export default WaterIntakeTimeLine;
 
 const styles = StyleSheet.create({
-  
+
   container: {
     flexDirection: "row",
   },

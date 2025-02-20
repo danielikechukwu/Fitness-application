@@ -9,10 +9,10 @@ import {
 } from "react-native";
 import React, { useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { colors } from "@/constants/colors";
-import { fonts } from "@/constants/fonts";
+import { colors } from "../../../constants/colors";
+import { fonts } from "../../../constants/fonts";
 import { Button, Checkbox } from "react-native-paper";
-import Label from "@/components/Labels/label";
+import Label from "../../../components/Labels/label";
 import { useRouter } from "expo-router";
 
 const CreateAccount: React.FC = () => {

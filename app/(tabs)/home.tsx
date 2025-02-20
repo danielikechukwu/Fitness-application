@@ -9,23 +9,21 @@ import {
 } from "react-native";
 import React, { useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { colors } from "@/constants/colors";
-import { fonts } from "@/constants/fonts";
-import HomeBanner from "@/components/Banner/home";
-import HeartRate from "@/components/Status/heart-rate";
-import Sleep from "@/components/Status/sleep";
-import WaterIntake from "@/components/Status/water-intake";
-import Calories from "@/components/Status/calories";
-import LatestWorkoutSection from "@/components/WorkoutSection/latest-workout-section";
-import WorkoutSection from "@/components/WorkoutSection/workout-section";
+import { colors } from "../../constants/colors";
+import { fonts } from "../../constants/fonts";
+import HomeBanner from "../../components/Banner/home";
+import HeartRate from "../../components/Status/heart-rate";
+import Sleep from "../../components/Status/sleep";
+import WaterIntake from "../../components/Status/water-intake";
+import Calories from "../../components/Status/calories";
+import LatestWorkoutSection from "../../components/WorkoutSection/latest-workout-section";
+import WorkoutSection from "../../components/WorkoutSection/workout-section";
 
 const Home: React.FC = () => {
-  
   const [notification, setNotification] = useState<boolean>(false);
 
   return (
     <SafeAreaView style={styles.container}>
-
       <StatusBar backgroundColor={colors.white} />
 
       <ScrollView
@@ -120,7 +118,9 @@ const Home: React.FC = () => {
           </Text>
 
           <View style={styles.status}>
-            <View style={{ marginLeft: "3%", marginRight: "3%", borderWidth: 1 }}>
+            <View
+              style={{ marginLeft: "3%", marginRight: "3%", borderWidth: 1 }}
+            >
               {/* <HeartRate />              */}
               <Text>Heart rate chart</Text>
             </View>
@@ -159,14 +159,17 @@ const Home: React.FC = () => {
             </View>
           </View>
 
-          <View style={{ marginTop: "7%", marginLeft: "3%", marginRight: "3%" }}>
+          <View
+            style={{ marginTop: "7%", marginLeft: "3%", marginRight: "3%" }}
+          >
             <WorkoutSection />
           </View>
 
-          <View style={{ marginTop: "7%", marginLeft: "3%", marginRight: "3%" }}>
+          <View
+            style={{ marginTop: "7%", marginLeft: "3%", marginRight: "3%" }}
+          >
             <LatestWorkoutSection />
           </View>
-
         </View>
       </ScrollView>
     </SafeAreaView>

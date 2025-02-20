@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View, Image, Platform } from "react-native";
 import React from "react";
-import { fonts } from "@/constants/fonts";
-import { colors } from "@/constants/colors";
+import { fonts } from "../../constants/fonts";
+import { colors } from "../../constants/colors";
 
 const Sleep: React.FC = () => {
   return (

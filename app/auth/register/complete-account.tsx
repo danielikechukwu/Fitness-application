@@ -8,13 +8,13 @@ import {
 } from "react-native";
 import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { colors } from "@/constants/colors";
-import { fonts } from "@/constants/fonts";
-import Next from "@/components/Buttons/next";
-import NumberLabel from "@/components/Labels/weight-height-label";
-import Label from "@/components/Labels/label";
-import DatePicker from "@/components/Labels/date-picker";
-import DropDown from "@/components/Labels/dropdown";
+import { colors } from "../../../constants/colors";
+import { fonts } from "../../../constants/fonts";
+import Next from "../../../components/Buttons/next";
+import NumberLabel from "../../../components/Labels/weight-height-label";
+import Label from "../../../components/Labels/label";
+import DatePicker from "../../../components/Labels/date-picker";
+import DropDown from "../../../components/Labels/dropdown";
 
 const CompleteAccount: React.FC = () => {
   return (
