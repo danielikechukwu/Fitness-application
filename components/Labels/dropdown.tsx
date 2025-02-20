@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View, Image } from "react-native";
 import React, { useState } from "react";
 import RNPickerSelect from "react-native-picker-select";
-import colors from "../../constants/Colors";
+import colors from "../../constants/colors";
 import ILabel from "../../app/types/label";
 
 const DropDown: React.FC<ILabel> = (props: ILabel) => {

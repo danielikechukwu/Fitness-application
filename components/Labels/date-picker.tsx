@@ -7,7 +7,7 @@ import {
   Platform,
 } from "react-native";
 import React, { useState } from "react";
-import colors from "../../constants/Colors";
+import colors from "../../constants/colors";
 import fonts from "../../constants/fonts";
 import DateTimePicker from "@react-native-community/datetimepicker";
 import ILabel from "../../app/types/label";

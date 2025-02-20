@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View, Image, Platform } from "react-native";
 import fonts from "../../constants/fonts";
-import colors from "../../constants/Colors";
+import colors from "../../constants/colors";
 import React, { useEffect } from "react";
 import Svg, { Circle, Rect } from "react-native-svg";
 import Animated, {

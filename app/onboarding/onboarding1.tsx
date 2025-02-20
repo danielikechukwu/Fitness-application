@@ -2,7 +2,7 @@ import { StatusBar, StyleSheet, Text, View } from "react-native";
 import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import fonts from "../../constants/fonts";
-import colors from "../../constants/Colors";
+import colors from "../../constants/colors";
 import Buttons from "../../components/Buttons/button";
 
 const FirstOnboardingScreen: React.FC = () => {

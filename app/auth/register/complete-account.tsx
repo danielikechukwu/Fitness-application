@@ -8,7 +8,7 @@ import {
 } from "react-native";
 import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
-import colors from "../../../constants/Colors";
+import colors from "../../../constants/colors";
 import fonts from "../../../constants/fonts";
 import Next from "../../../components/Buttons/next";
 import NumberLabel from "../../../components/Labels/weight-height-label";

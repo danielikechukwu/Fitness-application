@@ -1,6 +1,6 @@
 import { Platform, StyleSheet, Text, View } from "react-native";
 import React from "react";
-import colors from "../../constants/Colors";
+import colors from "../../constants/colors";
 import { LineChart } from "react-native-gifted-charts";
 // import { LineChart } from 'react-native-gifted-charts';
 

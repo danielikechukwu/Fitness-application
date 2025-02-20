@@ -6,7 +6,7 @@ import {
   Pressable,
 } from "react-native";
 import React from "react";
-import colors from "../../constants/Colors";
+import colors from "../../constants/colors";
 import fonts from "../../constants/fonts";
 import { PieChart } from "react-native-gifted-charts";
 
