@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View, Platform } from "react-native";
 import React from "react";
-import colors from "../../constants/colors";
+import colors from "../../constants/Colors";
 import fonts from "../../constants/fonts";
 import WaterIntakeGraph from "./water-intake-graph";
 import WaterIntakeTimeLine from "./water-intake-time-line";

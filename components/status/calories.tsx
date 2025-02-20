@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View, Image, Platform } from "react-native";
 import fonts from "../../constants/fonts";
-import colors from "../../constants/colors";
+import colors from "../../constants/Colors";
 import React, { useEffect } from "react";
 import Svg, { Circle, Rect } from "react-native-svg";
 import Animated, {
@@ -125,7 +125,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     width: "90%",
-    height: '100%',
+    height: "100%",
     padding: "8%",
     borderRadius: 25,
     backgroundColor: colors.white,

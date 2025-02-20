@@ -9,5 +9,6 @@ const colors = {
   border: "#D9EAFD"
 } as const;
 
+
 export default colors;
   

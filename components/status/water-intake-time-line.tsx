@@ -1,11 +1,6 @@
-import {
-  FlatList,
-  StyleSheet,
-  Text,
-  View,
-} from "react-native";
+import { FlatList, StyleSheet, Text, View } from "react-native";
 import React from "react";
-import colors from "../../constants/colors";
+import colors from "../../constants/Colors";
 import fonts from "../../constants/fonts";
 
 interface Props {
@@ -24,20 +19,20 @@ const waterIntakeData: Props[] = [
   { time: "9am - 11am", amount: "500ml" },
   { time: "11am - 2pm", amount: "1000ml" },
   { time: "2pm - 4pm", amount: "700ml" },
-  
+
   { time: "4pm - now", amount: "900ml", isCurrent: true },
 ];
 
 const WaterIntakeTimeLine: React.FC = () => {
   return (
     <View
-      style={{      
+      style={{
         marginTop: "4%",
-        height: '88%'
+        height: "88%",
       }}
     >
       <FlatList
-        data={waterIntakeData}        
+        data={waterIntakeData}
         keyExtractor={(_, index) => index.toString()}
         renderItem={({ item }) => (
           <View style={styles.container}>
@@ -64,7 +59,7 @@ const WaterIntakeTimeLine: React.FC = () => {
         nestedScrollEnabled={true}
         showsHorizontalScrollIndicator={false}
         showsVerticalScrollIndicator={false}
-        style={{maxHeight: 300}}
+        style={{ maxHeight: 300 }}
       />
     </View>
   );
@@ -73,7 +68,6 @@ const WaterIntakeTimeLine: React.FC = () => {
 export default WaterIntakeTimeLine;
 
 const styles = StyleSheet.create({
-
   container: {
     flexDirection: "row",
   },

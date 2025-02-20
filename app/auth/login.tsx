@@ -8,26 +8,22 @@ import {
 } from "react-native";
 import React, { useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
-import colors from "../../constants/colors";
+import colors from "../../constants/Colors";
 import fonts from "../../constants/fonts";
 import Label from "../../components/Labels/label";
 import LoginBtn from "../../components/Buttons/login";
 import { useRouter } from "expo-router";
 
 const Login: React.FC = () => {
-
   const [checked, setChecked] = useState<boolean>(false);
 
   const router = useRouter();
 
   return (
-
     <SafeAreaView style={styles.container}>
-        
       <StatusBar backgroundColor="white" />
 
       <View style={{ flex: 1, alignItems: "center", marginTop: "4%" }}>
-
         <View style={{ alignItems: "center" }}>
           <Text
             style={{
@@ -68,14 +64,18 @@ const Login: React.FC = () => {
               alignItems: "flex-start",
             }}
           >
-            <Text style={styles.text}>
-              Forgot your password
-            </Text>
+            <Text style={styles.text}>Forgot your password</Text>
           </View>
         </View>
 
-        <View style={{ width: "90%", flex: 1, justifyContent: 'flex-end', marginBottom: '15%' }}>
-
+        <View
+          style={{
+            width: "90%",
+            flex: 1,
+            justifyContent: "flex-end",
+            marginBottom: "15%",
+          }}
+        >
           <LoginBtn title="Login" path="" />
 
           <View
@@ -103,9 +103,7 @@ const Login: React.FC = () => {
               style={styles.socials}
               onPress={() => console.log("Google")}
             >
-              <Image
-                source={require("../../assets/images/icons/google.png")}
-              />
+              <Image source={require("../../assets/images/icons/google.png")} />
             </TouchableOpacity>
             <TouchableOpacity
               style={styles.socials}
@@ -118,7 +116,21 @@ const Login: React.FC = () => {
           </View>
 
           <View style={{ alignItems: "center", marginTop: "5%" }}>
-            <Text style={{fontFamily: fonts.medium, color: colors.black, fontSize: 14}}>Don't have an account yet? <Text style={{color: colors.brand}} onPress={() => router.replace('/auth/register/create-account')}>Register</Text></Text>
+            <Text
+              style={{
+                fontFamily: fonts.medium,
+                color: colors.black,
+                fontSize: 14,
+              }}
+            >
+              Don't have an account yet?{" "}
+              <Text
+                style={{ color: colors.brand }}
+                onPress={() => router.replace("/auth/register/create-account")}
+              >
+                Register
+              </Text>
+            </Text>
           </View>
         </View>
       </View>
@@ -138,14 +150,14 @@ const styles = StyleSheet.create({
     marginTop: "5%",
     marginRight: "5%",
     marginLeft: "5%",
-    alignItems: 'center'
+    alignItems: "center",
   },
 
   text: {
     fontFamily: fonts.regular,
     color: colors.gray2,
     fontSize: 14,
-    textDecorationLine: 'underline'
+    textDecorationLine: "underline",
   },
 
   horizontalLine: {

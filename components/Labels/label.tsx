@@ -6,12 +6,11 @@ import {
   TouchableOpacity,
 } from "react-native";
 import React, { useState } from "react";
-import colors from "../../constants/colors";
+import colors from "../../constants/Colors";
 import fonts from "../../constants/fonts";
 import ILabel from "../../app/types/label";
 
 const Label: React.FC<ILabel> = (props: ILabel) => {
-
   const [isPasswordVisible, setIsPasswordVisiable] = useState(false);
 
   if (props.password) {

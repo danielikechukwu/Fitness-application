@@ -1,12 +1,11 @@
 import { StyleSheet, Text, Pressable } from "react-native";
 import React from "react";
-import colors from "../../constants/colors";
+import colors from "../../constants/Colors";
 import fonts from "../../constants/fonts";
 import { useRouter } from "expo-router";
 import IButton from "../../app/types/onboarding-button";
 
 const Buttons: React.FC<IButton> = (props: IButton) => {
-  
   const router = useRouter();
 
   return (
@@ -20,7 +19,7 @@ const Buttons: React.FC<IButton> = (props: IButton) => {
       <Text style={styles.buttonText}>{props.title}</Text>
     </Pressable>
   );
-}
+};
 
 export default Buttons;
 

@@ -1,11 +1,10 @@
 import { StyleSheet, View, TextInput, Image } from "react-native";
 import React, { useState } from "react";
-import colors from "../../constants/colors";
+import colors from "../../constants/Colors";
 import fonts from "../../constants/fonts";
 import ILabel from "../../app/types/label";
 
 const NumberLabel: React.FC<ILabel> = (props: ILabel) => {
-
   const [number, setNumber] = useState("");
 
   const handleInput = (text: string) => {

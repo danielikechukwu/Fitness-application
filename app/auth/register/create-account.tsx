@@ -5,11 +5,11 @@ import {
   TouchableOpacity,
   View,
   Image,
-  ScrollView
+  ScrollView,
 } from "react-native";
 import React, { useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
-import colors from "../../../constants/colors";
+import colors from "../../../constants/Colors";
 import fonts from "../../../constants/fonts";
 import { Button, Checkbox } from "react-native-paper";
 import Label from "../../../components/Labels/label";
@@ -24,8 +24,18 @@ const CreateAccount: React.FC = () => {
     <SafeAreaView style={styles.container}>
       <StatusBar backgroundColor="white" />
 
-      <ScrollView showsHorizontalScrollIndicator={false} showsVerticalScrollIndicator={false}>
-        <View style={{ flex: 1, alignItems: "center", marginTop: '3%', marginBottom: '15%' }}>
+      <ScrollView
+        showsHorizontalScrollIndicator={false}
+        showsVerticalScrollIndicator={false}
+      >
+        <View
+          style={{
+            flex: 1,
+            alignItems: "center",
+            marginTop: "3%",
+            marginBottom: "15%",
+          }}
+        >
           <View style={{ alignItems: "center" }}>
             <Text
               style={{

@@ -8,7 +8,7 @@ import {
 } from "react-native";
 import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
-import colors from "../../../constants/colors";
+import colors from "../../../constants/Colors";
 import fonts from "../../../constants/fonts";
 import Next from "../../../components/Buttons/next";
 import NumberLabel from "../../../components/Labels/weight-height-label";
@@ -31,7 +31,9 @@ const CompleteAccount: React.FC = () => {
 
           <View style={styles.textSection}>
             <Text style={styles.textHeading}>Let's complete your profile</Text>
-            <Text style={styles.textContent}>It will help us to know more about you!</Text>
+            <Text style={styles.textContent}>
+              It will help us to know more about you!
+            </Text>
           </View>
 
           {/* Complete form */}
@@ -107,13 +109,14 @@ const styles = StyleSheet.create({
   textHeading: {
     fontFamily: fonts.bold,
     fontSize: 22,
-    color: colors.black
+    color: colors.black,
   },
 
   textContent: {
-    color: colors.gray1, 
-    fontFamily: fonts.regular, 
-    fontSize: 14 },
+    color: colors.gray1,
+    fontFamily: fonts.regular,
+    fontSize: 14,
+  },
 
   form: {
     marginTop: "5%",

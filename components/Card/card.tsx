@@ -1,7 +1,7 @@
 import { Dimensions, StyleSheet, Text, View, Image } from "react-native";
 import React, { useState } from "react";
 import Carousel from "react-native-snap-carousel";
-import colors from "../../constants/colors";
+import colors from "../../constants/Colors";
 import fonts from "../../constants/fonts";
 
 const { width } = Dimensions.get("screen");
@@ -31,7 +31,6 @@ const data = [
 ];
 
 const CardCarousel: React.FC = () => {
-
   const [activeIndex, setActiveIndex] = useState(0);
 
   const renderItem = ({
@@ -40,11 +39,9 @@ const CardCarousel: React.FC = () => {
     item: { heading: string; image: string; content: string };
   }) => (
     <View style={styles.card}>
-        
-      <Image source={item.image} style={{alignSelf: 'center'}} />
-      
+      <Image source={item.image} style={{ alignSelf: "center" }} />
+
       <View style={styles.textContent}>
-        
         <Text style={styles.textHeading}>{item.heading}</Text>
         <View style={styles.horizontalLine} />
         <View style={styles.horizontalLine}></View>
@@ -112,6 +109,6 @@ const styles = StyleSheet.create({
   horizontalLine: {
     width: "20%",
     height: 0.5,
-    backgroundColor: colors.white
+    backgroundColor: colors.white,
   },
 } as const);

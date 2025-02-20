@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View } from "react-native";
 import React from "react";
-import colors from "../../constants/colors";
+import colors from "../../constants/Colors";
 import fonts from "../../constants/fonts";
 import WorkoutCard from "./workout-card";
 
@@ -18,7 +18,7 @@ const LatestWorkoutSection: React.FC = () => {
           style={{
             color: colors.black,
             fontFamily: fonts.bold,
-            fontSize: 16
+            fontSize: 16,
           }}
         >
           Latest Workout
@@ -27,7 +27,7 @@ const LatestWorkoutSection: React.FC = () => {
           style={{
             fontFamily: fonts.regular,
             fontSize: 14,
-            color: colors.gray1
+            color: colors.gray1,
           }}
         >
           See more
@@ -37,7 +37,6 @@ const LatestWorkoutSection: React.FC = () => {
       <View>
         <WorkoutCard />
       </View>
-
     </View>
   );
 };

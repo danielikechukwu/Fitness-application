@@ -8,7 +8,7 @@ import {
 } from "react-native";
 import React from "react";
 import fonts from "../../constants/fonts";
-import colors from "../../constants/colors";
+import colors from "../../constants/Colors";
 import OnboardingButton from "../../components/Buttons/onboarding-button";
 
 const SecondOnboardingScreen: React.FC = () => {

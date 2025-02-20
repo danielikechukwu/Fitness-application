@@ -1,7 +1,7 @@
 import { StatusBar, StyleSheet, Text, View } from "react-native";
 import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
-import colors from "../../../constants/colors";
+import colors from "../../../constants/Colors";
 import fonts from "../../../constants/fonts";
 import { Button } from "react-native-paper";
 import CardCarousel from "../../../components/Card/card";
@@ -12,14 +12,13 @@ const Benefit: React.FC = () => {
       <StatusBar backgroundColor={colors.white} />
 
       <View style={styles.content}>
-        
         <View style={styles.topTextSection}>
           <Text style={styles.heading}>What is your goal?</Text>
           <Text style={styles.text}>It will help us to choose a best</Text>
           <Text style={styles.text}>program for you</Text>
         </View>
 
-        <View style={{ height: '63%'}}>
+        <View style={{ height: "63%" }}>
           <CardCarousel />
         </View>
 
@@ -35,7 +34,6 @@ const Benefit: React.FC = () => {
             </Text>
           </Button>
         </View>
-
       </View>
     </SafeAreaView>
   );
@@ -46,7 +44,7 @@ export default Benefit;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: colors.white
+    backgroundColor: colors.white,
   },
 
   content: {
