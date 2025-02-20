@@ -10,7 +10,7 @@ const Activity: React.FC<void> = () => {
 
       <ScrollView>
         <View>
-            <Text>Hello, world</Text>
+          <Text>Hello, world</Text>
         </View>
       </ScrollView>
     </SafeAreaView>
@@ -23,6 +23,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: colors.white,
-    alignItems: 'center',
+    alignItems: "center",
   } as const,
 });

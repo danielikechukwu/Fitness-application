@@ -1,4 +1,4 @@
-export const colors = Object.freeze({
+export const colors = {
   brand: "#98B9FE",     
   secondary: "#DFA7F8",  
   black: "#1D1617", 
@@ -7,5 +7,5 @@ export const colors = Object.freeze({
   gray2: "#ADA4A5",
   gray3: "#DDDADA",
   border: "#D9EAFD"
-});
+} as const;
   
