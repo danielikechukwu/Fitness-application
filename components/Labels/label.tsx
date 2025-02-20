@@ -6,8 +6,8 @@ import {
   TouchableOpacity,
 } from "react-native";
 import React, { useState } from "react";
-import { colors } from "../../constants/colors";
-import { fonts } from "../../constants/fonts";
+import colors from "../../constants/colors";
+import fonts from "../../constants/fonts";
 import ILabel from "../../app/types/label";
 
 const Label: React.FC<ILabel> = (props: ILabel) => {

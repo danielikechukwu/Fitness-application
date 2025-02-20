@@ -1,8 +1,8 @@
 import { Dimensions, StyleSheet, Text, View, Image } from "react-native";
 import React, { useState } from "react";
 import Carousel from "react-native-snap-carousel";
-import { colors } from "../../constants/colors";
-import { fonts } from "../../constants/fonts";
+import colors from "../../constants/colors";
+import fonts from "../../constants/fonts";
 
 const { width } = Dimensions.get("screen");
 

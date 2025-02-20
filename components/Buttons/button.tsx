@@ -1,7 +1,7 @@
 import { StyleSheet, Text, Pressable } from "react-native";
 import React from "react";
-import { colors } from "../../constants/colors";
-import { fonts } from "../../constants/fonts";
+import colors from "../../constants/colors";
+import fonts from "../../constants/fonts";
 import { useRouter } from "expo-router";
 import IButton from "../../app/types/onboarding-button";
 
