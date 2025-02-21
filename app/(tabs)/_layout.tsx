@@ -1,4 +1,4 @@
-import { View, Text, Image } from "react-native";
+import { View, Text, Image, TouchableOpacity } from "react-native";
 import React, { useState } from "react";
 import { Tabs } from "expo-router";
 import { Ionicons } from "@expo/vector-icons";
@@ -23,7 +23,7 @@ const RootLayout = () => {
         options={{
           title: "",
           tabBarIcon: ({ focused }) => (
-            <View>
+            <TouchableOpacity activeOpacity={1}>
               {focused ? (
                 <Image
                   accessibilityLabel="home"
@@ -43,7 +43,7 @@ const RootLayout = () => {
                   source={require("../../assets/images/icons/dot.png")}
                 />
               )}
-            </View>
+            </TouchableOpacity>
           ),
         }}
       />
@@ -52,7 +52,7 @@ const RootLayout = () => {
         options={{
           title: "",
           tabBarIcon: ({ focused }) => (
-            <View>
+            <TouchableOpacity activeOpacity={1}>
               {focused ? (
                 <Image
                   accessibilityLabel="activity"
@@ -73,7 +73,7 @@ const RootLayout = () => {
                   source={require("../../assets/images/icons/dot.png")}
                 />
               )}
-            </View>
+            </TouchableOpacity>
           ),
         }}
       />
@@ -82,7 +82,8 @@ const RootLayout = () => {
         options={{
           title: "",
           tabBarIcon: (_) => (
-            <View
+            <TouchableOpacity
+              activeOpacity={1}
               style={{
                 width: 55,
                 height: 55,
@@ -98,7 +99,7 @@ const RootLayout = () => {
                 accessibilityLabel="search"
                 source={require("../../assets/images/icons/search.png")}
               />
-            </View>
+            </TouchableOpacity>
           ),
         }}
       />
@@ -107,7 +108,7 @@ const RootLayout = () => {
         options={{
           title: "",
           tabBarIcon: ({ focused }) => (
-            <View>
+            <TouchableOpacity activeOpacity={1}>
               {focused ? (
                 <Image
                   accessibilityLabel="camera"
@@ -127,7 +128,7 @@ const RootLayout = () => {
                   source={require("../../assets/images/icons/dot.png")}
                 />
               )}
-            </View>
+            </TouchableOpacity>
           ),
         }}
       />
@@ -136,7 +137,7 @@ const RootLayout = () => {
         options={{
           title: "",
           tabBarIcon: ({ focused }) => (
-            <View>
+            <TouchableOpacity activeOpacity={1}>
               {focused ? (
                 <Image
                   accessibilityLabel="profile"
@@ -156,7 +157,7 @@ const RootLayout = () => {
                   source={require("../../assets/images/icons/dot.png")}
                 />
               )}
-            </View>
+            </TouchableOpacity>
           ),
         }}
       />
