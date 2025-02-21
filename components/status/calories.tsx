@@ -66,7 +66,7 @@ const Calories: React.FC<Props> = (props: Props) => {
             cy="50"
             r="40"
             stroke={colors.border}
-            strokeWidth="9"
+            strokeWidth="13"
             fill="none"
           />
 
@@ -75,7 +75,7 @@ const Calories: React.FC<Props> = (props: Props) => {
             cy="50"
             r={radius}
             stroke={colors.brand}
-            strokeWidth="9"
+            strokeWidth="13"
             fill="none"
             strokeDasharray={circumference}
             strokeLinecap="round"

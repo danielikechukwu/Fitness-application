@@ -29,6 +29,7 @@ const WaterIntakeTimeLine: React.FC = () => {
       style={{
         marginTop: "4%",
         height: "88%",
+        flex: 1,
       }}
     >
       <FlatList
@@ -60,6 +61,7 @@ const WaterIntakeTimeLine: React.FC = () => {
         showsHorizontalScrollIndicator={false}
         showsVerticalScrollIndicator={false}
         style={{ maxHeight: 300 }}
+        contentContainerStyle={{ flexGrow: 1 }}
       />
     </View>
   );
