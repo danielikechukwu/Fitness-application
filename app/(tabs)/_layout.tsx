@@ -1,4 +1,4 @@
-import { View, Text, Image, TouchableOpacity } from "react-native";
+import { View, Text, Image, TouchableOpacity, Pressable } from "react-native";
 import React, { useState } from "react";
 import { Tabs } from "expo-router";
 import { Ionicons } from "@expo/vector-icons";
@@ -23,7 +23,7 @@ const RootLayout = () => {
         options={{
           title: "",
           tabBarIcon: ({ focused }) => (
-            <TouchableOpacity activeOpacity={1}>
+            <View>
               {focused ? (
                 <Image
                   accessibilityLabel="home"
@@ -43,7 +43,10 @@ const RootLayout = () => {
                   source={require("../../assets/images/icons/dot.png")}
                 />
               )}
-            </TouchableOpacity>
+            </View>
+          ),
+          tabBarButton: (props) => (
+            <Pressable {...props} android_ripple={{ color: "transparent" }} />
           ),
         }}
       />
@@ -52,7 +55,7 @@ const RootLayout = () => {
         options={{
           title: "",
           tabBarIcon: ({ focused }) => (
-            <TouchableOpacity activeOpacity={1}>
+            <View>
               {focused ? (
                 <Image
                   accessibilityLabel="activity"
@@ -73,7 +76,10 @@ const RootLayout = () => {
                   source={require("../../assets/images/icons/dot.png")}
                 />
               )}
-            </TouchableOpacity>
+            </View>
+          ),
+          tabBarButton: (props) => (
+            <Pressable {...props} android_ripple={{ color: "transparent" }} />
           ),
         }}
       />
@@ -82,8 +88,7 @@ const RootLayout = () => {
         options={{
           title: "",
           tabBarIcon: (_) => (
-            <TouchableOpacity
-              activeOpacity={1}
+            <View
               style={{
                 width: 55,
                 height: 55,
@@ -99,7 +104,10 @@ const RootLayout = () => {
                 accessibilityLabel="search"
                 source={require("../../assets/images/icons/search.png")}
               />
-            </TouchableOpacity>
+            </View>
+          ),
+          tabBarButton: (props) => (
+            <Pressable {...props} android_ripple={{ color: "transparent" }} />
           ),
         }}
       />
@@ -108,7 +116,7 @@ const RootLayout = () => {
         options={{
           title: "",
           tabBarIcon: ({ focused }) => (
-            <TouchableOpacity activeOpacity={1}>
+            <View>
               {focused ? (
                 <Image
                   accessibilityLabel="camera"
@@ -128,7 +136,10 @@ const RootLayout = () => {
                   source={require("../../assets/images/icons/dot.png")}
                 />
               )}
-            </TouchableOpacity>
+            </View>
+          ),
+          tabBarButton: (props) => (
+            <Pressable {...props} android_ripple={{ color: "transparent" }} />
           ),
         }}
       />
@@ -137,7 +148,7 @@ const RootLayout = () => {
         options={{
           title: "",
           tabBarIcon: ({ focused }) => (
-            <TouchableOpacity activeOpacity={1}>
+            <View>
               {focused ? (
                 <Image
                   accessibilityLabel="profile"
@@ -157,7 +168,10 @@ const RootLayout = () => {
                   source={require("../../assets/images/icons/dot.png")}
                 />
               )}
-            </TouchableOpacity>
+            </View>
+          ),
+          tabBarButton: (props) => (
+            <Pressable {...props} android_ripple={{ color: "transparent" }} />
           ),
         }}
       />
