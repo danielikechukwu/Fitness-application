@@ -8,10 +8,11 @@ import {
 } from "react-native";
 import React from "react";
 import WorkoutProgressBar from "./workout-progress-bar";
-import fonts from "@/constants/fonts";
-import colors from "@/constants/colors";
+import fonts from "../../constants/fonts";
+import colors from "../../constants/colors";
+import IWorkout from "@/app/types/workout";
 
-const WorkoutCard: React.FC = () => {
+const WorkoutCard: React.FC<IWorkout> = (props: IWorkout) => {
   return (
     <View style={styles.container}>
       <View
@@ -19,9 +20,8 @@ const WorkoutCard: React.FC = () => {
       >
         <View style={{ marginRight: "5%" }}>
           <Image
-            resizeMode="cover"
             source={require("../../assets/images/dashboard/first-workout-pic.png")}
-            style={{ width: 60, height: 60, objectFit: "fill" }}
+            style={{ width: 60, height: 60, objectFit: "contain" }}
           />
         </View>
         <View>
@@ -37,7 +37,7 @@ const WorkoutCard: React.FC = () => {
           <Text style={{ fontFamily: fonts.regular, fontSize: 12 }}>
             180 Calories Burn | 20minutes
           </Text>
-          <View style={{ marginTop: "3%" }}>
+          <View style={{ marginTop: "8%" }}>
             <WorkoutProgressBar />
           </View>
         </View>
@@ -49,7 +49,7 @@ const WorkoutCard: React.FC = () => {
             tintColor={colors.secondary}
             resizeMode="cover"
             source={require("../../assets/images/icons/arrow-right-circle.png")}
-            style={{ width: 22, height: 22, objectFit: "fill" }}
+            style={{ width: 26, height: 26, objectFit: "fill" }}
           />
         </Pressable>
       </View>
@@ -62,9 +62,7 @@ export default WorkoutCard;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    borderWidth: 1,
     marginTop: "3%",
-    borderColor: "red",
     flexDirection: "row",
     justifyContent: "space-between",
     paddingTop: "3%",

@@ -1,12 +1,15 @@
 import { StyleSheet, Text, View } from "react-native";
 import React from "react";
 import Svg, { Defs, Line, LinearGradient, Rect, Stop } from "react-native-svg";
-import Animated from "react-native-reanimated";
+import Animated, { SharedValue, useSharedValue } from "react-native-reanimated";
 import colors from "@/constants/colors";
 
 const AnimatedRect = Animated.createAnimatedComponent(Rect);
 
 const WorkoutProgressBar = () => {
+
+    const progress: SharedValue<number> = useSharedValue(0);
+
   return (
     <Svg width="130%" height={20} style={styles.progressBar}>
       {/* Define gradient */}
