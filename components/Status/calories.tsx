@@ -2,12 +2,13 @@ import { StyleSheet, Text, View, Image, Platform } from "react-native";
 import fonts from "../../constants/fonts";
 import colors from "../../constants/colors";
 import React, { useEffect } from "react";
-import Svg, { Circle, Rect } from "react-native-svg";
+import Svg, { Circle } from "react-native-svg";
 import Animated, {
   useSharedValue,
   useAnimatedProps,
   withTiming,
   interpolate,
+  SharedValue,
 } from "react-native-reanimated";
 
 interface Props {
@@ -17,7 +18,7 @@ interface Props {
 const AnimatedCircle = Animated.createAnimatedComponent(Circle);
 
 const Calories: React.FC<Props> = (props: Props) => {
-  const progress = useSharedValue(0);
+  const progress: SharedValue<number> = useSharedValue(0);
 
   const radius: number = 40;
 
