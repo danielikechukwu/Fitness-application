@@ -18,7 +18,7 @@ const LatestWorkoutSection: React.FC = () => {
           style={{
             color: colors.black,
             fontFamily: fonts.bold,
-            fontSize: 16,
+            fontSize: 18,
           }}
         >
           Latest Workout
@@ -46,6 +46,5 @@ export default LatestWorkoutSection;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    borderWidth: 1,
   },
 } as const);
