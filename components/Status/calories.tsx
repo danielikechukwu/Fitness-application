@@ -2,7 +2,7 @@ import { StyleSheet, Text, View, Image, Platform } from "react-native";
 import fonts from "../../constants/fonts";
 import colors from "../../constants/colors";
 import React, { useEffect } from "react";
-import Svg, { Circle } from "react-native-svg";
+import Svg, { Circle, Defs, LinearGradient, Stop } from "react-native-svg";
 import Animated, {
   useSharedValue,
   useAnimatedProps,
@@ -62,6 +62,21 @@ const Calories: React.FC<Props> = (props: Props) => {
 
       <View style={{ alignItems: "center", justifyContent: "center" }}>
         <Svg height="130" width="130" viewBox="0 0 100 100">
+          {/* Define gradient */}
+          <Defs>
+            <LinearGradient
+              id="progressGradient"
+              x1="0%"
+              y1="0%"
+              x2="100%"
+              y2="0%"
+            >
+              <Stop offset="0%" stopColor="#C58BF2" />
+              <Stop offset="100%" stopColor="#92A3FD" />
+            </LinearGradient>
+          </Defs>
+
+          {/* Background bar */}
           <Circle
             cx="50"
             cy="50"
@@ -71,11 +86,12 @@ const Calories: React.FC<Props> = (props: Props) => {
             fill="none"
           />
 
+          {/* Animate bar */}
           <AnimatedCircle
             cx="50"
             cy="50"
             r={radius}
-            stroke={colors.brand}
+            stroke="url(#progressGradient)" // Apply the gradient
             strokeWidth="13"
             fill="none"
             strokeDasharray={circumference}
@@ -91,17 +107,37 @@ const Calories: React.FC<Props> = (props: Props) => {
             position: "absolute",
           }}
         >
-          <View>
-            <View
-              style={{
-                width: 80,
-                height: 80,
-                alignItems: "center",
-                justifyContent: "center",
-                borderRadius: "50%",
-                backgroundColor: colors.brand,
-              }}
-            >
+          <Svg height={100} width={100}>
+            {/* Define gradient */}
+            <Defs>
+              <LinearGradient
+                id="progressGradient"
+                x1="100%"
+                y1="0%"
+                x2="0%"
+                y2="0%"
+              >
+                <Stop offset="0%" stopColor="#92A3FD" />
+                <Stop offset="100%" stopColor="#9DCEFF" />
+              </LinearGradient>
+            </Defs>
+
+            {/* Full Circle */}
+            <Circle cx={50} cy={50} r={39} fill="url(#progressGradient)" />
+
+            {/* Centered Text */}
+            <Text
+          x={50}
+          y={50}
+          textAnchor="middle"
+          alignmentBaseline="middle"
+          fontSize="18"
+          fill="white"
+          fontWeight="bold"
+        >
+          Text
+        </Text>
+            {/* <View style={{borderWidth: 1, width: 80, alignItems: 'center', justifyContent: 'center', marginTop: '33%', right: '-9%'  }}>
               <Text
                 style={{
                   color: colors.white,
@@ -112,8 +148,8 @@ const Calories: React.FC<Props> = (props: Props) => {
               >
                 {990 - props.calorieCount} kCal left
               </Text>
-            </View>
-          </View>
+            </View> */}
+          </Svg>
         </View>
       </View>
     </View>

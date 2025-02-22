@@ -4,7 +4,6 @@ import {
   View,
   Image,
   Pressable,
-  ViewBase,
   Platform,
 } from "react-native";
 import React from "react";
@@ -15,17 +14,30 @@ import colors from "@/constants/colors";
 const WorkoutCard: React.FC = () => {
   return (
     <View style={styles.container}>
-      <View style={{ flexDirection: "row", alignItems: 'center' }}>
+      <View
+        style={{ flexDirection: "row", alignItems: "center", width: "94%" }}
+      >
         <View style={{ marginRight: "5%" }}>
           <Image
+            resizeMode="cover"
             source={require("../../assets/images/dashboard/first-workout-pic.png")}
-            style={{ width: 60, height: 60, objectFit: "cover" }}
+            style={{ width: 60, height: 60, objectFit: "fill" }}
           />
         </View>
         <View>
-          <Text style={{fontFamily: fonts.semiBold, color: colors.black, fontSize: 14}}>Fullbody Workout</Text>
-          <Text style={{fontFamily: fonts.regular, fontSize: 12}}>180 Calories Burn | 20minutes</Text>
-          <View>
+          <Text
+            style={{
+              fontFamily: fonts.semiBold,
+              color: colors.black,
+              fontSize: 14,
+            }}
+          >
+            Fullbody Workout
+          </Text>
+          <Text style={{ fontFamily: fonts.regular, fontSize: 12 }}>
+            180 Calories Burn | 20minutes
+          </Text>
+          <View style={{ marginTop: "3%" }}>
             <WorkoutProgressBar />
           </View>
         </View>
@@ -34,8 +46,10 @@ const WorkoutCard: React.FC = () => {
       <View>
         <Pressable onPress={() => console.log("View details")}>
           <Image
-            source={require("../../assets/images/dashboard/workout-btn.png")}
-            style={{ width: 25, height: 25, objectFit: "cover" }}
+            tintColor={colors.secondary}
+            resizeMode="cover"
+            source={require("../../assets/images/icons/arrow-right-circle.png")}
+            style={{ width: 22, height: 22, objectFit: "fill" }}
           />
         </Pressable>
       </View>
@@ -56,7 +70,7 @@ const styles = StyleSheet.create({
     paddingTop: "3%",
     paddingBottom: "3%",
     paddingRight: "4%",
-    paddingLeft: "4%",    
+    paddingLeft: "4%",
     alignItems: "center",
     backgroundColor: colors.white,
     borderRadius: 15,
@@ -68,8 +82,8 @@ const styles = StyleSheet.create({
         shadowRadius: 4,
       },
       android: {
-        elevation: 10
-      }
-    })
+        elevation: 10,
+      },
+    }),
   },
 } as const);
