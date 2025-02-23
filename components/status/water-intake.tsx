@@ -8,7 +8,7 @@ import WaterIntakeTimeLine from "./water-intake-time-line";
 const WaterIntake: React.FC = () => {
   return (
     <View style={styles.container}>
-      <View style={{ marginRight: "5%" }}>
+      <View style={{ marginRight: "5%", marginLeft: '5%' }}>
         <WaterIntakeGraph waterIntake={1900} />
       </View>
 

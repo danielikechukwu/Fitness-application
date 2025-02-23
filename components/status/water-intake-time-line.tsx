@@ -28,8 +28,7 @@ const WaterIntakeTimeLine: React.FC = () => {
     <View
       style={{
         marginTop: "4%",
-        height: "88%",
-        flex: 1,
+        flex: 1
       }}
     >
       <FlatList
@@ -45,7 +44,7 @@ const WaterIntakeTimeLine: React.FC = () => {
 
               {/* Dashed Line */}
               {!item.isCurrent &&
-                [...Array(5)].map((_, index) => (
+                [...Array(4)].map((_, index) => (
                   <View key={index} style={styles.dashedLine} />
                 ))}
             </View>
@@ -60,7 +59,7 @@ const WaterIntakeTimeLine: React.FC = () => {
         nestedScrollEnabled={true}
         showsHorizontalScrollIndicator={false}
         showsVerticalScrollIndicator={false}
-        style={{ maxHeight: 300 }}
+        style={{ maxHeight: 290 }}
         contentContainerStyle={{ flexGrow: 1 }}
       />
     </View>

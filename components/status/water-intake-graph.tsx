@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { View, Text } from "react-native";
+import { View, Text, StyleSheet } from "react-native";
 import Svg, { Defs, LinearGradient, Rect, Stop } from "react-native-svg";
 import Animated, {
   useSharedValue,
@@ -29,9 +29,8 @@ const WaterIntakeGraph: React.FC<{ waterIntake: number }> = ({
   });
 
   return (
-    <View style={{ alignItems: "center", justifyContent: "center" }}>
-      <Svg viewBox="0 20 50 45" height={400} width={50}>
-
+    <View style={styles.container}>
+      <Svg height={400} width={50}>
         {/* Define gradient */}
         <Defs>
           <LinearGradient
@@ -46,30 +45,40 @@ const WaterIntakeGraph: React.FC<{ waterIntake: number }> = ({
           </LinearGradient>
         </Defs>
 
-        {/* Background */}
+        {/* Background bar */}
         <Rect
-          x="5"
-          y="20"
-          width="35"
+          width={35}
           height="370"
+          rx={20}
+          ry={20}
           fill={colors.gray3}
-          rx="20"
+          x={0}
+          y={19}
         />
 
-        {/* Animated Water Level */}
+        {/* Animated bar */}
         <AnimatedRect
-          x="5"
-          width="35"
-          fill="url(#progressGradient)" // Apply the gradient
-          rx="20"
+          width={35}
+          rx={20}
+          ry={20}
+          fill="url(#progressGradient)"
+          x={0}
+          y={0}
           animatedProps={animatedProps}
         />
       </Svg>
-      {/*<Text style={{ position: "absolute", top: 160, fontSize: 18, fontWeight: "bold" }}>
-        {waterIntake} ml
-      </Text> */}
     </View>
   );
 };
 
 export default WaterIntakeGraph;
+
+const styles = StyleSheet.create({
+  container: {
+    width: 35,
+    height: "100%",
+    justifyContent: "center",
+    alignItems: "center",
+    flex: 1
+  },
+});
