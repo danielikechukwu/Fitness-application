@@ -1,5 +1,5 @@
-import { FlatList, StyleSheet, Text, View } from "react-native";
-import React from "react";
+import { FlatList, StyleSheet, Text, View, Animated } from "react-native";
+import React, { useState } from "react";
 import colors from "../../constants/colors";
 import fonts from "../../constants/fonts";
 
@@ -24,13 +24,28 @@ const waterIntakeData: Props[] = [
 ];
 
 const WaterIntakeTimeLine: React.FC = () => {
+  const [showTopShadow, setShowTopShadow] = useState<boolean>(false);
+  const [showBottomShadow, setShowBottomShadow] = useState<boolean>(true);
+
+  const scrollY: Animated.Value = new Animated.Value(0);
+
+  const handleScroll: (event: any) => void = (event: any) => {
+    const offsetY = event.nativeEvent.contentOffset.y;
+    const contentHeight = event.nativeEvent.contentSize.height;
+    const layoutHeight = event.nativeEvent.layoutMeasurement.height;
+
+    setShowTopShadow(offsetY > 10); // Show top shadow when scrolled down a bit
+    setShowBottomShadow(offsetY + layoutHeight < contentHeight - 10); // Hide bottom shadow when at the bottom
+  };
+
   return (
     <View
       style={{
         marginTop: "4%",
-        flex: 1
+        flex: 1,
       }}
     >
+      {showTopShadow && <View style={[styles.shadow, styles.topShadow]} />}
       <FlatList
         data={waterIntakeData}
         keyExtractor={(_, index) => index.toString()}
@@ -61,7 +76,17 @@ const WaterIntakeTimeLine: React.FC = () => {
         showsVerticalScrollIndicator={false}
         style={{ maxHeight: 290 }}
         contentContainerStyle={{ flexGrow: 1 }}
+        onScroll={Animated.event(
+          [{ nativeEvent: { contentOffset: { y: scrollY } } }],
+          {
+            useNativeDriver: false,
+            listener: handleScroll,
+          }
+        )}
       />
+      {showBottomShadow && (
+        <View style={[styles.shadow, styles.bottomShadow]} />
+      )}
     </View>
   );
 };
@@ -110,5 +135,22 @@ const styles = StyleSheet.create({
     fontSize: 14,
     fontFamily: fonts.bold,
     color: colors.secondary,
+  },
+
+  shadow: {
+    position: "absolute",
+    left: 0,
+    right: 0,
+    height: 30,
+    backgroundColor: "rgba(0,0,0,0.2)",
+    zIndex: 1,
+  },
+
+  topShadow: {
+    top: 0,
+  },
+
+  bottomShadow: {
+    bottom: 0,
   },
 } as const);
