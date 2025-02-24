@@ -26,17 +26,15 @@ const CaloriesCircle = ({ caloriesCount }: { caloriesCount: number }) => {
 
       {/* Centered Text */}
       <Text
-        x={33}
+        x={50}
         y={45}
         textAnchor="middle"
         alignmentBaseline="middle"
         fontSize="14"
         fontFamily={fonts.regular}
         fill={colors.white}
-        wordSpacing={30}
       >
-        {/* {990 - props.calorieCount} kCal left */}
-        {caloriesCount ? 990 - caloriesCount : 0} kCal
+        {caloriesCount ? 990 - caloriesCount : 0}
       </Text>
       <Text
         x={50}
@@ -47,8 +45,7 @@ const CaloriesCircle = ({ caloriesCount }: { caloriesCount: number }) => {
         fontFamily={fonts.regular}
         fill={colors.white}
       >
-     
-        left
+        kCal left
       </Text>
     </Svg>
   );

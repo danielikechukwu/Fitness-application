@@ -108,7 +108,7 @@ const Calories: React.FC<Props> = (props: Props) => {
             position: "absolute",
           }}
         >
-          <CaloriesCircle />
+          <CaloriesCircle caloriesCount={props.calorieCount} />
 
         </View>
       </View>

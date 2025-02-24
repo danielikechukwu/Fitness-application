@@ -1,7 +1,6 @@
-import { View, Text, Image, TouchableOpacity, Pressable } from "react-native";
-import React, { useState } from "react";
+import { View, Image, Pressable } from "react-native";
+import React from "react";
 import { Tabs } from "expo-router";
-import { Ionicons } from "@expo/vector-icons";
 import colors from "../../constants/colors";
 
 const RootLayout = () => {
