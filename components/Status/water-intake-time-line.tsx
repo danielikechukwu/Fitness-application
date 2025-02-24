@@ -45,7 +45,7 @@ const WaterIntakeTimeLine: React.FC = () => {
         flex: 1,
       }}
     >
-      {showTopShadow && <View style={[styles.shadow, styles.topShadow]} />}
+      {/* {showTopShadow && <View style={[styles.shadow, styles.topShadow]} />} */}
       <FlatList
         data={waterIntakeData}
         keyExtractor={(_, index) => index.toString()}
@@ -84,9 +84,9 @@ const WaterIntakeTimeLine: React.FC = () => {
           }
         )}
       />
-      {showBottomShadow && (
+      {/* {showBottomShadow && (
         <View style={[styles.shadow, styles.bottomShadow]} />
-      )}
+      )} */}
     </View>
   );
 };

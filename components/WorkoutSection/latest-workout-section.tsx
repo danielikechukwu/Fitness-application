@@ -3,8 +3,26 @@ import React from "react";
 import colors from "../../constants/colors";
 import fonts from "../../constants/fonts";
 import WorkoutCard from "./workout-card";
+import IWorkout from "../../app/types/workout";
 
 const LatestWorkoutSection: React.FC = () => {
+  const workouts: IWorkout[] = [
+    {
+      workouts: "Fullbody Workout",
+      totalCalories: 0,
+      burntCalories: 180,
+      imagePath: "",
+      time: 20,
+    },
+    {
+      workouts: "Lowerbody Workout",
+      totalCalories: 0,
+      burntCalories: 200,
+      imagePath: "",
+      time: 30,
+    },
+  ];
+
   return (
     <View style={styles.container}>
       <View
@@ -35,7 +53,7 @@ const LatestWorkoutSection: React.FC = () => {
       </View>
 
       <View>
-        <WorkoutCard />
+        {/* <WorkoutCard /> */}
       </View>
     </View>
   );
