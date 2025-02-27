@@ -1,13 +1,13 @@
 import {
-  StatusBar,
+  SafeAreaView,
   StyleSheet,
   Text,
   View,
   Image,
   ScrollView,
+  useColorScheme,
 } from "react-native";
 import React from "react";
-import { SafeAreaView } from "react-native-safe-area-context";
 import colors from "../../../constants/colors";
 import fonts from "../../../constants/fonts";
 import Next from "../../../components/Buttons/next";
@@ -15,11 +15,15 @@ import NumberLabel from "../../../components/Labels/weight-height-label";
 import Label from "../../../components/Labels/label";
 import DatePicker from "../../../components/Labels/date-picker";
 import DropDown from "../../../components/Labels/dropdown";
+import { StatusBar } from "expo-status-bar";
 
 const CompleteAccount: React.FC = () => {
+
+  const colorScheme = useColorScheme();
+  
   return (
     <SafeAreaView style={styles.container}>
-      <StatusBar backgroundColor="white" />
+      <StatusBar style={colorScheme === 'dark' ? 'dark' : 'dark'} />
 
       <ScrollView>
         <View>

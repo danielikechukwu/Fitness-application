@@ -1,16 +1,18 @@
-import { StatusBar, StyleSheet, Text, View } from "react-native";
+import { SafeAreaView, StyleSheet, Text, useColorScheme, View } from "react-native";
 import React from "react";
-import { SafeAreaView } from "react-native-safe-area-context";
 import fonts from "../../constants/fonts";
 import colors from "../../constants/colors";
 import Buttons from "../../components/Buttons/button";
+import { StatusBar } from "expo-status-bar";
 
 const FirstOnboardingScreen: React.FC = () => {
+
+  const colorScheme = useColorScheme();
   const buttonTitle: string = "Get Started";
 
   return (
     <SafeAreaView style={styles.container}>
-      <StatusBar backgroundColor="white" />
+      <StatusBar style={colorScheme === 'dark' ? 'dark' : 'dark'} />
 
       <View style={{ flex: 1, justifyContent: "center" }}>
         <View

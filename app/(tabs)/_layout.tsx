@@ -33,6 +33,7 @@ const RootLayout = () => {
                   tintColor={colors.gray1}
                   accessibilityLabel="home"
                   source={require("../../assets/images/icons/home.png")}
+                  
                 />
               )}
               {focused && (

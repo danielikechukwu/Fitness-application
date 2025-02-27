@@ -1,26 +1,19 @@
 import { FlatList, StyleSheet, Text, View, Animated } from "react-native";
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import colors from "../../constants/colors";
 import fonts from "../../constants/fonts";
+import IWaterIntakeTimeLine from "../../types/water-intake-timeline";
 
-interface Props {
-  time: string;
-  amount: string;
-  isCurrent?: boolean;
-}
-
-const waterIntakeData: Props[] = [
-  { time: "6am - 8am", amount: "600ml" },
-  { time: "9am - 11am", amount: "500ml" },
-  { time: "11am - 2pm", amount: "1000ml" },
-  { time: "2pm - 4pm", amount: "700ml" },
-
-  { time: "6am - 8am", amount: "600ml" },
-  { time: "9am - 11am", amount: "500ml" },
-  { time: "11am - 2pm", amount: "1000ml" },
-  { time: "2pm - 4pm", amount: "700ml" },
-
-  { time: "4pm - now", amount: "900ml", isCurrent: true },
+const waterIntakeTimeLine: IWaterIntakeTimeLine[] = [
+  { id: 1, time: "6am - 8am", amount: "600ml" },
+  { id: 2, time: "9am - 11am", amount: "500ml" },
+  { id: 3, time: "11am - 2pm", amount: "1000ml" },
+  { id: 4, time: "2pm - 4pm", amount: "700ml" },
+  { id: 5, time: "6am - 8am", amount: "600ml" },
+  { id: 6, time: "9am - 11am", amount: "500ml" },
+  { id: 7, time: "11am - 2pm", amount: "1000ml" },
+  { id: 8, time: "2pm - 4pm", amount: "700ml" },
+  { id: 9, time: "4pm - now", amount: "900ml", isCurrent: true },
 ];
 
 const WaterIntakeTimeLine: React.FC = () => {
@@ -42,13 +35,12 @@ const WaterIntakeTimeLine: React.FC = () => {
     <View
       style={{
         marginTop: "4%",
-        flex: 1,
       }}
     >
       {/* {showTopShadow && <View style={[styles.shadow, styles.topShadow]} />} */}
       <FlatList
-        data={waterIntakeData}
-        keyExtractor={(_, index) => index.toString()}
+        data={waterIntakeTimeLine}
+        keyExtractor={(item, index) => item.id.toString()}
         renderItem={({ item }) => (
           <View style={styles.container}>
             <View>
@@ -59,7 +51,7 @@ const WaterIntakeTimeLine: React.FC = () => {
 
               {/* Dashed Line */}
               {!item.isCurrent &&
-                [...Array(4)].map((_, index) => (
+                [...Array(5)].map((_, index) => (
                   <View key={index} style={styles.dashedLine} />
                 ))}
             </View>
@@ -71,7 +63,7 @@ const WaterIntakeTimeLine: React.FC = () => {
             </View>
           </View>
         )}
-        nestedScrollEnabled={true}
+        nestedScrollEnabled={true} // Allows FlatList to scroll inside ScrollView
         showsHorizontalScrollIndicator={false}
         showsVerticalScrollIndicator={false}
         style={{ maxHeight: 290 }}

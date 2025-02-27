@@ -45,7 +45,7 @@ const CaloriesCircle = ({ caloriesCount }: { caloriesCount: number }) => {
         fontFamily={fonts.regular}
         fill={colors.white}
       >
-        kCal left
+       kCal left
       </Text>
     </Svg>
   );

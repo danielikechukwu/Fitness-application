@@ -1,21 +1,24 @@
 import {
-  StatusBar,
+  SafeAreaView,
   StyleSheet,
   Text,
   TouchableOpacity,
   View,
   Image,
   ScrollView,
+  useColorScheme,
 } from "react-native";
 import React, { useState } from "react";
-import { SafeAreaView } from "react-native-safe-area-context";
 import colors from "../../../constants/colors";
 import fonts from "../../../constants/fonts";
 import { Button, Checkbox } from "react-native-paper";
 import Label from "../../../components/Labels/label";
 import { useRouter } from "expo-router";
+import { StatusBar } from "expo-status-bar";
 
 const CreateAccount: React.FC = () => {
+
+  const colorScheme = useColorScheme();
   const [checked, setChecked] = useState<boolean>(false);
 
   const router = useRouter();

@@ -1,20 +1,24 @@
 import {
   Image,
   SafeAreaView,
-  StatusBar,
   StyleSheet,
   Text,
+  useColorScheme,
   View,
 } from "react-native";
 import React from "react";
 import fonts from "../../constants/fonts";
 import colors from "../../constants/colors";
 import OnboardingButton from "../../components/Buttons/onboarding-button";
+import { StatusBar } from "expo-status-bar";
 
 const ThirdOnboardingScreen: React.FC = () => {
+
+  const colorScheme = useColorScheme();
+
   return (
     <SafeAreaView style={styles.container}>
-      <StatusBar backgroundColor="white" />
+      <StatusBar style={colorScheme === 'dark' ? 'dark' : 'dark'} />
 
       <View>
         <Image

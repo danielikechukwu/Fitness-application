@@ -1,12 +1,15 @@
-import { StatusBar, StyleSheet, Text, View } from "react-native";
+import { SafeAreaView, StyleSheet, Text, useColorScheme, View } from "react-native";
 import React from "react";
-import { SafeAreaView } from "react-native-safe-area-context";
 import colors from "../../../constants/colors";
 import fonts from "../../../constants/fonts";
 import { Button } from "react-native-paper";
 import CardCarousel from "../../../components/Card/card";
+import { StatusBar } from "expo-status-bar";
 
 const Benefit: React.FC = () => {
+
+  const colorScheme = useColorScheme();
+
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar backgroundColor={colors.white} />

@@ -45,7 +45,7 @@ const WaterIntake: React.FC = () => {
             Real time updates
           </Text>
 
-          <View>
+          <View style={{flex: 1}}>
             <WaterIntakeTimeLine />
           </View>
         </View>

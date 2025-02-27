@@ -3,7 +3,7 @@ import React from "react";
 import colors from "../../constants/colors";
 import fonts from "../../constants/fonts";
 import WorkoutCard from "./workout-card";
-import IWorkout from "../../app/types/workout";
+import IWorkout from "../../types/workout";
 
 const LatestWorkoutSection: React.FC = () => {
   const workouts: IWorkout[] = [
@@ -52,9 +52,7 @@ const LatestWorkoutSection: React.FC = () => {
         </Text>
       </View>
 
-      <View>
-        {/* <WorkoutCard /> */}
-      </View>
+      <View>{/* <WorkoutCard /> */}</View>
     </View>
   );
 };

@@ -1,11 +1,11 @@
 import {
-  StatusBar,
   StyleSheet,
   Text,
   View,
   ScrollView,
   Image,
   Pressable,
+  useColorScheme,
 } from "react-native";
 import React, { useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -18,13 +18,18 @@ import WaterIntake from "../../components/Status/water-intake";
 import Calories from "../../components/Status/calories";
 import LatestWorkoutSection from "../../components/WorkoutSection/latest-workout-section";
 import WorkoutSection from "../../components/WorkoutSection/workout-section";
+import { StatusBar } from "expo-status-bar";
 
 const Home: React.FC = () => {
+
+  const colorScheme = useColorScheme();
+
   const [notification, setNotification] = useState<boolean>(false);
 
   return (
     <SafeAreaView style={styles.container}>
-      <StatusBar backgroundColor={colors.white} />
+      
+      <StatusBar style={colorScheme === 'dark' ? 'dark' : 'dark'}  />
 
       <ScrollView
         showsHorizontalScrollIndicator={false}
@@ -44,7 +49,8 @@ const Home: React.FC = () => {
                 Welcome Back,
               </Text>
               <Text style={{ fontFamily: fonts.bold, fontSize: 22 }}>
-                Stefani Wong              </Text>
+                Stefani Wong{" "}
+              </Text>
             </View>
             <Pressable
               style={styles.notification}

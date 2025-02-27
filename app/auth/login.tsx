@@ -1,27 +1,30 @@
 import {
-  StatusBar,
+  SafeAreaView,
   StyleSheet,
   Text,
   TouchableOpacity,
   View,
   Image,
+  useColorScheme,
 } from "react-native";
 import React, { useState } from "react";
-import { SafeAreaView } from "react-native-safe-area-context";
 import colors from "../../constants/colors";
 import fonts from "../../constants/fonts";
 import Label from "../../components/Labels/label";
 import LoginBtn from "../../components/Buttons/login";
 import { useRouter } from "expo-router";
+import { StatusBar } from "expo-status-bar";
 
 const Login: React.FC = () => {
+
+  const colorScheme = useColorScheme();
   const [checked, setChecked] = useState<boolean>(false);
 
   const router = useRouter();
 
   return (
     <SafeAreaView style={styles.container}>
-      <StatusBar backgroundColor="white" />
+      <StatusBar style={colorScheme === 'dark' ? 'dark' : 'dark'} />
 
       <View style={{ flex: 1, alignItems: "center", marginTop: "4%" }}>
         <View style={{ alignItems: "center" }}>

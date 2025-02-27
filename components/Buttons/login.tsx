@@ -3,7 +3,7 @@ import React from "react";
 import colors from "../../constants/colors";
 import fonts from "../../constants/fonts";
 import { useRouter } from "expo-router";
-import IButton from "../../app/types/onboarding-button";
+import IButton from "../../types/onboarding-button";
 
 const LoginBtn: React.FC<IButton> = (props: IButton) => {
   const router = useRouter();

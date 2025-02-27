@@ -10,7 +10,7 @@ import React from "react";
 import WorkoutProgressBar from "./workout-progress-bar";
 import fonts from "../../constants/fonts";
 import colors from "../../constants/colors";
-import IWorkout from "@/app/types/workout";
+import IWorkout from "@/types/workout";
 
 const WorkoutCard: React.FC<IWorkout> = (props: IWorkout) => {
   return (
