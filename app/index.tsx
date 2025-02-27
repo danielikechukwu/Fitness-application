@@ -1,30 +1,40 @@
 import {
-  Button,
   StyleSheet,
   Text,
   View,
   ScrollView,
   useColorScheme,
-  SafeAreaView,
 } from "react-native";
-import React, { useEffect } from "react";
-import { useRouter } from "expo-router";
+import React from "react";
+import { SafeAreaView } from "react-native-safe-area-context";
 import { StatusBar } from "expo-status-bar";
+import colors from "../constants/colors";
+import { Button } from "react-native-paper";
+import { router } from "expo-router";
 
-const Index: React.FC = () => {
+const Activity: React.FC<void> = () => {
   const colorScheme = useColorScheme();
 
-  const router = useRouter();
-
   return (
-    <SafeAreaView>
+    <SafeAreaView style={styles.container}>
+      <StatusBar style={colorScheme === "dark" ? "dark" : "dark"} />
+
       <ScrollView>
-        <StatusBar style={colorScheme === "dark" ? "dark" : "dark"} />
-        <Text>Welcome</Text>
-        <Button title="Next" onPress={() => router.push("/(tabs)/home")} />
+        <View>
+          <Button mode="contained" onPress={() => router.push("/(tabs)/home")}>
+            Welcome
+          </Button>
+        </View>
       </ScrollView>
     </SafeAreaView>
   );
 };
 
-export default Index;
+export default Activity;
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: colors.white,
+  } as const,
+});

@@ -14,7 +14,7 @@ const Camera: React.FC<void> = () => {
 
       <ScrollView>
         <View>
-          <Text>Hello, world</Text>
+          <Text>Hello, Camera</Text>
         </View>
       </ScrollView>
     </SafeAreaView>

@@ -6,6 +6,7 @@ import {
   Image,
   Pressable,
   useColorScheme,
+  FlatList,
 } from "react-native";
 import React, { useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -19,6 +20,7 @@ import Calories from "../../components/Status/calories";
 import LatestWorkoutSection from "../../components/WorkoutSection/latest-workout-section";
 import WorkoutSection from "../../components/WorkoutSection/workout-section";
 import { StatusBar } from "expo-status-bar";
+import IWaterIntakeTimeLine from "@/types/water-intake-timeline";
 
 const Home: React.FC = () => {
 
@@ -177,6 +179,7 @@ const Home: React.FC = () => {
           </View>
         </View>
       </ScrollView>
+
     </SafeAreaView>
   );
 };

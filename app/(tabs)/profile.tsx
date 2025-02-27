@@ -7,7 +7,7 @@ import { StatusBar } from "expo-status-bar";
 const Profile: React.FC = () => {
 
   const colorScheme = useColorScheme();
-  
+
   return (
     <SafeAreaView style={styles.container}>
 
@@ -15,7 +15,7 @@ const Profile: React.FC = () => {
 
       <ScrollView>
         <View>
-          <Text>Hello, world</Text>
+          <Text>Hello, Profile</Text>
         </View>
       </ScrollView>
     </SafeAreaView>

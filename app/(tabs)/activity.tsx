@@ -10,12 +10,12 @@ const Activity: React.FC<void> = () => {
 
   return (
     <SafeAreaView style={styles.container}>
-      
+
       <StatusBar style={colorScheme === 'dark' ? 'dark' : 'dark'} />
 
       <ScrollView>
         <View>
-          <Text>Hello, world</Text>
+          <Text>Hello, Activity</Text>
         </View>
       </ScrollView>
     </SafeAreaView>
