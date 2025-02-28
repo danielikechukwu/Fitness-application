@@ -12,7 +12,7 @@ import colors from "../constants/colors";
 import { Button } from "react-native-paper";
 import { router } from "expo-router";
 
-const Activity: React.FC<void> = () => {
+const Index: React.FC<void> = () => {
   const colorScheme = useColorScheme();
 
   return (
@@ -30,7 +30,7 @@ const Activity: React.FC<void> = () => {
   );
 };
 
-export default Activity;
+export default Index;
 
 const styles = StyleSheet.create({
   container: {

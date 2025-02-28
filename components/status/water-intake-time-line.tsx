@@ -35,6 +35,7 @@ const WaterIntakeTimeLine: React.FC = () => {
     <View
       style={{
         marginTop: "4%",
+        flex: 1
       }}
     >
       {/* {showTopShadow && <View style={[styles.shadow, styles.topShadow]} />} */}
@@ -63,11 +64,12 @@ const WaterIntakeTimeLine: React.FC = () => {
             </View>
           </View>
         )}
-        nestedScrollEnabled={true} // Allows FlatList to scroll inside ScrollView
         showsHorizontalScrollIndicator={false}
         showsVerticalScrollIndicator={false}
+        nestedScrollEnabled={true}
         style={{ maxHeight: 290 }}
-        contentContainerStyle={{ flexGrow: 1 }}
+        onEndReached={() => console.log('End Reached')}
+        keyboardShouldPersistTaps='handled'
         onScroll={Animated.event(
           [{ nativeEvent: { contentOffset: { y: scrollY } } }],
           {

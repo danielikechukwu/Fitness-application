@@ -8,7 +8,7 @@ import {
   useColorScheme,
   FlatList,
 } from "react-native";
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import colors from "../../constants/colors";
 import fonts from "../../constants/fonts";
@@ -37,6 +37,7 @@ const Home: React.FC = () => {
         showsHorizontalScrollIndicator={false}
         showsVerticalScrollIndicator={false}
         contentContainerStyle={{ paddingBottom: 50, flexGrow: 1 }}
+        nestedScrollEnabled
       >
         <View>
           <View style={styles.header}>
