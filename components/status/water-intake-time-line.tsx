@@ -25,42 +25,35 @@ const waterIntakeTimeLine: IWaterIntakeTimeLine[] = [
 
 const WaterIntakeTimeLine: React.FC = () => {
   return (
-    <View
-      style={{
-        marginTop: "4%",
-        flex: 1,
-      }}
-    >
-      <ScrollView
-        showsHorizontalScrollIndicator={false}
-        showsVerticalScrollIndicator={false}
-        nestedScrollEnabled
-        style={{ maxHeight: 290 }}
-      >
-        {waterIntakeTimeLine.map((item, index) => (
-          <View key={index} style={styles.container}>
-            <View>
-              {/* Dots with gradient effect */}
-              <View
-                style={[styles.dot, item.isCurrent && styles.currentDot]}
-              ></View>
+    <ScrollView
+    showsHorizontalScrollIndicator={false}
+    showsVerticalScrollIndicator={false}
+    nestedScrollEnabled
+    style={{ maxHeight: 290 }}
+  >
+    {waterIntakeTimeLine.map((item: IWaterIntakeTimeLine, index: number) => (
+      <View key={index} style={styles.container}>
+        <View>
+          {/* Dots with gradient effect */}
+          <View
+            style={[styles.dot, item.isCurrent && styles.currentDot]}
+          ></View>
 
-              {/* Dashed Line */}
-              {!item.isCurrent &&
-                [...Array(5)].map((_, index) => (
-                  <View key={index} style={styles.dashedLine} />
-                ))}
-            </View>
+          {/* Dashed Line */}
+          {!item.isCurrent &&
+            [...Array(5)].map((_, index) => (
+              <View key={index} style={styles.dashedLine} />
+            ))}
+        </View>
 
-            {/* Time and Amount */}
-            <View style={styles.textContainer}>
-              <Text style={styles.timeText}>{item.time}</Text>
-              <Text style={styles.amountText}>{item.amount}</Text>
-            </View>
-          </View>
-        ))}
-      </ScrollView>
-    </View>
+        {/* Time and Amount */}
+        <View style={styles.textContainer}>
+          <Text style={styles.timeText}>{item.time}</Text>
+          <Text style={styles.amountText}>{item.amount}</Text>
+        </View>
+      </View>
+    ))}
+  </ScrollView>
   );
 };
 

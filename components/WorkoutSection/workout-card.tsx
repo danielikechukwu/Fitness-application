@@ -20,7 +20,7 @@ const WorkoutCard: React.FC<IWorkout> = (props: IWorkout) => {
       >
         <View style={{ marginRight: "5%" }}>
           <Image
-            source={require("../../assets/images/dashboard/first-workout-pic.png")}
+            source={props.imagePath}
             style={{ width: 60, height: 60, objectFit: "contain" }}
           />
         </View>
@@ -32,10 +32,10 @@ const WorkoutCard: React.FC<IWorkout> = (props: IWorkout) => {
               fontSize: 14,
             }}
           >
-            Fullbody Workout
+            {props.workouts}
           </Text>
           <Text style={{ fontFamily: fonts.regular, fontSize: 12 }}>
-            180 Calories Burn | 20minutes
+            {props.burntCalories} Calories Burn | {props.time}minutes
           </Text>
           <View style={{ marginTop: "8%" }}>
             <WorkoutProgressBar />
@@ -62,7 +62,7 @@ export default WorkoutCard;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginTop: "3%",
+    //marginTop: "3%",
     flexDirection: "row",
     justifyContent: "space-between",
     paddingTop: "3%",
@@ -71,17 +71,6 @@ const styles = StyleSheet.create({
     paddingLeft: "4%",
     alignItems: "center",
     backgroundColor: colors.white,
-    borderRadius: 15,
-    ...Platform.select({
-      ios: {
-        shadowColor: "black",
-        shadowOffset: { width: 0, height: 2 },
-        shadowOpacity: 0.2,
-        shadowRadius: 4,
-      },
-      android: {
-        elevation: 10,
-      },
-    }),
+    borderRadius: 15
   },
 } as const);

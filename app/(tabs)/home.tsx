@@ -36,7 +36,7 @@ const Home: React.FC = () => {
       <ScrollView
         showsHorizontalScrollIndicator={false}
         showsVerticalScrollIndicator={false}
-        contentContainerStyle={{ paddingBottom: 50, flexGrow: 1 }}
+        contentContainerStyle={{ paddingBottom: 40, flexGrow: 1 }}
         nestedScrollEnabled
         keyboardShouldPersistTaps='handled'
       >
@@ -175,7 +175,7 @@ const Home: React.FC = () => {
           </View>
 
           <View
-            style={{ marginTop: "7%", marginLeft: "3%", marginRight: "3%" }}
+            style={{ marginTop: "7%" }}
           >
             <LatestWorkoutSection />
           </View>
