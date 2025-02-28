@@ -38,6 +38,7 @@ const Home: React.FC = () => {
         showsVerticalScrollIndicator={false}
         contentContainerStyle={{ paddingBottom: 50, flexGrow: 1 }}
         nestedScrollEnabled
+        keyboardShouldPersistTaps='handled'
       >
         <View>
           <View style={styles.header}>

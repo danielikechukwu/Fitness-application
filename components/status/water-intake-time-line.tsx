@@ -1,4 +1,11 @@
-import { FlatList, StyleSheet, Text, View, Animated } from "react-native";
+import {
+  FlatList,
+  StyleSheet,
+  Text,
+  View,
+  Animated,
+  ScrollView,
+} from "react-native";
 import React, { useRef, useState } from "react";
 import colors from "../../constants/colors";
 import fonts from "../../constants/fonts";
@@ -17,33 +24,21 @@ const waterIntakeTimeLine: IWaterIntakeTimeLine[] = [
 ];
 
 const WaterIntakeTimeLine: React.FC = () => {
-  const [showTopShadow, setShowTopShadow] = useState<boolean>(false);
-  const [showBottomShadow, setShowBottomShadow] = useState<boolean>(true);
-
-  const scrollY: Animated.Value = new Animated.Value(0);
-
-  const handleScroll: (event: any) => void = (event: any) => {
-    const offsetY = event.nativeEvent.contentOffset.y;
-    const contentHeight = event.nativeEvent.contentSize.height;
-    const layoutHeight = event.nativeEvent.layoutMeasurement.height;
-
-    setShowTopShadow(offsetY > 10); // Show top shadow when scrolled down a bit
-    setShowBottomShadow(offsetY + layoutHeight < contentHeight - 10); // Hide bottom shadow when at the bottom
-  };
-
   return (
     <View
       style={{
         marginTop: "4%",
-        flex: 1
+        flex: 1,
       }}
     >
-      {/* {showTopShadow && <View style={[styles.shadow, styles.topShadow]} />} */}
-      <FlatList
-        data={waterIntakeTimeLine}
-        keyExtractor={(item, index) => item.id.toString()}
-        renderItem={({ item }) => (
-          <View style={styles.container}>
+      <ScrollView
+        showsHorizontalScrollIndicator={false}
+        showsVerticalScrollIndicator={false}
+        nestedScrollEnabled
+        style={{ maxHeight: 290 }}
+      >
+        {waterIntakeTimeLine.map((item, index) => (
+          <View key={index} style={styles.container}>
             <View>
               {/* Dots with gradient effect */}
               <View
@@ -63,24 +58,8 @@ const WaterIntakeTimeLine: React.FC = () => {
               <Text style={styles.amountText}>{item.amount}</Text>
             </View>
           </View>
-        )}
-        showsHorizontalScrollIndicator={false}
-        showsVerticalScrollIndicator={false}
-        nestedScrollEnabled={true}
-        style={{ maxHeight: 290 }}
-        onEndReached={() => console.log('End Reached')}
-        keyboardShouldPersistTaps='handled'
-        onScroll={Animated.event(
-          [{ nativeEvent: { contentOffset: { y: scrollY } } }],
-          {
-            useNativeDriver: false,
-            listener: handleScroll,
-          }
-        )}
-      />
-      {/* {showBottomShadow && (
-        <View style={[styles.shadow, styles.bottomShadow]} />
-      )} */}
+        ))}
+      </ScrollView>
     </View>
   );
 };
