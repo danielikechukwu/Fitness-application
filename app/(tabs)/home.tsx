@@ -36,7 +36,7 @@ const Home: React.FC = () => {
       <ScrollView
         showsHorizontalScrollIndicator={false}
         showsVerticalScrollIndicator={false}
-        contentContainerStyle={{ paddingBottom: 40, flexGrow: 1 }}
+        contentContainerStyle={{ flexGrow: 1 }}
         nestedScrollEnabled
         keyboardShouldPersistTaps='handled'
       >

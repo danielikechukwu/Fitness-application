@@ -71,6 +71,17 @@ const styles = StyleSheet.create({
     paddingLeft: "4%",
     alignItems: "center",
     backgroundColor: colors.white,
-    borderRadius: 15
+    borderRadius: 15,
+    ...Platform.select({
+      ios: {
+        shadowColor: "black",
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.2,
+        shadowRadius: 4,
+      },
+      android: {
+        elevation: 5,
+      },
+    }),
   },
 } as const);
