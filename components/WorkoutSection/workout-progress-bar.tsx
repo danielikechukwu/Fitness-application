@@ -1,14 +1,32 @@
 import { StyleSheet, Text, View } from "react-native";
-import React from "react";
+import React, { useEffect } from "react";
 import Svg, { Defs, Line, LinearGradient, Rect, Stop } from "react-native-svg";
-import Animated, { SharedValue, useSharedValue } from "react-native-reanimated";
+import Animated, {
+  SharedValue,
+  useAnimatedProps,
+  useSharedValue,
+  withTiming,
+} from "react-native-reanimated";
 import colors from "@/constants/colors";
+import IWorkout from "@/types/workout";
 
 const AnimatedRect = Animated.createAnimatedComponent(Rect);
 
-const WorkoutProgressBar = () => {
+const WorkoutProgressBar = (props: IWorkout) => {
+  const progress = useSharedValue(0); // Shared value for animation
 
-    const progress: SharedValue<number> = useSharedValue(0);
+  // Calculate the percentage of calories burnt
+  const progressPercentage =
+    (props.burntCalories! / props.totalCalories!) * 100;
+
+  useEffect(() => {
+    progress.value = withTiming(progressPercentage, { duration: 1000 });
+  }, [props.burntCalories]);
+
+  // Animate width of the progress bar.
+  const animatedProps = useAnimatedProps(() => ({
+    width: `${progress.value}%`,
+  }));
 
   return (
     <Svg width="130%" height={20} style={styles.progressBar}>
@@ -33,13 +51,13 @@ const WorkoutProgressBar = () => {
 
       {/* Animated progress bar */}
       <AnimatedRect
-        width="70%"
         height={13}
         rx={7}
         ry={7}
         x={0}
         y={0}
         fill="url(#progressGradient)" // Apply the gradient
+        animatedProps={animatedProps}
       />
     </Svg>
   );

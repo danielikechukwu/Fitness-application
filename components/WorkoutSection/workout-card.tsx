@@ -38,7 +38,10 @@ const WorkoutCard: React.FC<IWorkout> = (props: IWorkout) => {
             {props.burntCalories} Calories Burn | {props.time}minutes
           </Text>
           <View style={{ marginTop: "8%" }}>
-            <WorkoutProgressBar />
+            <WorkoutProgressBar
+              burntCalories={props.burntCalories}
+              totalCalories={props.totalCalories}
+            />
           </View>
         </View>
       </View>
