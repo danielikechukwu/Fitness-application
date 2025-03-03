@@ -107,7 +107,7 @@ const HeartRate: React.FC = () => {
           areaChart
           data={ptData}          
           width={350}
-          height={100}
+          height={90}
           hideDataPoints
           spacing={10}
           color="rgb(71, 124, 238)"
@@ -124,7 +124,7 @@ const HeartRate: React.FC = () => {
           hideYAxisText={true}
           hideRules={true}          
           pointerConfig={{
-            pointerStripHeight: 50,
+            pointerStripHeight: 40,
             pointerStripWidth: 2,
             pointerColor: colors.secondary,
             radius: 6,
