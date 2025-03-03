@@ -23,22 +23,20 @@ import { StatusBar } from "expo-status-bar";
 import IWaterIntakeTimeLine from "@/types/water-intake-timeline";
 
 const Home: React.FC = () => {
-
   const colorScheme = useColorScheme();
 
   const [notification, setNotification] = useState<boolean>(false);
 
   return (
     <SafeAreaView style={styles.container}>
-      
-      <StatusBar style={colorScheme === 'dark' ? 'dark' : 'dark'}  />
+      <StatusBar style={colorScheme === "dark" ? "dark" : "dark"} />
 
       <ScrollView
         showsHorizontalScrollIndicator={false}
         showsVerticalScrollIndicator={false}
         contentContainerStyle={{ flexGrow: 1 }}
         nestedScrollEnabled
-        keyboardShouldPersistTaps='handled'
+        keyboardShouldPersistTaps="handled"
       >
         <View>
           <View style={styles.header}>
@@ -94,7 +92,7 @@ const Home: React.FC = () => {
               <Pressable
                 style={{
                   backgroundColor: colors.brand,
-                  padding: "6%",
+                  padding: "4%",
                   alignItems: "center",
                   justifyContent: "center",
                   borderRadius: 18,
@@ -104,8 +102,8 @@ const Home: React.FC = () => {
                 <Text
                   style={{
                     color: colors.white,
-                    fontFamily: fonts.regular,
-                    fontSize: 18,
+                    fontFamily: fonts.bold,
+                    fontSize: 14,
                   }}
                 >
                   Check
@@ -119,7 +117,7 @@ const Home: React.FC = () => {
               color: colors.black,
               fontFamily: fonts.semiBold,
               fontSize: 18,
-              marginTop: "5%",
+              marginTop: "4%",
               marginLeft: "3%",
             }}
           >
@@ -127,17 +125,14 @@ const Home: React.FC = () => {
           </Text>
 
           <View style={styles.status}>
-            <View
-              style={{ marginLeft: "3%", marginRight: "3%", borderWidth: 1 }}
-            >
-              {/* <HeartRate />              */}
-              <Text>Heart rate chart</Text>
+            <View style={{ marginLeft: "3%", marginRight: "3%" }}>
+              <HeartRate />
             </View>
 
             <View
               style={{
                 flexDirection: "row",
-                marginTop: "7%",
+                marginTop: "5%",
                 width: "100%",
                 height: "62%",
               }}
@@ -145,7 +140,7 @@ const Home: React.FC = () => {
               <View style={{ marginLeft: "3%" }}>
                 <WaterIntake />
               </View>
-              <View style={{ gap: "8%", width: "50%" }}>
+              <View style={{ gap: "6%", width: "50%" }}>
                 <View
                   style={{
                     alignSelf: "flex-end",
@@ -174,14 +169,11 @@ const Home: React.FC = () => {
             <WorkoutSection />
           </View>
 
-          <View
-            style={{ marginTop: "7%" }}
-          >
+          <View style={{ marginTop: "7%" }}>
             <LatestWorkoutSection />
           </View>
         </View>
       </ScrollView>
-
     </SafeAreaView>
   );
 };
@@ -222,7 +214,7 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: "row",
     justifyContent: "space-between",
-    marginTop: "8%",
+    marginTop: "5%",
     marginLeft: "3%",
     marginRight: "3%",
     paddingTop: "5%",

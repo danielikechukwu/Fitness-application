@@ -35,6 +35,27 @@ const LatestWorkoutSection: React.FC = () => {
       imagePath: require("../../assets/images/dashboard/third-workout-pic.png"),
       time: 30,
     },
+    {
+      workouts: "Fullbody Workout",
+      totalCalories: 900,
+      burntCalories: 280,
+      imagePath: require("../../assets/images/dashboard/first-workout-pic.png"),
+      time: 20,
+    },
+    {
+      workouts: "Lowerbody Workout",
+      totalCalories: 900,
+      burntCalories: 30,
+      imagePath: require("../../assets/images/dashboard/second-workout-pic.png"),
+      time: 30,
+    },
+    {
+      workouts: "ABS Workout",
+      totalCalories: 900,
+      burntCalories: 700,
+      imagePath: require("../../assets/images/dashboard/third-workout-pic.png"),
+      time: 30,
+    },
   ];
 
   return (
