@@ -9,11 +9,11 @@ const WorkoutSection: React.FC = () => {
     <View style={styles.container}>
       <View
         style={{
-          borderWidth: 1,
           borderColor: "red",
           flexDirection: "row",
           justifyContent: "space-between",
           alignItems: "center",
+          marginBottom: '3%'
         }}
       >
         <Text
