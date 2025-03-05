@@ -171,8 +171,9 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingTop: "5%",
     borderRadius: 15,
-    backgroundColor: colors.border,
+    backgroundColor: colors.border
   },
   chart: {
+
   },
 } as const);

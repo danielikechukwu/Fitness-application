@@ -71,7 +71,7 @@ const LatestWorkoutSection: React.FC = () => {
           style={{
             color: colors.black,
             fontFamily: fonts.bold,
-            fontSize: 18,
+            fontSize: 16,
             marginLeft: "3%",
           }}
         >
