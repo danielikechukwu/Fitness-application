@@ -65,6 +65,7 @@ const LatestWorkoutSection: React.FC = () => {
           flexDirection: "row",
           justifyContent: "space-between",
           alignItems: "center",
+          marginBottom: '3%'
         }}
       >
         <Text

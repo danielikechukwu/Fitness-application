@@ -3,6 +3,7 @@ import React from "react";
 import colors from "@/constants/colors";
 import fonts from "@/constants/fonts";
 import SelectButton from "./select-button";
+import WorkoutSectionGraph from "./workout-section-graph";
 
 const WorkoutSection: React.FC = () => {
   return (
@@ -13,7 +14,7 @@ const WorkoutSection: React.FC = () => {
           flexDirection: "row",
           justifyContent: "space-between",
           alignItems: "center",
-          marginBottom: '3%'
+          marginBottom: '5%'
         }}
       >
         <Text
@@ -23,8 +24,8 @@ const WorkoutSection: React.FC = () => {
         </Text>
         <SelectButton />
       </View>
-      <View>
-        <Text>Hello, world</Text>
+      <View style={{}}>
+        <WorkoutSectionGraph />
       </View>
     </View>
   );
@@ -34,7 +35,6 @@ export default WorkoutSection;
 
 const styles = StyleSheet.create({
   container: {
-    borderWidth: 1,
     flex: 1,
   },
 } as const);
