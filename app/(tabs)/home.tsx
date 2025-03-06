@@ -51,7 +51,7 @@ const Home: React.FC = () => {
                 Welcome Back,
               </Text>
               <Text style={{ fontFamily: fonts.bold, fontSize: 22 }}>
-                Stefani Wong{" "}
+                Stefani Wong
               </Text>
             </View>
             <Pressable
