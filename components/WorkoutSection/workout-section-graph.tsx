@@ -6,47 +6,81 @@ import {
   ViewBase,
   Image,
 } from "react-native";
-import React from "react";
-import { LineChart, yAxisSides } from "react-native-gifted-charts";
+import React, { useState } from "react";
+import { LineChart, lineDataItem, yAxisSides } from "react-native-gifted-charts";
 import colors from "@/constants/colors";
 import IWorkout from "@/types/workout";
-import WorkoutProgressBar from "./workout-progress-bar";
 import WorkoutGraphProgressBar from "./workout-graph-progress-bar";
-import fonts from "@/constants/fonts";
+import fonts from "@/constants/fonts"
 
 const WorkoutSectionGraph = () => {
-  const data1 = [
-    { value: 70 },
-    { value: 36 },
-    { value: 50 },
-    { value: 40 },
-    { value: 18 },
-    { value: 38 },
-    { value: 18 },
-    { value: 70 },
-    { value: 36 },
-    { value: 50 },
-    { value: 40 },
-    { value: 18 },
-    { value: 38 },
-    { value: 18 },
+
+  const weeklyData1: lineDataItem[] = [
+    { value: 70, label: "Mon" },
+    { value: 36, label: "Tue" },
+    { value: 50, label: "Wed" },
+    { value: 40, label: "Thur" },
+    { value: 18, label: "Fri" },
+    { value: 38, label: "Sat" },
+    { value: 18, label: "Sun" },
   ];
 
-  const data2 = [
+  const weeklyData2: lineDataItem[] = [
+    {value: 50},
+    {value: 10},
+    {value: 45},
+    {value: 30},
+    {value: 45},
+    {value: 18},
+    {value: 58},
+  ];
+
+  const monthlyData1: lineDataItem[] = [
+    { value: 70, label: "Jan" },
+    { value: 36, label: "Feb" },
+    { value: 50, label: "Mar" },
+    { value: 40, label: "Apr" },
+    { value: 18, label: "May" },
+    { value: 38, label: "Jun" },
+    { value: 18, label: "Jul" },
+    { value: 70, label: "Aug" },
+    { value: 36, label: "Sep" },
+    { value: 50, label: "Oct" },
+    { value: 40, label: "Nov" },
+    { value: 18, label: "Dec" },
+  ];
+
+  const monthlyData2: lineDataItem[] = [
+    { value: 20 },
+    { value: 16 },
     { value: 50 },
-    { value: 10 },
-    { value: 45 },
-    { value: 30 },
-    { value: 45 },
+    { value: 90 },
+    { value: 8 },
+    { value: 68 },
     { value: 18 },
-    { value: 45 },
-    { value: 50 },
-    { value: 10 },
-    { value: 45 },
+    { value: 80 },
+    { value: 36 },
     { value: 30 },
-    { value: 45 },
-    { value: 18 },
-    { value: 45 },
+    { value: 40 },
+    { value: 88 },
+  ];
+
+  const yearlyData1: lineDataItem[] = [
+    { value: 70, label: "2021" },
+    { value: 36, label: "2022" },
+    { value: 50, label: "2023" },
+    { value: 40, label: "2024" },
+    { value: 18, label: "2025" },
+    { value: 38, label: "2026" },
+  ];
+
+  const yearlyData2: lineDataItem[] = [
+    { value: 70, label: "2021" },
+    { value: 6, label: "2022" },
+    { value: 20, label: "2023" },
+    { value: 40, label: "2024" },
+    { value: 88, label: "2025" },
+    { value: 48, label: "2026" },
   ];
 
   const workouts: IWorkout = {
@@ -57,11 +91,13 @@ const WorkoutSectionGraph = () => {
     time: 20,
   };
 
+  const [data1, setData1] = useState<lineDataItem[]>(weeklyData1);
+  const [data2, setData2] = useState<lineDataItem[]>(weeklyData2);
+
   return (
     <View
       style={{
-        backgroundColor: colors.white,
-        borderWidth: 1,
+        backgroundColor: colors.white
       }}
     >
       <LineChart
@@ -71,28 +107,29 @@ const WorkoutSectionGraph = () => {
         data2={data2}
         hideDataPoints
         width={315}
-        thickness1={2}
-        thickness2={4}
-        spacing={68}
+        thickness1={4}
+        thickness2={2}
+        spacing={50}
         maxValue={100}
-        color1={colors.secondary}
-        color2={colors.brand}
+        color1={colors.brand}
+        color2={colors.gray3}
         startFillColor1={colors.white}
         startFillColor2={colors.white}
         endFillColor1={colors.white}
         endFillColor2={colors.white}
         startOpacity={0.9}
         endOpacity={0.2}
-        initialSpacing={0}
+        initialSpacing={25}
         noOfSections={5}
         yAxisColor="black"
         yAxisThickness={0}
         yAxisSide={yAxisSides.RIGHT}
+        xAxisColor={colors.gray2}
         rulesType="solid"
-        rulesColor="gray"
+        rulesColor={colors.gray2}
         yAxisTextStyle={{ color: colors.black }}
         yAxisLabelSuffix="%"
-        xAxisColor="lightgray"
+        xAxisLabelTextStyle={{ color: colors.gray1 }}
         pointerConfig={{
           pointerStripUptoDataPoint: true,
           pointerStripColor: "lightgray",

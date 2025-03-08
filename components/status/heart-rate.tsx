@@ -68,7 +68,8 @@ const HeartRate: React.FC = () => {
     { value: 120, date: "9 Apr 2022" },
     {
       value: 240,
-      date: "10 Apr 2022",
+      date: '10 Apr 2022'
+   
     },
     { value: 280, date: "11 Apr 2022" },
     { value: 260, date: "12 Apr 2022" },
