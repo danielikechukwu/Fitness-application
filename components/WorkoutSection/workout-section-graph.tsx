@@ -1,20 +1,18 @@
+import { Platform, StyleSheet, Text, View, Image } from "react-native";
+import React, { useContext, useState } from "react";
 import {
-  Platform,
-  StyleSheet,
-  Text,
-  View,
-  ViewBase,
-  Image,
-} from "react-native";
-import React, { useState } from "react";
-import { LineChart, lineDataItem, yAxisSides } from "react-native-gifted-charts";
-import colors from "@/constants/colors";
-import IWorkout from "@/types/workout";
+  LineChart,
+  lineDataItem,
+  yAxisSides,
+} from "react-native-gifted-charts";
+import colors from "../../constants/colors";
+import IWorkout from "../../types/workout";
 import WorkoutGraphProgressBar from "./workout-graph-progress-bar";
-import fonts from "@/constants/fonts"
+import fonts from "../../constants/fonts";
+import { GraphContext, useGraph } from "@/context/graph-context";
+// import { useGraph } from "../../context/graph-context";
 
-const WorkoutSectionGraph = () => {
-
+const WorkoutSectionGraph: React.FC = () => {
   const weeklyData1: lineDataItem[] = [
     { value: 70, label: "Mon" },
     { value: 36, label: "Tue" },
@@ -26,13 +24,13 @@ const WorkoutSectionGraph = () => {
   ];
 
   const weeklyData2: lineDataItem[] = [
-    {value: 50},
-    {value: 10},
-    {value: 45},
-    {value: 30},
-    {value: 45},
-    {value: 18},
-    {value: 58},
+    { value: 50 },
+    { value: 10 },
+    { value: 45 },
+    { value: 30 },
+    { value: 45 },
+    { value: 18 },
+    { value: 58 },
   ];
 
   const monthlyData1: lineDataItem[] = [
@@ -91,124 +89,478 @@ const WorkoutSectionGraph = () => {
     time: 20,
   };
 
-  const [data1, setData1] = useState<lineDataItem[]>(weeklyData1);
-  const [data2, setData2] = useState<lineDataItem[]>(weeklyData2);
+  const  graph = useGraph();
 
-  return (
-    <View
-      style={{
-        backgroundColor: colors.white
-      }}
-    >
-      <LineChart
-        areaChart
-        curved
-        data={data1}
-        data2={data2}
-        hideDataPoints
-        width={315}
-        thickness1={4}
-        thickness2={2}
-        spacing={50}
-        maxValue={100}
-        color1={colors.brand}
-        color2={colors.gray3}
-        startFillColor1={colors.white}
-        startFillColor2={colors.white}
-        endFillColor1={colors.white}
-        endFillColor2={colors.white}
-        startOpacity={0.9}
-        endOpacity={0.2}
-        initialSpacing={25}
-        noOfSections={5}
-        yAxisColor="black"
-        yAxisThickness={0}
-        yAxisSide={yAxisSides.RIGHT}
-        xAxisColor={colors.gray2}
-        rulesType="solid"
-        rulesColor={colors.gray2}
-        yAxisTextStyle={{ color: colors.black }}
-        yAxisLabelSuffix="%"
-        xAxisLabelTextStyle={{ color: colors.gray1 }}
-        pointerConfig={{
-          pointerStripUptoDataPoint: true,
-          pointerStripColor: "lightgray",
-          pointerStripWidth: 2,
-          strokeDashArray: [2, 5],
-          radius: 0,
-          pointerColor: "lightgray",
-          pointerLabelWidth: 100,
-          pointerLabelHeight: 90,
-          activatePointersOnLongPress: true,
-          pointerLabelComponent: (items: any) => {
-            return (
-              <View style={styles.pointerLabel}>
-                <View
-                  style={{
-                    flexDirection: "row",
-                    justifyContent: "space-between",
-                    alignItems: "center",
-                    marginRight: "10%",
-                    marginTop: "5%",
-                  }}
-                >
-                  <Text
-                    style={{
-                      fontFamily: fonts.regular,
-                      color: colors.gray1,
-                      fontSize: 12,
-                    }}
-                  >
-                    Fri, 28 May
-                  </Text>
-                  <Text
-                    style={{
-                      fontFamily: fonts.regular,
-                      color: "#42D742",
-                      fontSize: 12,
-                      marginRight: "2%",
-                    }}
-                  >
-                    90%
-                    <Image
-                      tintColor="red"
-                      source={require("../../assets/images/icons/arrow-up.png")}
-                      style={{
-                        height: 9,
-                        width: 9,
-                      }}
-                    />
-                  </Text>
-                </View>
-                <View
-                  style={{
-                    marginTop: "3%",
-                    marginRight: "10%",
-                  }}
-                >
-                  <Text
-                    style={{
-                      fontFamily: fonts.regular,
-                      color: colors.gray1,
-                      fontSize: 14,
-                    }}
-                  >
-                    Upperbody Workout
-                  </Text>
-                  <View style={{ marginTop: "4%" }}>
-                    <WorkoutGraphProgressBar
-                      burntCalories={workouts.burntCalories}
-                      totalCalories={workouts.totalCalories}
-                    />
-                  </View>
-                </View>
-              </View>
-            );
-          },
-        }}
-      />
-    </View>
-  );
+  const renderGraph = () => {
+    switch (graph?.workoutGraph) {
+      case "1":
+        return (
+          <View
+            style={{
+              backgroundColor: colors.white,
+            }}
+          >
+            <LineChart
+              areaChart
+              curved
+              data2={weeklyData2}
+              data={weeklyData1}
+              hideDataPoints
+              width={315}
+              thickness1={4}
+              thickness2={2}
+              spacing={50}
+              maxValue={100}
+              color1={colors.brand}
+              color2={colors.gray3}
+              startFillColor1={colors.white}
+              startFillColor2={colors.white}
+              endFillColor1={colors.white}
+              endFillColor2={colors.white}
+              startOpacity={0.9}
+              endOpacity={0.2}
+              initialSpacing={25}
+              noOfSections={5}
+              yAxisColor="black"
+              yAxisThickness={0}
+              yAxisSide={yAxisSides.RIGHT}
+              xAxisColor={colors.gray2}
+              rulesType="solid"
+              rulesColor={colors.gray2}
+              yAxisTextStyle={{ color: colors.black }}
+              yAxisLabelSuffix="%"
+              xAxisLabelTextStyle={{ color: colors.gray1 }}
+              pointerConfig={{
+                pointerStripUptoDataPoint: true,
+                pointerStripColor: "lightgray",
+                pointerStripWidth: 2,
+                strokeDashArray: [2, 5],
+                radius: 0,
+                pointerColor: "lightgray",
+                pointerLabelWidth: 100,
+                pointerLabelHeight: 90,
+                activatePointersOnLongPress: true,
+                pointerLabelComponent: (items: any) => {
+                  return (
+                    <View style={styles.pointerLabel}>
+                      <View
+                        style={{
+                          flexDirection: "row",
+                          justifyContent: "space-between",
+                          alignItems: "center",
+                          marginRight: "10%",
+                          marginTop: "5%",
+                        }}
+                      >
+                        <Text
+                          style={{
+                            fontFamily: fonts.regular,
+                            color: colors.gray1,
+                            fontSize: 12,
+                          }}
+                        >
+                          Fri, 28 May
+                        </Text>
+                        <Text
+                          style={{
+                            fontFamily: fonts.regular,
+                            color: "#42D742",
+                            fontSize: 12,
+                            marginRight: "2%",
+                          }}
+                        >
+                          90%
+                          <Image
+                            tintColor="red"
+                            source={require("../../assets/images/icons/arrow-up.png")}
+                            style={{
+                              height: 9,
+                              width: 9,
+                            }}
+                          />
+                        </Text>
+                      </View>
+                      <View
+                        style={{
+                          marginTop: "3%",
+                          marginRight: "10%",
+                        }}
+                      >
+                        <Text
+                          style={{
+                            fontFamily: fonts.regular,
+                            color: colors.gray1,
+                            fontSize: 14,
+                          }}
+                        >
+                          Upperbody Workout
+                        </Text>
+                        <View style={{ marginTop: "4%" }}>
+                          <WorkoutGraphProgressBar
+                            burntCalories={workouts.burntCalories}
+                            totalCalories={workouts.totalCalories}
+                          />
+                        </View>
+                      </View>
+                    </View>
+                  );
+                },
+              }}
+            />
+          </View>
+        );
+      case "2":
+        return (
+          <View
+            style={{
+              backgroundColor: colors.white,
+            }}
+          >
+            <LineChart
+              areaChart
+              curved
+              data2={monthlyData2}
+              data={monthlyData1}
+              hideDataPoints
+              width={315}
+              thickness1={4}
+              thickness2={2}
+              spacing={50}
+              maxValue={100}
+              color1={colors.brand}
+              color2={colors.gray3}
+              startFillColor1={colors.white}
+              startFillColor2={colors.white}
+              endFillColor1={colors.white}
+              endFillColor2={colors.white}
+              startOpacity={0.9}
+              endOpacity={0.2}
+              initialSpacing={25}
+              noOfSections={5}
+              yAxisColor="black"
+              yAxisThickness={0}
+              yAxisSide={yAxisSides.RIGHT}
+              xAxisColor={colors.gray2}
+              rulesType="solid"
+              rulesColor={colors.gray2}
+              yAxisTextStyle={{ color: colors.black }}
+              yAxisLabelSuffix="%"
+              xAxisLabelTextStyle={{ color: colors.gray1 }}
+              pointerConfig={{
+                pointerStripUptoDataPoint: true,
+                pointerStripColor: "lightgray",
+                pointerStripWidth: 2,
+                strokeDashArray: [2, 5],
+                radius: 0,
+                pointerColor: "lightgray",
+                pointerLabelWidth: 100,
+                pointerLabelHeight: 90,
+                activatePointersOnLongPress: true,
+                pointerLabelComponent: (items: any) => {
+                  return (
+                    <View style={styles.pointerLabel}>
+                      <View
+                        style={{
+                          flexDirection: "row",
+                          justifyContent: "space-between",
+                          alignItems: "center",
+                          marginRight: "10%",
+                          marginTop: "5%",
+                        }}
+                      >
+                        <Text
+                          style={{
+                            fontFamily: fonts.regular,
+                            color: colors.gray1,
+                            fontSize: 12,
+                          }}
+                        >
+                          Fri, 28 May
+                        </Text>
+                        <Text
+                          style={{
+                            fontFamily: fonts.regular,
+                            color: "#42D742",
+                            fontSize: 12,
+                            marginRight: "2%",
+                          }}
+                        >
+                          90%
+                          <Image
+                            tintColor="red"
+                            source={require("../../assets/images/icons/arrow-up.png")}
+                            style={{
+                              height: 9,
+                              width: 9,
+                            }}
+                          />
+                        </Text>
+                      </View>
+                      <View
+                        style={{
+                          marginTop: "3%",
+                          marginRight: "10%",
+                        }}
+                      >
+                        <Text
+                          style={{
+                            fontFamily: fonts.regular,
+                            color: colors.gray1,
+                            fontSize: 14,
+                          }}
+                        >
+                          Upperbody Workout
+                        </Text>
+                        <View style={{ marginTop: "4%" }}>
+                          <WorkoutGraphProgressBar
+                            burntCalories={workouts.burntCalories}
+                            totalCalories={workouts.totalCalories}
+                          />
+                        </View>
+                      </View>
+                    </View>
+                  );
+                },
+              }}
+            />
+          </View>
+        );
+      case "3":
+        return (
+          <View
+            style={{
+              backgroundColor: colors.white,
+            }}
+          >
+            <LineChart
+              areaChart
+              curved
+              data2={yearlyData2}
+              data={yearlyData1}
+              hideDataPoints
+              width={315}
+              thickness1={4}
+              thickness2={2}
+              spacing={50}
+              maxValue={100}
+              color1={colors.brand}
+              color2={colors.gray3}
+              startFillColor1={colors.white}
+              startFillColor2={colors.white}
+              endFillColor1={colors.white}
+              endFillColor2={colors.white}
+              startOpacity={0.9}
+              endOpacity={0.2}
+              initialSpacing={25}
+              noOfSections={5}
+              yAxisColor="black"
+              yAxisThickness={0}
+              yAxisSide={yAxisSides.RIGHT}
+              xAxisColor={colors.gray2}
+              rulesType="solid"
+              rulesColor={colors.gray2}
+              yAxisTextStyle={{ color: colors.black }}
+              yAxisLabelSuffix="%"
+              xAxisLabelTextStyle={{ color: colors.gray1 }}
+              pointerConfig={{
+                pointerStripUptoDataPoint: true,
+                pointerStripColor: "lightgray",
+                pointerStripWidth: 2,
+                strokeDashArray: [2, 5],
+                radius: 0,
+                pointerColor: "lightgray",
+                pointerLabelWidth: 100,
+                pointerLabelHeight: 90,
+                activatePointersOnLongPress: true,
+                pointerLabelComponent: (items: any) => {
+                  return (
+                    <View style={styles.pointerLabel}>
+                      <View
+                        style={{
+                          flexDirection: "row",
+                          justifyContent: "space-between",
+                          alignItems: "center",
+                          marginRight: "10%",
+                          marginTop: "5%",
+                        }}
+                      >
+                        <Text
+                          style={{
+                            fontFamily: fonts.regular,
+                            color: colors.gray1,
+                            fontSize: 12,
+                          }}
+                        >
+                          Fri, 28 May
+                        </Text>
+                        <Text
+                          style={{
+                            fontFamily: fonts.regular,
+                            color: "#42D742",
+                            fontSize: 12,
+                            marginRight: "2%",
+                          }}
+                        >
+                          90%
+                          <Image
+                            tintColor="red"
+                            source={require("../../assets/images/icons/arrow-up.png")}
+                            style={{
+                              height: 9,
+                              width: 9,
+                            }}
+                          />
+                        </Text>
+                      </View>
+                      <View
+                        style={{
+                          marginTop: "3%",
+                          marginRight: "10%",
+                        }}
+                      >
+                        <Text
+                          style={{
+                            fontFamily: fonts.regular,
+                            color: colors.gray1,
+                            fontSize: 14,
+                          }}
+                        >
+                          Upperbody Workout
+                        </Text>
+                        <View style={{ marginTop: "4%" }}>
+                          <WorkoutGraphProgressBar
+                            burntCalories={workouts.burntCalories}
+                            totalCalories={workouts.totalCalories}
+                          />
+                        </View>
+                      </View>
+                    </View>
+                  );
+                },
+              }}
+            />
+          </View>
+        );
+      default:
+        return (
+          <View
+            style={{
+              backgroundColor: colors.white,
+            }}
+          >
+            <LineChart
+              areaChart
+              curved
+              data2={weeklyData2}
+              data={weeklyData1}
+              hideDataPoints
+              width={315}
+              thickness1={4}
+              thickness2={2}
+              spacing={50}
+              maxValue={100}
+              color1={colors.brand}
+              color2={colors.gray3}
+              startFillColor1={colors.white}
+              startFillColor2={colors.white}
+              endFillColor1={colors.white}
+              endFillColor2={colors.white}
+              startOpacity={0.9}
+              endOpacity={0.2}
+              initialSpacing={25}
+              noOfSections={5}
+              yAxisColor="black"
+              yAxisThickness={0}
+              yAxisSide={yAxisSides.RIGHT}
+              xAxisColor={colors.gray2}
+              rulesType="solid"
+              rulesColor={colors.gray2}
+              yAxisTextStyle={{ color: colors.black }}
+              yAxisLabelSuffix="%"
+              xAxisLabelTextStyle={{ color: colors.gray1 }}
+              pointerConfig={{
+                pointerStripUptoDataPoint: true,
+                pointerStripColor: "lightgray",
+                pointerStripWidth: 2,
+                strokeDashArray: [2, 5],
+                radius: 0,
+                pointerColor: "lightgray",
+                pointerLabelWidth: 100,
+                pointerLabelHeight: 90,
+                activatePointersOnLongPress: true,
+                pointerLabelComponent: (items: any) => {
+                  return (
+                    <View style={styles.pointerLabel}>
+                      <View
+                        style={{
+                          flexDirection: "row",
+                          justifyContent: "space-between",
+                          alignItems: "center",
+                          marginRight: "10%",
+                          marginTop: "5%",
+                        }}
+                      >
+                        <Text
+                          style={{
+                            fontFamily: fonts.regular,
+                            color: colors.gray1,
+                            fontSize: 12,
+                          }}
+                        >
+                          Fri, 28 May
+                        </Text>
+                        <Text
+                          style={{
+                            fontFamily: fonts.regular,
+                            color: "#42D742",
+                            fontSize: 12,
+                            marginRight: "2%",
+                          }}
+                        >
+                          90%
+                          <Image
+                            tintColor="red"
+                            source={require("../../assets/images/icons/arrow-up.png")}
+                            style={{
+                              height: 9,
+                              width: 9,
+                            }}
+                          />
+                        </Text>
+                      </View>
+                      <View
+                        style={{
+                          marginTop: "3%",
+                          marginRight: "10%",
+                        }}
+                      >
+                        <Text
+                          style={{
+                            fontFamily: fonts.regular,
+                            color: colors.gray1,
+                            fontSize: 14,
+                          }}
+                        >
+                          Upperbody Workout
+                        </Text>
+                        <View style={{ marginTop: "4%" }}>
+                          <WorkoutGraphProgressBar
+                            burntCalories={workouts.burntCalories}
+                            totalCalories={workouts.totalCalories}
+                          />
+                        </View>
+                      </View>
+                    </View>
+                  );
+                },
+              }}
+            />
+          </View>
+        );
+    }
+  };
+
+  return <View>{renderGraph()}</View>;
 };
 
 export default WorkoutSectionGraph;

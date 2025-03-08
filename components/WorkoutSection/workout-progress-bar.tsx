@@ -12,7 +12,7 @@ import IWorkout from "@/types/workout";
 
 const AnimatedRect = Animated.createAnimatedComponent(Rect);
 
-const WorkoutProgressBar = (props: IWorkout) => {
+const WorkoutProgressBar: React.FC<IWorkout> = (props: IWorkout) => {
   const progress = useSharedValue(0); // Shared value for animation
 
   // Calculate the percentage of calories burnt

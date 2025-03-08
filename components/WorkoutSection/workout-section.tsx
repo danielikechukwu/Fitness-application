@@ -14,7 +14,7 @@ const WorkoutSection: React.FC = () => {
           flexDirection: "row",
           justifyContent: "space-between",
           alignItems: "center",
-          marginBottom: '5%'
+          marginBottom: "5%",
         }}
       >
         <Text
@@ -24,7 +24,7 @@ const WorkoutSection: React.FC = () => {
         </Text>
         <SelectButton />
       </View>
-      <View style={{}}>
+      <View>
         <WorkoutSectionGraph />
       </View>
     </View>

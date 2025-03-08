@@ -19,42 +19,42 @@ const LatestWorkoutSection: React.FC = () => {
       totalCalories: 900,
       burntCalories: 580,
       imagePath: require("../../assets/images/dashboard/first-workout-pic.png"),
-      time: 20
+      time: 20,
     },
     {
       workouts: "Lowerbody Workout",
       totalCalories: 900,
       burntCalories: 300,
       imagePath: require("../../assets/images/dashboard/second-workout-pic.png"),
-      time: 30
+      time: 30,
     },
     {
       workouts: "ABS Workout",
       totalCalories: 900,
       burntCalories: 700,
       imagePath: require("../../assets/images/dashboard/third-workout-pic.png"),
-      time: 30
+      time: 30,
     },
     {
       workouts: "Fullbody Workout",
       totalCalories: 900,
       burntCalories: 280,
       imagePath: require("../../assets/images/dashboard/first-workout-pic.png"),
-      time: 20
+      time: 20,
     },
     {
       workouts: "Lowerbody Workout",
       totalCalories: 900,
       burntCalories: 30,
       imagePath: require("../../assets/images/dashboard/second-workout-pic.png"),
-      time: 30
+      time: 30,
     },
     {
       workouts: "ABS Workout",
       totalCalories: 900,
       burntCalories: 700,
       imagePath: require("../../assets/images/dashboard/third-workout-pic.png"),
-      time: 30
+      time: 30,
     },
   ];
 
@@ -65,7 +65,7 @@ const LatestWorkoutSection: React.FC = () => {
           flexDirection: "row",
           justifyContent: "space-between",
           alignItems: "center",
-          marginBottom: '3%'
+          marginBottom: "3%",
         }}
       >
         <Text
@@ -95,7 +95,7 @@ const LatestWorkoutSection: React.FC = () => {
           showsHorizontalScrollIndicator={false}
           showsVerticalScrollIndicator={false}
           nestedScrollEnabled
-          style={{ maxHeight: 250 }}
+          style={{ maxHeight: 500 }}
         >
           <View>
             {workouts.map((items: IWorkout, index: number) => (
@@ -123,8 +123,8 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   workout: {
-    marginBottom: '2%',
-    marginTop: '2%',
+    marginBottom: "2%",
+    marginTop: "2%",
     marginRight: "3%",
     marginLeft: "3%",
     backgroundColor: colors.white,

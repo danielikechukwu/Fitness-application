@@ -1,8 +1,9 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet } from "react-native";
 import React, { useState } from "react";
 import { SelectCountry } from "react-native-element-dropdown";
-import fonts from "@/constants/fonts";
-import colors from "@/constants/colors";
+import fonts from "../../constants/fonts";
+import colors from "../../constants/colors";
+import { useGraph } from "@/context/graph-context";
 
 const SelectButton = () => {
   const local_data = [
@@ -21,6 +22,8 @@ const SelectButton = () => {
   ];
 
   const [chart, setChart] = useState<string>("1");
+
+  const graph = useGraph();
 
   return (
     <SelectCountry
@@ -43,7 +46,7 @@ const SelectButton = () => {
       searchPlaceholder="Search..."
       onChange={(event: any) => {
         setChart(event.value);
-        console.log(event.value);
+        graph?.changeGraph(event.value);
       }}
     />
   );
@@ -75,6 +78,6 @@ const styles = StyleSheet.create({
     marginRight: 8,
   },
   containerStyle: {
-    backgroundColor: colors.black
-  }
+    backgroundColor: colors.black,
+  },
 });

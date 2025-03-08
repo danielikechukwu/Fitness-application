@@ -21,6 +21,7 @@ import LatestWorkoutSection from "../../components/WorkoutSection/latest-workout
 import WorkoutSection from "../../components/WorkoutSection/workout-section";
 import { StatusBar } from "expo-status-bar";
 import IWaterIntakeTimeLine from "@/types/water-intake-timeline";
+import { GraphProvider } from "@/context/graph-context";
 
 const Home: React.FC = () => {
   const colorScheme = useColorScheme();
@@ -166,7 +167,9 @@ const Home: React.FC = () => {
           <View
             style={{ marginTop: "7%", marginLeft: "3%", marginRight: "3%" }}
           >
-            <WorkoutSection />
+            <GraphProvider>
+              <WorkoutSection />
+            </GraphProvider>
           </View>
 
           <View style={{ marginTop: "7%" }}>

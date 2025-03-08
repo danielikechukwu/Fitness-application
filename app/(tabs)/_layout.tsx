@@ -2,6 +2,7 @@ import { View, Image, Pressable } from "react-native";
 import React from "react";
 import { Tabs } from "expo-router";
 import colors from "../../constants/colors";
+import { GraphProvider } from "@/context/graph-context";
 
 const RootLayout = () => {
   return (
@@ -33,7 +34,6 @@ const RootLayout = () => {
                   tintColor={colors.gray1}
                   accessibilityLabel="home"
                   source={require("../../assets/images/icons/home.png")}
-                  
                 />
               )}
               {focused && (

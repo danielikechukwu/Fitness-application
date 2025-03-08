@@ -2,13 +2,12 @@ import React, { useEffect } from "react";
 import { Stack } from "expo-router";
 import { useFonts } from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
-import { PaperProvider } from "react-native-paper";
+import { PaperProvider, Provider } from "react-native-paper";
 
 //Prevent splash screen from hiding automatically
 SplashScreen.preventAutoHideAsync();
 
 const RootLayout: React.FC = () => {
-  
   const [fontsLoaded] = useFonts({
     "Poppins-Regular": require("../assets/fonts/Poppins-Regular.ttf"),
     "Poppins-Bold": require("../assets/fonts/Poppins-Bold.ttf"),
@@ -23,11 +22,11 @@ const RootLayout: React.FC = () => {
   }, [fontsLoaded]);
 
   return (
-    <PaperProvider>
+    <Provider>
       <Stack screenOptions={{ headerShown: false }}>
         <Stack.Screen name="(tabs)" />
       </Stack>
-    </PaperProvider>
+    </Provider>
   );
 };
 
