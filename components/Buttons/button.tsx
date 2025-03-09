@@ -6,6 +6,7 @@ import { useRouter } from "expo-router";
 import IButton from "../../types/onboarding-button";
 
 const Buttons: React.FC<IButton> = (props: IButton) => {
+  
   const router = useRouter();
 
   return (

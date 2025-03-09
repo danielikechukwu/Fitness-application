@@ -5,14 +5,13 @@ import {
   View,
   Image,
   ScrollView,
-  useColorScheme,
+  useColorScheme
 } from "react-native";
 import React from "react";
 import colors from "../../../constants/colors";
 import fonts from "../../../constants/fonts";
 import Next from "../../../components/Buttons/next";
 import NumberLabel from "../../../components/Labels/weight-height-label";
-import Label from "../../../components/Labels/label";
 import DatePicker from "../../../components/Labels/date-picker";
 import DropDown from "../../../components/Labels/dropdown";
 import { StatusBar } from "expo-status-bar";
@@ -20,17 +19,19 @@ import { StatusBar } from "expo-status-bar";
 const CompleteAccount: React.FC = () => {
 
   const colorScheme = useColorScheme();
-  
+
   return (
     <SafeAreaView style={styles.container}>
-      <StatusBar style={colorScheme === 'dark' ? 'dark' : 'dark'} />
+      <StatusBar style={colorScheme === "dark" ? "dark" : "dark"} />
 
-      <ScrollView>
+      <ScrollView
+        showsHorizontalScrollIndicator={false}
+        showsVerticalScrollIndicator={false}
+      >
         <View>
           <Image
             source={require("../../../assets/images/sign-up-and-login/step2.png")}
             resizeMode="cover"
-            style={{ width: "auto", objectFit: "fill" }}
           />
 
           <View style={styles.textSection}>
@@ -89,7 +90,7 @@ const CompleteAccount: React.FC = () => {
           </View>
 
           <View style={styles.button}>
-            <Next path="/auth/register/complete-account" title="Next" />
+            <Next path="/auth/register/benefit" title="Next" />
           </View>
         </View>
       </ScrollView>
@@ -103,6 +104,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: colors.white,
+    paddingTop: "5%",
   },
 
   textSection: {

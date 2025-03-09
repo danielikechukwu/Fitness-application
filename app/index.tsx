@@ -1,6 +1,5 @@
 import {
   StyleSheet,
-  Text,
   View,
   ScrollView,
   useColorScheme,
@@ -21,7 +20,7 @@ const Index: React.FC<void> = () => {
 
       <ScrollView>
         <View>
-          <Button mode="contained" onPress={() => router.push("/(tabs)/home")}>
+          <Button mode="contained" onPress={() => router.push("/onboarding/onboarding1")}>
             Welcome
           </Button>
         </View>

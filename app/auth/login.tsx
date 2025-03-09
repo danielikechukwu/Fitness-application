@@ -6,6 +6,8 @@ import {
   View,
   Image,
   useColorScheme,
+  ScrollView,
+  Pressable,
 } from "react-native";
 import React, { useState } from "react";
 import colors from "../../constants/colors";
@@ -16,7 +18,6 @@ import { useRouter } from "expo-router";
 import { StatusBar } from "expo-status-bar";
 
 const Login: React.FC = () => {
-
   const colorScheme = useColorScheme();
   const [checked, setChecked] = useState<boolean>(false);
 
@@ -24,119 +25,130 @@ const Login: React.FC = () => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <StatusBar style={colorScheme === 'dark' ? 'dark' : 'dark'} />
+      <StatusBar style={colorScheme === "dark" ? "dark" : "dark"} />
 
-      <View style={{ flex: 1, alignItems: "center", marginTop: "4%" }}>
-        <View style={{ alignItems: "center" }}>
-          <Text
-            style={{
-              fontFamily: fonts.regular,
-              fontSize: 20,
-              color: colors.black,
-            }}
-          >
-            Hey there,
-          </Text>
-          <Text
-            style={{
-              fontFamily: fonts.bold,
-              fontSize: 24,
-              color: colors.black,
-            }}
-          >
-            Welcome Back
-          </Text>
-        </View>
-
-        <View style={styles.form}>
-          <Label
-            icon={require("../../assets/images/icons/message.png")}
-            placeholder="Email"
-            password={false}
-          />
-          <Label
-            icon={require("../../assets/images/icons/lock.png")}
-            placeholder="Password"
-            password={true}
-          />
-
-          <View
-            style={{
-              flexDirection: "row",
-              marginTop: "2%",
-              alignItems: "flex-start",
-            }}
-          >
-            <Text style={styles.text}>Forgot your password</Text>
-          </View>
-        </View>
-
-        <View
-          style={{
-            width: "90%",
-            flex: 1,
-            justifyContent: "flex-end",
-            marginBottom: "15%",
-          }}
-        >
-          <LoginBtn title="Login" path="" />
-
-          <View
-            style={{
-              marginTop: "5%",
-              flexDirection: "row",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
-            <View style={styles.horizontalLine}></View>
-            <Text style={{ marginLeft: "2%", marginRight: "2%" }}>Or</Text>
-            <View style={styles.horizontalLine}></View>
-          </View>
-
-          <View
-            style={{
-              flexDirection: "row",
-              marginTop: "7%",
-              justifyContent: "center",
-              gap: "10%",
-            }}
-          >
-            <TouchableOpacity
-              style={styles.socials}
-              onPress={() => console.log("Google")}
-            >
-              <Image source={require("../../assets/images/icons/google.png")} />
-            </TouchableOpacity>
-            <TouchableOpacity
-              style={styles.socials}
-              onPress={() => console.log("Facebook")}
-            >
-              <Image
-                source={require("../../assets/images/icons/facebook.png")}
-              />
-            </TouchableOpacity>
-          </View>
-
-          <View style={{ alignItems: "center", marginTop: "5%" }}>
+      <ScrollView
+        showsHorizontalScrollIndicator={false}
+        showsVerticalScrollIndicator={false}
+        contentContainerStyle={{ flexGrow: 1 }}
+      >
+        <View style={{ flex: 1, alignItems: "center", marginTop: "4%" }}>
+          <View style={{ alignItems: "center" }}>
             <Text
               style={{
-                fontFamily: fonts.medium,
+                fontFamily: fonts.regular,
+                fontSize: 20,
                 color: colors.black,
-                fontSize: 14,
               }}
             >
-              Don't have an account yet?{" "}
-              <Text
-                style={{ color: colors.brand }}
-                onPress={() => router.replace("/auth/register/create-account")}
-              >
-                Register
-              </Text>
+              Hey there,
+            </Text>
+            <Text
+              style={{
+                fontFamily: fonts.bold,
+                fontSize: 24,
+                color: colors.black,
+              }}
+            >
+              Welcome Back
             </Text>
           </View>
+
+          <View style={styles.form}>
+            <Label
+              icon={require("../../assets/images/icons/message.png")}
+              placeholder="Email"
+              password={false}
+            />
+            <Label
+              icon={require("../../assets/images/icons/lock.png")}
+              placeholder="Password"
+              password={true}
+            />
+
+            <View
+              style={{
+                flexDirection: "row",
+                marginTop: "2%",
+                alignItems: "flex-start",
+              }}
+            >
+              <Text style={styles.text}>Forgot your password</Text>
+            </View>
+          </View>
+
+          <View
+            style={{
+              width: "90%",
+              flex: 1,
+              justifyContent: "flex-end",
+              marginBottom: "15%",
+              marginTop: "10%"
+            }}
+          >
+            <LoginBtn title="Login" path="/auth/welcome" />
+
+            <View
+              style={{
+                marginTop: "5%",
+                flexDirection: "row",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <View style={styles.horizontalLine}></View>
+              <Text style={{ marginLeft: "2%", marginRight: "2%" }}>Or</Text>
+              <View style={styles.horizontalLine}></View>
+            </View>
+
+            <View
+              style={{
+                flexDirection: "row",
+                marginTop: "7%",
+                justifyContent: "center",
+                gap: "10%",
+              }}
+            >
+              <TouchableOpacity
+                style={styles.socials}
+                onPress={() => console.log("Google")}
+              >
+                <Image
+                  source={require("../../assets/images/icons/google.png")}
+                />
+              </TouchableOpacity>
+              <TouchableOpacity
+                style={styles.socials}
+                onPress={() => console.log("Facebook")}
+              >
+                <Image
+                  source={require("../../assets/images/icons/facebook.png")}
+                />
+              </TouchableOpacity>
+            </View>
+
+            <View style={{ alignItems: "center", marginTop: "5%" }}>
+              <Text
+                style={{
+                  fontFamily: fonts.medium,
+                  color: colors.black,
+                  fontSize: 14,
+                }}
+              >
+                Don't have an account yet?{" "}
+                <Text
+                  style={{ color: colors.brand }}
+                  onPress={() =>
+                    router.replace("/auth/register/create-account")
+                  }
+                >
+                  Register
+                </Text>
+              </Text>
+            </View>
+          </View>
         </View>
-      </View>
+      </ScrollView>
     </SafeAreaView>
   );
 };
@@ -147,6 +159,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: colors.white,
+    paddingTop: "5%",
   },
 
   form: {

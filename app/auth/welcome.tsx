@@ -1,17 +1,26 @@
-import { SafeAreaView, StyleSheet, Text, View, Image, useColorScheme } from "react-native";
+import {
+  SafeAreaView,
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  useColorScheme,
+} from "react-native";
 import React from "react";
 import colors from "../../constants/colors";
 import { Button } from "react-native-paper";
 import fonts from "../../constants/fonts";
 import { StatusBar } from "expo-status-bar";
+import { useRouter } from "expo-router";
 
 const Welcome: React.FC = () => {
-
   const colorScheme = useColorScheme();
-  
+
+  const router = useRouter();
+
   return (
     <SafeAreaView style={styles.container}>
-      <StatusBar style={colorScheme === 'dark' ? 'dark' : 'dark'} />
+      <StatusBar style={colorScheme === "dark" ? "dark" : "dark"} />
 
       <View style={styles.img}>
         <Image
@@ -31,7 +40,7 @@ const Welcome: React.FC = () => {
           mode="contained"
           textColor={colors.white}
           buttonColor={colors.brand}
-          onPress={() => console.log("Pressed")}
+          onPress={() => router.replace('/(tabs)/home')}
         >
           <Text style={{ fontFamily: fonts.bold, fontSize: 16 }}>
             Go To Home

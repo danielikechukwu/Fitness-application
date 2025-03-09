@@ -20,16 +20,18 @@ import Calories from "../../components/Status/calories";
 import LatestWorkoutSection from "../../components/WorkoutSection/latest-workout-section";
 import WorkoutSection from "../../components/WorkoutSection/workout-section";
 import { StatusBar } from "expo-status-bar";
-import IWaterIntakeTimeLine from "@/types/water-intake-timeline";
-import { GraphProvider } from "@/context/graph-context";
+import IWaterIntakeTimeLine from "../../types/water-intake-timeline";
+import { GraphProvider } from "../../context/graph-context";
 
 const Home: React.FC = () => {
+
   const colorScheme = useColorScheme();
 
   const [notification, setNotification] = useState<boolean>(false);
 
   return (
     <SafeAreaView style={styles.container}>
+
       <StatusBar style={colorScheme === "dark" ? "dark" : "dark"} />
 
       <ScrollView

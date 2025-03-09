@@ -8,6 +8,7 @@ import { StatusBar } from "expo-status-bar";
 const FirstOnboardingScreen: React.FC = () => {
 
   const colorScheme = useColorScheme();
+  
   const buttonTitle: string = "Get Started";
 
   return (

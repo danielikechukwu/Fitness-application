@@ -1,5 +1,6 @@
 import {
   Image,
+  Pressable,
   SafeAreaView,
   StyleSheet,
   Text,
@@ -11,14 +12,14 @@ import fonts from "../../constants/fonts";
 import colors from "../../constants/colors";
 import OnboardingButton from "../../components/Buttons/onboarding-button";
 import { StatusBar } from "expo-status-bar";
+import { router } from "expo-router";
 
 const SecondOnboardingScreen: React.FC = () => {
-
   const colorScheme = useColorScheme();
 
   return (
     <SafeAreaView style={styles.container}>
-      <StatusBar style={colorScheme === 'dark' ? 'dark' : 'dark'} />
+      <StatusBar style={colorScheme === "dark" ? "dark" : "dark"} />
 
       <View>
         <Image
@@ -39,7 +40,7 @@ const SecondOnboardingScreen: React.FC = () => {
       {/* Next button */}
       <View style={styles.button}>
         <View style={styles.buttonBorder}>
-          <OnboardingButton path="/onboarding/onboarding5" />
+          <OnboardingButton path="/auth/register/create-account" />
         </View>
       </View>
     </SafeAreaView>

@@ -17,15 +17,16 @@ import { useRouter } from "expo-router";
 import { StatusBar } from "expo-status-bar";
 
 const CreateAccount: React.FC = () => {
-
   const colorScheme = useColorScheme();
+
   const [checked, setChecked] = useState<boolean>(false);
 
   const router = useRouter();
 
   return (
     <SafeAreaView style={styles.container}>
-      <StatusBar backgroundColor="white" />
+
+      <StatusBar style={colorScheme === "dark" ? "dark" : "dark"} />
 
       <ScrollView
         showsHorizontalScrollIndicator={false}
@@ -116,7 +117,7 @@ const CreateAccount: React.FC = () => {
               mode="contained"
               textColor={colors.white}
               buttonColor={colors.brand}
-              onPress={() => console.log("Pressed")}
+              onPress={() => router.replace('/auth/register/complete-account')}
             >
               <Text style={{ fontFamily: fonts.bold, fontSize: 16 }}>
                 Register
@@ -192,6 +193,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: colors.white,
+    paddingTop: "5%",
   },
 
   form: {

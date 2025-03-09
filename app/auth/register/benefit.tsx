@@ -1,18 +1,27 @@
-import { SafeAreaView, StyleSheet, Text, useColorScheme, View } from "react-native";
+import {
+  SafeAreaView,
+  StyleSheet,
+  Text,
+  useColorScheme,
+  View,
+} from "react-native";
 import React from "react";
 import colors from "../../../constants/colors";
 import fonts from "../../../constants/fonts";
 import { Button } from "react-native-paper";
 import CardCarousel from "../../../components/Card/card";
 import { StatusBar } from "expo-status-bar";
+import { useRouter } from "expo-router";
 
 const Benefit: React.FC = () => {
 
   const colorScheme = useColorScheme();
 
+  const router = useRouter();
+
   return (
     <SafeAreaView style={styles.container}>
-      <StatusBar backgroundColor={colors.white} />
+      <StatusBar style={colorScheme === "dark" ? "dark" : "dark"} />
 
       <View style={styles.content}>
         <View style={styles.topTextSection}>
@@ -25,12 +34,12 @@ const Benefit: React.FC = () => {
           <CardCarousel />
         </View>
 
-        <View style={{ width: "90%" }}>
+        <View style={{ width: "90%", marginBottom: "3%" }}>
           <Button
             mode="contained"
             textColor={colors.white}
             buttonColor={colors.brand}
-            onPress={() => console.log("Pressed")}
+            onPress={() => router.replace('/auth/login')}
           >
             <Text style={{ fontFamily: fonts.bold, fontSize: 16 }}>
               Confirm
@@ -48,6 +57,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: colors.white,
+    paddingTop: "5%",
   },
 
   content: {
@@ -69,7 +79,5 @@ const styles = StyleSheet.create({
   text: {
     color: colors.gray1,
     fontFamily: fonts.regular,
-    //width: "70%",
-    //textAlign: "center",
-  },
+  }
 } as const);
