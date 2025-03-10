@@ -4,8 +4,6 @@ import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 import { LineChart } from "react-native-gifted-charts";
 
-// const screenWidth = Dimensions.get('window').width;
-
 const HeartRate: React.FC = () => {
 
   const ptData = [
@@ -112,7 +110,7 @@ const HeartRate: React.FC = () => {
           hideDataPoints
           spacing={10}
           color="rgb(71, 124, 238)"
-          thickness={3}
+          thickness={2}
           startFillColor="rgb(175, 199, 250)"
           endFillColor="rgb(235, 238, 242)"
           startOpacity={0.9}

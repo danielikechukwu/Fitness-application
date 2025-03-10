@@ -127,7 +127,7 @@ const WorkoutSectionGraph: React.FC = () => {
               xAxisColor={colors.gray2}
               rulesType="solid"
               rulesColor={colors.gray2}
-              yAxisTextStyle={{ color: colors.black }}
+              yAxisTextStyle={{ color: colors.gray1 }}
               yAxisLabelSuffix="%"
               xAxisLabelTextStyle={{ color: colors.gray1 }}
               pointerConfig={{
@@ -237,13 +237,13 @@ const WorkoutSectionGraph: React.FC = () => {
               endOpacity={0.2}
               initialSpacing={25}
               noOfSections={5}
-              yAxisColor="black"
+              yAxisColor={colors.black}
               yAxisThickness={0}
               yAxisSide={yAxisSides.RIGHT}
               xAxisColor={colors.gray2}
               rulesType="solid"
               rulesColor={colors.gray2}
-              yAxisTextStyle={{ color: colors.black }}
+              yAxisTextStyle={{ color: colors.gray1 }}
               yAxisLabelSuffix="%"
               xAxisLabelTextStyle={{ color: colors.gray1 }}
               pointerConfig={{
@@ -359,7 +359,7 @@ const WorkoutSectionGraph: React.FC = () => {
               xAxisColor={colors.gray2}
               rulesType="solid"
               rulesColor={colors.gray2}
-              yAxisTextStyle={{ color: colors.black }}
+              yAxisTextStyle={{ color: colors.gray1 }}
               yAxisLabelSuffix="%"
               xAxisLabelTextStyle={{ color: colors.gray1 }}
               pointerConfig={{
@@ -475,7 +475,7 @@ const WorkoutSectionGraph: React.FC = () => {
               xAxisColor={colors.gray2}
               rulesType="solid"
               rulesColor={colors.gray2}
-              yAxisTextStyle={{ color: colors.black }}
+              yAxisTextStyle={{ color: colors.gray1 }}
               yAxisLabelSuffix="%"
               xAxisLabelTextStyle={{ color: colors.gray1 }}
               pointerConfig={{

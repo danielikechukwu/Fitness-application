@@ -95,10 +95,10 @@ const Home: React.FC = () => {
               <Pressable
                 style={{
                   backgroundColor: colors.brand,
-                  padding: "4%",
+                  padding: "8%",
                   alignItems: "center",
                   justifyContent: "center",
-                  borderRadius: 18,
+                  borderRadius: 20,
                 }}
                 onPress={() => console.log("Today target")}
               >
