@@ -48,10 +48,10 @@ const CompleteAccount: React.FC = () => {
               placeholder="Choose gender"
               password={false}
             />
-            {/* <DatePicker
+            <DatePicker
               icon={require("../../../assets/images/icons/calender.png")}
               placeholder="Date of Birth"
-            /> */}
+            />
             <View style={{ flexDirection: "row", alignItems: "center" }}>
               <NumberLabel
                 icon={require("../../../assets/images/icons/weight-scale.png")}

@@ -54,7 +54,7 @@ const styles = StyleSheet.create({
     padding: 8,
     color: colors.black,
     fontFamily: fonts.regular,
-    alignSelf: "center",
+    alignSelf: "center"
   },
 
   img: {

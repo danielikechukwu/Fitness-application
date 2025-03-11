@@ -1,11 +1,4 @@
-import {
-  StyleSheet,
-  Text,
-  View,
-  Image,
-  TextInput,
-  Platform,
-} from "react-native";
+import { StyleSheet, View, Image, TextInput, Platform } from "react-native";
 import React, { useState } from "react";
 import colors from "../../constants/colors";
 import fonts from "../../constants/fonts";
@@ -13,7 +6,7 @@ import DateTimePicker from "@react-native-community/datetimepicker";
 import ILabel from "../../types/label";
 
 const DatePicker: React.FC<ILabel> = (props: ILabel) => {
-  const [date, setDate] = useState(new Date());
+  const [date, setDate] = useState<Date>(new Date());
   const [open, setOpen] = useState(false);
 
   const onChange = (event: any, selectedDate?: Date) => {
@@ -21,6 +14,7 @@ const DatePicker: React.FC<ILabel> = (props: ILabel) => {
 
     if (selectedDate) {
       setDate(selectedDate);
+      console.log(selectedDate);
     }
   };
 
@@ -37,7 +31,7 @@ const DatePicker: React.FC<ILabel> = (props: ILabel) => {
         placeholderTextColor={colors.gray2}
         style={styles.input}
         value={date.toDateString()}
-        onFocus={() => setOpen(true)}
+        onPress={() => setOpen(true)}
       />
       {open && (
         <DateTimePicker
@@ -45,6 +39,7 @@ const DatePicker: React.FC<ILabel> = (props: ILabel) => {
           mode="date"
           display="default"
           onChange={onChange}
+          
         />
       )}
     </View>

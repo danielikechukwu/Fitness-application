@@ -5,6 +5,7 @@ import colors from "../../constants/colors";
 import ILabel from "../../types/label";
 
 const DropDown: React.FC<ILabel> = (props: ILabel) => {
+
   const [value, setValue] = useState();
 
   return (
@@ -15,16 +16,7 @@ const DropDown: React.FC<ILabel> = (props: ILabel) => {
         source={props.icon}
         style={styles.img}
       />
-      <View style={{ width: "100%", marginLeft: "-3%" }}>
-        {/* <RNPickerSelect
-          onValueChange={(value) => setSelectedValue(value)}
-          items={[
-            { label: "Male", value: "male" },
-            { label: "Female", value: "female" },
-          ]}
-          placeholder={{ label: props.placeholder, value: null }}
-          style={pickerStyles}
-        /> */}
+      <View style={{ width: "95%" }}>
         <Picker
           selectedValue={value}
           onValueChange={(itemValue, itemIndex) => setValue(itemValue)}
@@ -56,20 +48,6 @@ const styles = StyleSheet.create({
     marginRight: "3%",
     width: 18,
     height: 18,
-  },
-} as const);
+  }
 
-const pickerStyles = Object.freeze({
-  inputIOS: {
-    color: colors.black,
-    padding: 10,
-    borderBottomWidth: 1,
-    borderColor: "red",
-  },
-  inputAndroid: {
-    color: colors.black,
-    //padding: 10,
-    borderWidth: 3,
-    borderColor: "red",
-  },
-});
+} as const);
