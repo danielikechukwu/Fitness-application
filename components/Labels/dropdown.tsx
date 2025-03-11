@@ -1,11 +1,11 @@
 import { StyleSheet, Text, View, Image } from "react-native";
 import React, { useState } from "react";
-import RNPickerSelect from "react-native-picker-select";
+import { Picker } from "@react-native-picker/picker";
 import colors from "../../constants/colors";
 import ILabel from "../../types/label";
 
 const DropDown: React.FC<ILabel> = (props: ILabel) => {
-  const [selectedValue, setSelectedValue] = useState();
+  const [value, setValue] = useState();
 
   return (
     <View style={styles.container}>
@@ -16,7 +16,7 @@ const DropDown: React.FC<ILabel> = (props: ILabel) => {
         style={styles.img}
       />
       <View style={{ width: "100%", marginLeft: "-3%" }}>
-        <RNPickerSelect
+        {/* <RNPickerSelect
           onValueChange={(value) => setSelectedValue(value)}
           items={[
             { label: "Male", value: "male" },
@@ -24,7 +24,14 @@ const DropDown: React.FC<ILabel> = (props: ILabel) => {
           ]}
           placeholder={{ label: props.placeholder, value: null }}
           style={pickerStyles}
-        />
+        /> */}
+        <Picker
+          selectedValue={value}
+          onValueChange={(itemValue, itemIndex) => setValue(itemValue)}
+        >
+          <Picker.Item label="Male" value="male" />
+          <Picker.Item label="Female" value="female" />
+        </Picker>
       </View>
     </View>
   );

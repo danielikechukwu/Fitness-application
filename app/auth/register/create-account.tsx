@@ -117,7 +117,7 @@ const CreateAccount: React.FC = () => {
               mode="contained"
               textColor={colors.white}
               buttonColor={colors.brand}
-              onPress={() => router.replace('/auth/register/complete-account')}
+              onPress={() => { router.replace('/auth/register/complete-account')}}
             >
               <Text style={{ fontFamily: fonts.bold, fontSize: 16 }}>
                 Register
