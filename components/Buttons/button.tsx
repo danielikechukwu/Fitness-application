@@ -13,7 +13,7 @@ const Buttons: React.FC<IButton> = (props: IButton) => {
     <Pressable
       style={({ pressed }) => [
         styles.containter,
-        pressed && { backgroundColor: colors.gray3 },
+        //pressed && { backgroundColor: colors.gray3 },
       ]}
       onPress={() => router.replace(props.path)}
     >
