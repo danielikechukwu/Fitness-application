@@ -83,7 +83,7 @@ const FirstOnboardingScreen: React.FC = () => {
           Everybody can train
         </Text>
       </Svg>
-      <View style={{ top: "-12%", paddingRight: "5%", paddingLeft: "5%" }}>
+      <View style={{ top: "-10%", paddingRight: "5%", paddingLeft: "5%" }}>
         <Buttons title={buttonTitle} path="/onboarding/onboarding2" />
       </View>
     </SafeAreaView>

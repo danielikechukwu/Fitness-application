@@ -20,7 +20,7 @@ const Index: React.FC<void> = () => {
 
       <ScrollView>
         <View>
-          <Button mode="contained" onPress={() => router.push("/onboarding/onboarding1")}>
+          <Button mode="contained" onPress={() => router.push("/auth/register/benefit")}>
             Welcome
           </Button>
         </View>

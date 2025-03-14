@@ -9,12 +9,12 @@ import React from "react";
 import colors from "../../../constants/colors";
 import fonts from "../../../constants/fonts";
 import { Button } from "react-native-paper";
-import CardCarousel from "../../../components/Card/card";
 import { StatusBar } from "expo-status-bar";
 import { useRouter } from "expo-router";
+import Slider from "../../../components/slider";
 
 const Benefit: React.FC = () => {
-
+  
   const colorScheme = useColorScheme();
 
   const router = useRouter();
@@ -30,8 +30,8 @@ const Benefit: React.FC = () => {
           <Text style={styles.text}>program for you</Text>
         </View>
 
-        <View style={{ height: "63%" }}>
-          <CardCarousel />
+        <View>
+          <Slider />
         </View>
 
         <View style={{ width: "90%", marginBottom: "3%" }}>
@@ -39,7 +39,7 @@ const Benefit: React.FC = () => {
             mode="contained"
             textColor={colors.white}
             buttonColor={colors.brand}
-            onPress={() => router.replace('/auth/login')}
+            onPress={() => router.replace("/auth/login")}
           >
             <Text style={{ fontFamily: fonts.bold, fontSize: 16 }}>
               Confirm
@@ -79,5 +79,5 @@ const styles = StyleSheet.create({
   text: {
     color: colors.gray1,
     fontFamily: fonts.regular,
-  }
+  },
 } as const);
