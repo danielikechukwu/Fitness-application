@@ -31,7 +31,8 @@ const Benefit: React.FC = () => {
         </View>
 
         <View>
-          <Slider />
+          {/* <Slider /> */}
+          <Text>Hello, world</Text>
         </View>
 
         <View style={{ width: "90%", marginBottom: "3%" }}>

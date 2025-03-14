@@ -1,17 +1,16 @@
-import { SafeAreaView, StyleSheet, useColorScheme, View } from "react-native";
+import {
+  SafeAreaView,
+  StyleSheet,
+  useColorScheme,
+  View,
+  Text,
+} from "react-native";
 import React from "react";
 import fonts from "../../constants/fonts";
 import colors from "../../constants/colors";
 import Buttons from "../../components/Buttons/button";
 import { StatusBar } from "expo-status-bar";
-import Svg, {
-  Defs,
-  G,
-  LinearGradient,
-  Rect,
-  Stop,
-  Text,
-} from "react-native-svg";
+import { LinearGradient } from "expo-linear-gradient";
 
 const FirstOnboardingScreen: React.FC = () => {
   const colorScheme = useColorScheme();
@@ -22,70 +21,40 @@ const FirstOnboardingScreen: React.FC = () => {
     <SafeAreaView style={styles.container}>
       <StatusBar style={colorScheme === "dark" ? "dark" : "dark"} />
 
-      <Svg
-        style={{ borderWidth: 1, borderColor: "red" }}
-        width="100%"
-        height="100%"
+      <LinearGradient
+        colors={["#92A3FD", "#9DCEFF"]}
+        start={[1, 0]}
+        end={[0, 0]}
+        style={{ borderWidth: 1, flex: 1, justifyContent: "center" }}
       >
-        {/* Define gradient */}
-        <Defs>
-          <LinearGradient
-            id="progressGradient"
-            x1="100%"
-            y1="0%"
-            x2="0%"
-            y2="0%"
+        <View
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <View style={styles.text}>
+            <Text style={styles.brand}>Fitnest</Text>
+            <Text style={styles.x}>X</Text>
+          </View>
+
+          <Text
+            style={{
+              fontFamily: fonts.regular,
+              fontSize: 16,
+              color: colors.gray1,
+              top: -9,
+            }}
           >
-            <Stop offset="0%" stopColor="#92A3FD" />
-            <Stop offset="100%" stopColor="#9DCEFF" />
-          </LinearGradient>
-        </Defs>
+            Everybody can train
+          </Text>
+        </View>
 
-        <Rect
-          x="0"
-          y="0"
-          width="100%"
-          height="100%"
-          fill="url(#progressGradient)"
-        />
-
-        <Text
-          x="47%"
-          y="50%"
-          textAnchor="middle"
-          alignmentBaseline="middle"
-          fontSize="26"
-          fontFamily={fonts.bold}
-          fill={colors.black}
-        >
-          Fitnest
-        </Text>
-        <Text
-          x="61.2%"
-          y="49.8%"
-          textAnchor="middle"
-          alignmentBaseline="middle"
-          fontSize="32"
-          fontFamily={fonts.bold}
-          fill={colors.white}
-        >
-          X
-        </Text>
-        <Text
-          x="50%"
-          y="53.5%"
-          textAnchor="middle"
-          alignmentBaseline="middle"
-          fontSize="14"
-          fontFamily={fonts.regular}
-          fill={colors.gray1}
-        >
-          Everybody can train
-        </Text>
-      </Svg>
-      <View style={{ top: "-10%", paddingRight: "5%", paddingLeft: "5%" }}>
-        <Buttons title={buttonTitle} path="/onboarding/onboarding2" />
-      </View>
+        <View style={styles.buttonComponent}>
+          <Buttons title={buttonTitle} path="/onboarding/onboarding2" />
+        </View>
+      </LinearGradient>
     </SafeAreaView>
   );
 };
@@ -97,9 +66,32 @@ const styles = StyleSheet.create({
     flex: 1,
   },
 
+  brand: {
+    fontFamily: fonts.bold,
+    fontSize: 30,
+  },
+
+  text: {
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "baseline",
+  },
+
+  x: {
+    color: "white",
+    fontFamily: fonts.bold,
+    fontSize: 34,
+  },
+
   buttonComponent: {
-    top: 270,
+    top: 300,
     marginLeft: 30,
     marginRight: 30,
+  },
+
+  button: {
+    padding: 15,
+    alignItems: "center",
+    borderRadius: 5,
   },
 } as const);

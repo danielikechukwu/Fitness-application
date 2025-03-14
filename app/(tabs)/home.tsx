@@ -6,10 +6,10 @@ import {
   Image,
   Pressable,
   useColorScheme,
+  SafeAreaView,
   FlatList,
 } from "react-native";
 import React, { useRef, useState } from "react";
-import { SafeAreaView } from "react-native-safe-area-context";
 import colors from "../../constants/colors";
 import fonts from "../../constants/fonts";
 import HomeBanner from "../../components/Banner/home";
