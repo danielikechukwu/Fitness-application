@@ -24,18 +24,18 @@ const Benefit: React.FC = () => {
       <StatusBar style={colorScheme === "dark" ? "dark" : "dark"} />
 
       <View style={styles.content}>
+
         <View style={styles.topTextSection}>
           <Text style={styles.heading}>What is your goal?</Text>
           <Text style={styles.text}>It will help us to choose a best</Text>
           <Text style={styles.text}>program for you</Text>
         </View>
 
-        <View>
-          {/* <Slider /> */}
-          <Text>Hello, world</Text>
+        <View style={{borderWidth: 2, height: '64%'}}>
+          <Slider />
         </View>
 
-        <View style={{ width: "90%", marginBottom: "3%" }}>
+        <View style={{ width: "90%" }}>
           <Button
             mode="contained"
             textColor={colors.white}
@@ -47,7 +47,9 @@ const Benefit: React.FC = () => {
             </Text>
           </Button>
         </View>
+
       </View>
+
     </SafeAreaView>
   );
 };
@@ -55,10 +57,11 @@ const Benefit: React.FC = () => {
 export default Benefit;
 
 const styles = StyleSheet.create({
+
   container: {
     flex: 1,
     backgroundColor: colors.white,
-    paddingTop: "5%",
+    paddingTop: "5%"
   },
 
   content: {
