@@ -11,10 +11,10 @@ import fonts from "../../../constants/fonts";
 import { Button } from "react-native-paper";
 import { StatusBar } from "expo-status-bar";
 import { useRouter } from "expo-router";
-import Slider from "../../../components/slider";
+import CardCarousel from "../../../components/Card/card";
+//import Slider from "../../../components/slider";
 
 const Benefit: React.FC = () => {
-  
   const colorScheme = useColorScheme();
 
   const router = useRouter();
@@ -24,15 +24,14 @@ const Benefit: React.FC = () => {
       <StatusBar style={colorScheme === "dark" ? "dark" : "dark"} />
 
       <View style={styles.content}>
-
         <View style={styles.topTextSection}>
           <Text style={styles.heading}>What is your goal?</Text>
           <Text style={styles.text}>It will help us to choose a best</Text>
           <Text style={styles.text}>program for you</Text>
         </View>
 
-        <View style={{borderWidth: 2, height: '64%'}}>
-          <Slider />
+        <View style={{ height: "68%", width: "100%" }}>
+          <CardCarousel />
         </View>
 
         <View style={{ width: "90%" }}>
@@ -47,9 +46,7 @@ const Benefit: React.FC = () => {
             </Text>
           </Button>
         </View>
-
       </View>
-
     </SafeAreaView>
   );
 };
@@ -57,11 +54,10 @@ const Benefit: React.FC = () => {
 export default Benefit;
 
 const styles = StyleSheet.create({
-
   container: {
     flex: 1,
     backgroundColor: colors.white,
-    paddingTop: "5%"
+    paddingTop: "5%",
   },
 
   content: {
