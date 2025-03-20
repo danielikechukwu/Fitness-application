@@ -1,9 +1,4 @@
-import {
-  StyleSheet,
-  View,
-  ScrollView,
-  useColorScheme,
-} from "react-native";
+import { StyleSheet, View, ScrollView, useColorScheme } from "react-native";
 import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { StatusBar } from "expo-status-bar";
@@ -20,7 +15,10 @@ const Index: React.FC<void> = () => {
 
       <ScrollView>
         <View>
-          <Button mode="contained" onPress={() => router.push("/auth/register/benefit")}>
+          <Button
+            mode="contained"
+            onPress={() => router.push("/onboarding/onboarding1")}
+          >
             Welcome
           </Button>
         </View>

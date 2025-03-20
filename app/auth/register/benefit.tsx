@@ -30,7 +30,7 @@ const Benefit: React.FC = () => {
           <Text style={styles.text}>program for you</Text>
         </View>
 
-        <View style={{ height: "68%", width: "100%" }}>
+        <View style={{ height: "65%", width: "100%" }}>
           <CardCarousel />
         </View>
 

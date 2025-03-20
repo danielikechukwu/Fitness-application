@@ -31,14 +31,14 @@ const data = [
 ];
 
 const CardCarousel: React.FC = () => {
-
   const [activeIndex, setActiveIndex] = useState(0);
 
-  const renderItem = ({
-    item, index
+  const _renderItem = ({
+    item,
+    index,
   }: {
-    item: { heading: string; image: any; content: string },
-    index: number
+    item: { heading: string; image: any; content: string };
+    index: number;
   }) => (
     <View style={styles.card}>
       <Image source={item.image} style={{ alignSelf: "center" }} />
@@ -56,14 +56,10 @@ const CardCarousel: React.FC = () => {
       <Carousel
         data={data}
         key={data.length}
-        renderItem={renderItem}
+        renderItem={_renderItem}
         sliderWidth={width}
         itemWidth={width * 0.8} // Adjust card width
-        loop={true}
-        //auto play
-        autoplay={true}
-        lockScrollWhileSnapping={true}
-        enableMomentum={false}
+        layout={"default"}
       />
     </View>
   );
