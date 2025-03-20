@@ -2,8 +2,7 @@ import { Dimensions, StyleSheet, Text, View, Image } from "react-native";
 import React, { useState } from "react";
 import colors from "../../constants/colors";
 import fonts from "../../constants/fonts";
-import Carousel from 'react-native-snap-carousel';
-
+import Carousel from "react-native-snap-carousel";
 
 const { width } = Dimensions.get("screen");
 
@@ -36,9 +35,10 @@ const CardCarousel: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   const renderItem = ({
-    item
+    item, index
   }: {
-    item: { heading: string; image: any; content: string };
+    item: { heading: string; image: any; content: string },
+    index: number
   }) => (
     <View style={styles.card}>
       <Image source={item.image} style={{ alignSelf: "center" }} />
@@ -47,22 +47,24 @@ const CardCarousel: React.FC = () => {
         <View style={styles.horizontalLine} />
         <View style={styles.horizontalLine}></View>
         <Text style={styles.text}>{item.content}</Text>
-      </View>      
+      </View>
     </View>
   );
 
   return (
     <View style={styles.container}>
-
       <Carousel
         data={data}
+        key={data.length}
         renderItem={renderItem}
         sliderWidth={width}
         itemWidth={width * 0.8} // Adjust card width
-        loop        
-        //onSnapToItem={(index: any) => setActiveIndex(index)}
+        loop={true}
+        //auto play
+        autoplay={true}
+        lockScrollWhileSnapping={true}
+        enableMomentum={false}
       />
-
     </View>
   );
 };
@@ -70,7 +72,6 @@ const CardCarousel: React.FC = () => {
 export default CardCarousel;
 
 const styles = StyleSheet.create({
-
   container: {
     alignItems: "center",
   },
@@ -82,10 +83,6 @@ const styles = StyleSheet.create({
     paddingRight: 15,
     paddingTop: "15%",
     paddingBottom: "15%",
-    shadowColor: "#000",
-    shadowOpacity: 0.2,
-    shadowRadius: 5,
-    elevation: 5,
     height: "100%",
   },
 
@@ -114,6 +111,5 @@ const styles = StyleSheet.create({
     width: "20%",
     height: 0.5,
     backgroundColor: colors.white,
-  }
-
+  },
 } as const);

@@ -84,7 +84,7 @@ const styles = StyleSheet.create({
   },
 
   buttonComponent: {
-    top: 300,
+    top: 260,
     marginLeft: 30,
     marginRight: 30,
   },

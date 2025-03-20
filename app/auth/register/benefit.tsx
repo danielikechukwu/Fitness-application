@@ -25,7 +25,7 @@ const Benefit: React.FC = () => {
 
       <View style={styles.content}>
         <View style={styles.topTextSection}>
-          <Text style={styles.heading}>What is your goal?</Text>
+          <Text style={styles.heading}>What is your goal?U</Text>
           <Text style={styles.text}>It will help us to choose a best</Text>
           <Text style={styles.text}>program for you</Text>
         </View>
