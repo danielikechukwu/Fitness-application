@@ -5,7 +5,7 @@ import { StatusBar } from 'expo-status-bar'
 
 const RegisterLayout = () => {
   return (
-    <Stack screenOptions={{ headerShown: false }}>        
+    <Stack screenOptions={{ headerShown: false, animation: 'fade', presentation: 'card' }}>        
         <Stack.Screen name='create-account' />
         <Stack.Screen name='complete-account' />
         <Stack.Screen name='benefit' />

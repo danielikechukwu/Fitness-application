@@ -25,12 +25,12 @@ const Benefit: React.FC = () => {
 
       <View style={styles.content}>
         <View style={styles.topTextSection}>
-          <Text style={styles.heading}>What is your goal?U</Text>
+          <Text style={styles.heading}>What is your goal?</Text>
           <Text style={styles.text}>It will help us to choose a best</Text>
           <Text style={styles.text}>program for you</Text>
         </View>
 
-        <View style={{ height: "65%", width: "100%" }}>
+        <View style={{ height: "68%", width: "100%" }}>
           <CardCarousel />
         </View>
 
@@ -41,7 +41,7 @@ const Benefit: React.FC = () => {
             buttonColor={colors.brand}
             onPress={() => router.replace("/auth/login")}
           >
-            <Text style={{ fontFamily: fonts.bold, fontSize: 16 }}>
+            <Text style={{ fontFamily: fonts.bold, fontSize: 12 }}>
               Confirm
             </Text>
           </Button>

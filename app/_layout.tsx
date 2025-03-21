@@ -25,7 +25,7 @@ const RootLayout: React.FC = () => {
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
       <Provider>
-        <Stack screenOptions={{ headerShown: false }}>
+        <Stack screenOptions={{ headerShown: false, animation: 'fade', presentation: 'card' }}>
           <Stack.Screen name="index" />
         </Stack>
       </Provider>

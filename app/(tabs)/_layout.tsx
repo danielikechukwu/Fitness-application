@@ -11,6 +11,7 @@ const RootLayout = () => {
         tabBarActiveTintColor: "red",
         tabBarInactiveTintColor: "green",
         headerShown: false,
+        animation: "fade",
         tabBarStyle: {
           backgroundColor: colors.white,
           height: "8%",

@@ -2,11 +2,14 @@ import { StyleSheet, Text, Pressable } from "react-native";
 import React from "react";
 import colors from "../../constants/colors";
 import fonts from "../../constants/fonts";
-import { useRouter } from "expo-router";
+import { useNavigation, useRouter } from "expo-router";
 import IButton from "../../types/onboarding-button";
 
 const Buttons: React.FC<IButton> = (props: IButton) => {
+
   const router = useRouter();
+
+  const navigation = useNavigation();
 
   return (
     <Pressable
@@ -35,6 +38,6 @@ const styles = StyleSheet.create({
   buttonText: {
     color: colors.brand,
     fontFamily: fonts.bold,
-    fontSize: 12,
+    fontSize: 14,
   },
 } as const);

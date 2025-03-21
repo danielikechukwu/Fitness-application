@@ -3,7 +3,7 @@ import { Stack } from "expo-router";
 
 const OnboardingLayout: React.FC = () => {
   return (
-    <Stack screenOptions={{ headerShown: false }}>
+    <Stack screenOptions={{ headerShown: false, animation: 'fade', presentation: 'card' }}>
       <Stack.Screen name="onboarding1" />
       <Stack.Screen name="onboarding2" />
       <Stack.Screen name="onboarding3" />
