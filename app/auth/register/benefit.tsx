@@ -41,7 +41,7 @@ const Benefit: React.FC = () => {
             buttonColor={colors.brand}
             onPress={() => router.replace("/auth/login")}
           >
-            <Text style={{ fontFamily: fonts.bold, fontSize: 12 }}>
+            <Text style={{ fontFamily: fonts.bold, fontSize: 14 }}>
               Confirm
             </Text>
           </Button>

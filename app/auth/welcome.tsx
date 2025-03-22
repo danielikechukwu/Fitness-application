@@ -40,11 +40,9 @@ const Welcome: React.FC = () => {
           mode="contained"
           textColor={colors.white}
           buttonColor={colors.brand}
-          onPress={() => router.replace('/(tabs)/home')}
+          onPress={() => router.replace("/(tabs)/home")}
         >
-          <Text style={{ fontFamily: fonts.bold, fontSize: 16 }}>
-            Go To Home
-          </Text>
+          <Text style={{ fontFamily: fonts.bold, fontSize: 14 }}>Home</Text>
         </Button>
       </View>
     </SafeAreaView>

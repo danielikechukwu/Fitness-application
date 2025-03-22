@@ -34,12 +34,12 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     borderRadius: 28,
-    flexDirection: "row",
+    flexDirection: "row"
   },
 
   buttonText: {
     color: colors.white,
     fontFamily: fonts.bold,
-    fontSize: 12,
+    fontSize: 14,
   },
 } as const);
