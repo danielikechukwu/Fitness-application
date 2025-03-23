@@ -2,21 +2,13 @@ import { StyleSheet, View, Image, TextInput, Platform } from "react-native";
 import React, { useState } from "react";
 import colors from "../../constants/colors";
 import fonts from "../../constants/fonts";
-import DateTimePicker from "@react-native-community/datetimepicker";
 import ILabel from "../../types/label";
+//import DateTimePicker from '@react-native-community/datetimepicker';
 
-const DatePicker: React.FC<ILabel> = (props: ILabel) => {
+const DatePickerLabel: React.FC<ILabel> = (props: ILabel) => {
+
   const [date, setDate] = useState<Date>(new Date());
-  const [open, setOpen] = useState(false);
-
-  const onChange = (event: any, selectedDate?: Date) => {
-    setOpen(Platform.OS === "ios"); //keep open for ios
-
-    if (selectedDate) {
-      setDate(selectedDate);
-      console.log(selectedDate);
-    }
-  };
+  const [open, setOpen] = useState<boolean>(false);
 
   return (
     <View style={styles.container}>
@@ -33,7 +25,7 @@ const DatePicker: React.FC<ILabel> = (props: ILabel) => {
         value={date.toDateString()}
         onPress={() => setOpen(true)}
       />
-      {open && (
+      {/* {open && (
         <DateTimePicker
           value={date}
           mode="date"
@@ -41,12 +33,14 @@ const DatePicker: React.FC<ILabel> = (props: ILabel) => {
           onChange={onChange}
           
         />
-      )}
+      )} */}
+
+
     </View>
   );
 };
 
-export default DatePicker;
+export default DatePickerLabel;
 
 const styles = StyleSheet.create({
   container: {

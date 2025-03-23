@@ -12,7 +12,7 @@ import colors from "../../../constants/colors";
 import fonts from "../../../constants/fonts";
 import Next from "../../../components/Buttons/next";
 import NumberLabel from "../../../components/Labels/weight-height-label";
-import DatePicker from "../../../components/Labels/date-picker";
+import DatePickerLabel from "../../../components/Labels/date-picker";
 import DropDown from "../../../components/Labels/dropdown";
 import { StatusBar } from "expo-status-bar";
 
@@ -48,7 +48,7 @@ const CompleteAccount: React.FC = () => {
               placeholder="Choose gender"
               password={false}
             />
-            <DatePicker
+            <DatePickerLabel
               icon={require("../../../assets/images/icons/calender.png")}
               placeholder="Date of Birth"
             />
